@@ -1,0 +1,1002 @@
+<examplesWithSolutions>
+
+
+	<example name="1">Get me an orange juice</example>
+	<role name="1">0.Get(Predicate) 1.me(Who) 2.an(What) 3.orange(What) 4.juice(What)</role>
+	<arc name="1">0-1(pp) 0-2(pp) 2-3(ic) 3-4(ic)</arc>>
+
+	<example name="2">Armar bring me an orange juice</example>
+	<role name="2">0.Armar(Actor) 1.bring(Predicate) 2.me(Who) 3.an(What) 4.orange(What) 5.juice(What)</role>
+	<arc name="2">1-0(pp) 1-2(pp) 1-3(pp) 3-4(ic) 4-5(ic)</arc>
+
+	<example name="3">Armar bring me an orange juice then get me an apple juice then buy me a grape juice</example>
+	<role name="3">0.Armar(Actor) 1.bring(Predicate) 2.me(Who) 3.an(What) 4.orange(What) 5.juice(What) 6.then(When) 7.get(Predicate) 8.me(Who) 9.an(What) 10.apple(What) 11.juice(What) 12.then(When) 13.buy(Predicate) 14.me(Who) 15.a(What) 16.grape(What) 17.juice(What)</role>
+	<arc name="3">1-7(na) 7-13(na) 1-0(pp) 1-2(pp) 1-3(pp) 3-4(ic) 4-5(ic) 7-0(pp) 7-6(pp) 7-8(pp) 7-9(pp) 9-10(ic) 10-11(ic) 13-0(pp) 13-12(pp) 13-14(pp) 13-15(pp) 15-16(ic) 16-17(ic)</arc>
+
+	<example name="4">Armar brought me an orange juice and brought Sebastian an apple juice</example>
+	<role name="4">0.Armar(Actor) 1.brought(Predicate) 2.me(Who) 3.an(What) 4.orange(What) 5.juice(What) 6.and 7.brought(Predicate) 8.Sebastian(Who) 9.an(What) 10.apple(What) 11.juice(What)</role>
+	<arc name="4">1-7(na) 1-0(pp) 1-2(pp) 1-3(pp) 3-4(ic) 4-5(ic) 7-0(pp) 7-8(pp) 7-9(pp) 9-10(ic) 10-11(ic)</arc>
+
+	<example name="5">Armar likes Japan and Alice likes Canada</example>
+	<role name="5">0.Armar(Actor) 1.likes(Predicate) 2.Japan(Where) 3.and 4.Alice(Actor) 5.likes(Predicate) 6.Canada(Where)</role>
+	<arc name="5">1-5(na) 1-0(pp) 1-2(pp) 5-4(pp) 5-6(pp)</arc>
+
+	<example name="6">Armar lives in Japan and Alice lives in Canada</example>
+	<role name="6">0.Armar(Actor) 1.lives(Predicate) 2.in 3.Japan(Where) 4.and 5.Alice(Actor) 6.lives(Predicate) 7.in 8.Canada(Where)</role>
+	<arc name="6">1-6(na) 1-0(pp) 1-3(pp) 6-5(pp) 6-8(pp)</arc>
+
+	<example name="7">He likes Japan and she likes Canada</example>
+	<role name="7">0.He(Actor) 1.likes(Predicate) 2.Japan(Where) 3.and 4.she(Actor) 5.likes(Predicate) 6.Canada(Where)</role>
+	<arc name="7">1-5(na) 1-0(pp) 1-2(pp) 5-4(pp) 5-6(pp)</arc>
+
+	<example name="8">He likes Japan and loves Canada</example>
+	<role name="8">0.He(Actor) 1.likes(Predicate) 2.Japan(Where) 3.and 4.loves(Predicate) 5.Canada(Where)</role>
+	<arc name="8">1-4(na) 1-0(pp) 1-2(pp) 4-0(pp) 4-5(pp)</arc>
+
+	<example name="9">Armar likes Japan and Canada</example>
+	<role name="9">0.Armar(Actor) 1.likes(Predicate) 2.Japan(Where) 3.and 4.Canada(Where) 5.likes(null)</role>
+	<arc name="9">1-5(na) 1-0(pp) 1-2(pp) 5-0(pp) 5-4(pp)</arc>
+
+	<example name="10">Armar eats an apple quickly and drinks an orange juice happily</example>
+	<role name="10">0.Armar(Actor) 1.eats(Predicate) 2.an(What) 3.apple(What) 4.quickly(How) 5.and 6.drinks(Predicate) 7.an(What) 8.orange(What) 9.juice(What) 10.happily(How)</role>
+	<arc name="10">1-6(na) 1-0(pp) 1-2(pp) 2-3(ic) 1-4(pp) 6-0(pp) 6-7(pp) 7-8(ic) 8-9(ic) 6-10(pp)</arc>
+
+	<example name="11">Armar broke a pen and cried sadly</example>
+	<role name="11">0.Armar(Actor) 1.broke(Predicate) 2.a(What) 3.pen(What) 4.and 5.cried(Predicate) 6.sadly(How)</role>
+	<arc name="11">1-5(na) 1-0(pp) 1-2(pp) 2-3(ic) 5-0(pp) 5-6(pp)</arc>
+
+	<example name="12">Armar opened the fridge and grabbed a frozen popcorn</example>
+	<role name="12">0.Armar(Actor) 1.opened(Predicate) 2.the(What) 3.fridge(What) 4.and 5.grabbed(Predicate) 6.a(What) 7.frozen(What) 8.popcorn(What)</role>
+	<arc name="12">1-5(na) 1-0(pp) 1-2(pp) 2-3(ic) 5-0(pp) 5-6(pp) 6-7(ic) 7-8(ic)</arc>
+
+
+
+
+
+	----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+	
+
+
+
+	<example name="t1">okay go to the table crap popcorn come to me give me the popcorn witches in your hand</example>
+	<role name="t1">0.okay 1.go(Predicate) 2.to 3.the(Where) 4.table(Where) 5.grab(Predicate) 6.popcorn(What) 7.come(Predicate) 8.to 9.me(Who) 10.give(Predicate) 11.me(Who) 12.the(What) 13.popcorn(What) 14.which(What) 15.is(What) 16.in(What) 17.your(What) 18.hand(What)</role>
+	<arc name="t1">1-5(na) 5-7(na) 7-10(na) 1-3(pp) 3-4(ic) 5-6(pp) 7-9(pp) 10-11(pp) 10-12(pp) 12-13(ic) 13-14(ic) 14-15(ic) 15-16(ic) 16-17(ic) 17-18(ic)</arc>
+
+	<example name="t2">ok imma go to the table take the green cup go to the dishwasher open it put the green cup into the dishwasher and closet</example>
+	<role name="t2">0.okay 1.Armar(Actor) 2.go(Predicate) 3.to 4.the(Where) 5.table(Where) 6.take(Predicate) 7.the(What) 8.green(What) 9.cup(What) 10.go(Predicate) 11.to 12.the(Where) 13.dishwasher(Where) 14.open(Predicate) 15.it(What)</role>
+	<arc name="t2">2-6(na) 6-10(na) 10-14(na) 2-1(pp) 2-4(pp) 6-1(pp) 6-7(pp) 7-8(ic) 8-9(ic) 10-1(pp) 10-12(pp) 12-13(ic) 14-1(pp) 14-15(pp) </arc>
+
+	<example name="t3">ok imma go to the fridge open it look for the orange juice and take it close the fridge and bring the juice to me</example>
+	<role name="t3">0.okay 1.Armar(Actor) 2.go(Predicate) 3.to 4.the(Where) 5.fridge(Where) 6.open(Predicate) 7.it(What) 8.look(Predicate) 9.for(Predicate) 10.the(What) 11.orange(What) 12.juice(What) 13.and 14.take(Predicate) 15.it(What)</role>
+	<arc name="t3">2-6(na) 6-8(na) 8-14(na) 2-1(pp) 2-4(pp) 4-5(ic) 6-1(pp) 6-7(pp) 8-1(pp) 8-9(ic) 8-10(pp) 10-11(ic) 11-12(ic) 14-1(pp) 14-15(pp)</arc>
+
+	<example name="t4">mama can you please bring medium popcorn bag</example>
+	<role name="t4">0.Armar(Actor) 1.can 2.you 3.please 4.bring(Predicate) 5.me(Who) 6.the(What) 7.popcorn(What) 8.bag(What)</role>
+	<arc name="t4">4-0(pp) 4-5(pp) 4-6(pp) 6-7(ic) 7-8(ic)</arc>
+
+	<example name="t5">I would like to have a cup of orange juice you find the cup on the table and the juice in the fridge</example>
+	<role name="t5">0.Armar 1.i(Actor) 2.would 3.like 4.to 5.have(Predicate) 6.a(What) 7.cup(What) 8.of(What) 9.orange(What) 10.juice(What) 11.you(Actor) 12.will 13.find(Predicate) 14.the(What) 15.cup(What) 16.on 17.the(Where) 18.table(Where) 19.and 20.the(What) 21.juice(What) 22.in 23.the(Where) 24.fridge(Where) 25.find</role>
+	<arc name="t5">5-13(na) 13-25(na) 5-1(pp) 5-6(pp) 6-7(ic) 7-8(ic) 8-9(ic) 9-10(ic) 13-11(pp) 13-14(pp) 14-15(ic) 13-17(pp) 17-18(ic) 25-11(pp) 25-20(pp) 25-23(pp) 20-21(ic) 23-24(ic)</arc>
+
+	<example name="t6">how long I would like to have the orange juice you can find in the fridge and then the front</example>
+	<role name="t6">0.Armar 1.I(Actor) 2.would 3.like 4.to 5.have(Predicate) 6.the(What) 7.orange(What) 8.juice(What) 9.you(Actor) 10.can 11.find(Predicate) 12.it(What) 13.in 14.the(Where) 15.fridge(Where) 16.somewhere(Where) 17.in(Where) 18.the(Where) 19.front(Where</role>
+	<arc name="t6">5-1(pp) 5-6(pp) 6-7(ic) 7-8(ic) 11-9(pp) 11-12(pp) 11-14(pp) 14-15(ic) 15-16(ic) 16-17(ic) 17-18(ic) 18-19(ic)</arc>
+
+	<example name="t7">Im at please put the green cap in the dishwasher and I forgot to close it afterwards</example>
+	<role name="t7">0.Armar(Actor) 1.please 2.put(Predicate) 3.the(What) 4.green(What) 5.cup(What) 6.into 7.the(What) 8.dishwasher(What) 9.and 10.dont 11.forget(Predicate) 12.to 13.close(Predicate) 14.it(What) 15.afterwards(How)</role>
+	<arc name="t7">2-0(pp) 2-3(pp) 3-4(ic) 4-5(ic) 2-7(pp) 7-8(ic) 11-0(pp) 11-13(ic) 11-14(pp) 11-15(pp)</arc>
+
+	<example name="t8">could you bring me the popcorn from the kitchen table please</example>
+	<role name="t8">0.Armar(Actor) 1.could 2.you(Actor) 3.bring(Predicate) 4.me(Who) 5.the(What) 6.popcorn(What) 7.from 8.the(Where) 9.kitchen(Where) 10.table(Where) 11.please</role>
+	<arc name="t8">0-2(ic) 3-0(pp) 3-4(pp) 3-5(pp) 5-6(ic) 3-8(pp) 8-9(ic) 9-10(ic)</arc>
+
+	<example name="t9">am I could you please take the green cup and move to the dishwasher then open the dishwasher and put the cup into the dishwasher after that you can load the dishwasher</example>
+	<role name="t9">0.Armar(Actor) 1.could 2.you(Actor) 3.please 4.take(Predicate) 5.the(What) 6.green(What) 7.cup(What) 8.and 9.move(Predicate) 10.to 11.the(What) 12.dishwasher(What) 13.then 14.open(Predicate) 15.the(What) 16.dishwasher(What) 17.and 18.put(Predicate) 19.the(What) 20.cup(What) 21.into 22.the(Where) 23.dishwasher(Where) 24.after(When) 25.that(When) 26.you 27.can 28.close(Predicate) 29.the(What) 30.dishwasher(What)</role>
+	<arc name="t9">4-9(na) 9-14(na) 14-18(na) 18-28(na) 0-2(ic) 4-0(pp) 4-5(pp) 5-6(ic) 6-7(ic) 9-0(pp) 9-11(pp) 11-12(ic) 14-0(pp) 14-15(pp) 15-16(ic) 18-0(pp) 18-19(pp) 19-20(ic) 18-22(pp) 22-23(ic) 28-0(pp) 28-24(pp) 24-25(ic) 28-29(pp) 29-30(ic)</arc>
+
+	<example name="t10">, could you please take the green cab from the kitchen table and then move to the dishwasher and open it and then put the cab into the dishwasher and close it again</example>
+	<role name="t10">0.Armar(Actor) 1.could 2.you(Actor) 3.please 4.take(Predicate) 5.the(What) 6.green(What) 7.cup(What) 8.from 9.the(Where) 10.kitchen(Where) 11.table(Where) 12.and 13.then(When) 14.move(Predicate) 15.to 16.the(What) 17.dishwasher(What) 18.and 19.open(Predicate) 20.it(What) 21.and 22.then(When) 23.put(Predicate) 24.the(What) 25.cup(What) 26.into 27.the(Where) 28.dishwasher(Where) 29.and 30.close(Predicate) 31.it(What) 32.again(When)</role>
+	<arc name="t10">4-14(na) 14-19(na) 19-23(na) 23-30(na) 0-2(ic) 4-0(pp) 4-5(pp) 5-6(ic) 6-7(ic) 4-9(pp) 9-10(ic) 10-11(ic) 14-0(pp) 14-13(pp) 14-16(pp) 16-17(ic) 19-0(pp) 19-20(pp) 23-0(pp) 23-22(pp) 23-24(pp) 24-25(ic) 23-27(pp) 27-28(ic) 30-0(pp) 30-31(pp) 30-32(pp)</arc>
+
+	<example name="t11">Im I would you please go to the fridge and open it take out the orange juice and bring it to me</example>
+	<role name="t11">0.Armar 1.would(null) 2.you(Actor) 3.please(null) 4.go(PREDICATE) 5.to(null) 6.the(Where) 7.fridge(Where) 8.and(null) 9.open(PREDICATE) 10.it(WHAT) 11.take(PREDICATE) 12.out(PREDICATE) 13.the(WHAT) 14.orange(WHAT) 15.juice(WHAT) 16.and(null) 17.bring(PREDICATE) 18.it(WHAT) 19.to(null) 20.me(WHO) </role>
+	<arc name="t11">6-7(ic) 4-6(pp) 4-2(pp) 9-10(pp) 11-12(ic) 13-14(ic) 14-15(ic) 11-13(pp) 17-18(pp) 17-20(pp) 4-9(na) 9-11(na) 11-17(na) </arc>
+
+	<example name="t12">hey armor can you go to the table and grab me the popcorn bag please and then ya can you bring back to me</example>
+	<role name="t12">0.hey 1.Armar 2.can 3.you(Actor) 4.go(PREDICATE) 5.to(null) 6.the(Where) 7.table(Where) 8.and(null) 9.grab(PREDICATE) 10.me(WHO) 11.the(WHAT) 12.popcorn(WHAT) 13.bag(WHAT) 14.please 15.and(null) 16.then(When) 17.yeah 18.can(null) 19.you(ACTOR) 20.bring(PREDICATE) 21.it(WHAT) 22.back(HOW) 23.to(null) 24.me(WHO) </role>
+	<arc name="t12">6-7(ic) 4-3(pp) 4-6(pp) 11-12(ic) 12-13(ic) 9-3(pp) 9-11(pp) 9-10(pp) 20-19(pp) 20-21(pp) 20-16(pp) 4-9(na) 9-14(na) 14-20(na) </arc>
+
+	<example name="t13">armour can you please go to the table and grab the crank up and then can you go to the dishwasher put it in the dishwasher close the dishwasher and come back</example>
+	<role name="t13">0.hey 1.Armar(Actor) 2.can(null) 3.you(Actor) 4.please 5.go(PREDICATE) 6.to(null) 7.the(WHAT) 8.table(WHAT) 9.and(null) 10.grab(PREDICATE) 11.the(WHAT) 12.green(WHAT) 13.cup(WHAT) 14.and(null) 15.then(HOW) 16.can(null) 17.you(WHO) 18.go(PREDICATE) 19.to(null) 20.the(WHAT) 21.dishwasher(WHAT) 22.put(PREDICATE) 23.it(WHAT) 24.in(null) 25.the(WHAT) 26.dishwasher(WHAT) 27.close(null) 28.the(WHAT) 29.dishwasher(WHAT) 30.and(null) 31.come(PREDICATE) 32.back(HOW) </role>
+	<arc name="t13">7-8(ic) 1-3(ic) 5-7(pp) 11-12(ic) 12-13(ic) 10-11(pp) 20-21(ic) 18-20(pp) 18-17(pp) 18-15(pp) 23-25(ic) 25-26(ic) 22-23(pp) 28-29(ic) 31-32(pp) 4-10(na) 10-18(na) 18-22(na) </arc>
+
+	<example name="t14">the hammer can you please go to the French Open at Grammy the orange juice and I close the fridge and bring the orange juice to me please</example>
+	<role name="t14">0.hey 1.Armar(Actor) 2.can(null) 3.you(Actor) 4.please 5.go(PREDICATE) 6.to(null) 7.the(WHAT) 8.fridge(WHAT) 9.open(PREDICATE) 10.it(WHAT) 11.grab(PREDICATE) 12.me(WHO) 13.the(WHAT) 14.orange(WHAT) 15.juice(WHAT) 16.and(null) 17.then(WHEN) 18.close(PREDICATE) 19.the(WHAT) 20.fridge(WHAT) 21.and(null) 22.bring(PREDICATE) 23.the(WHAT) 24.orange(WHAT) 25.juice(WHAT) 26.to(null) 27.me(WHO) 28.please(null) </role>
+	<arc name="t14">7-8(ic) 1-3(ic) 5-1(pp) 9-1(pp) 11-1(pp) 18-1(pp) 22-1(pp) 9-10(pp) 13-14(ic) 14-15(ic) 11-13(pp) 11-12(pp) 19-20(ic) 18-19(pp) 18-17(pp) 23-24(ic) 24-25(ic) 22-23(pp) 22-27(pp) 4-9(na) 9-11(na) 11-18(na) 18-22(na) </arc>
+
+	<example name="t15">hey Ima go to kitchen table take the pop come back and bring it to me</example>
+	<role name="t15">0.hey 1.Armar(Actor) 2.go(PREDICATE) 3.to(null) 4.kitchen(WHAT) 5.table(WHAT) 6.take(PREDICATE) 7.the(WHAT) 8.popcorn(WHAT) 9.bag(WHAT) 10.and(null) 11.bring(PREDICATE) 12.it(WHAT) 13.to(null) 14.me(WHO) </role>
+	<arc name="t15">4-5(ic) 2-1(pp) 6-1(pp) 11-1(pp) 2-4(pp) 7-8(ic) 8-9(ic) 6-7(pp) 11-12(pp) 11-14(pp) 2-6(na) 6-11(na) </arc>
+
+	<example name="t16">hey imma go to the kitchen table and take the green cup then go to the dishwasher and put the cup in it</example>
+	<role name="t16">0.hey(null) 1.Armar(Actor) 2.go(PREDICATE) 3.to(null) 4.the(WHAT) 5.kitchen(WHAT) 6.table(WHAT) 7.and(null) 8.take(PREDICATE) 9.the(WHAT) 10.green(WHAT) 11.cup(WHAT) 12.then(WHEN) 13.go(PREDICATE) 14.to(null) 15.the(WHAT) 16.dishwasher(WHAT) 17.and(null) 18.put(PREDICATE) 19.the(WHAT) 20.cup(WHAT) 21.in(null) 22.it(Where) </role>
+	<arc name="t16">2-1(pp) 8-1(pp) 13-1(pp) 18-1(pp) 4-5(ic) 5-6(ic) 2-4(pp) 9-10(ic) 10-11(ic) 8-9(pp) 15-16(ic) 13-15(pp) 13-12(pp) 19-20(ic) 18-22(p) 18-19(pp) 2-8(na) 8-13(na) 13-18(na) </arc>
+
+	<example name="t17">hey Ima go to fridge and take the orange juice then bring it to me</example>
+	<role name="t17">0.hey(null) 1.Armar(Actor) 2.go(PREDICATE) 3.to(null) 4.fridge(Where) 5.and(null) 6.take(PREDICATE) 7.the(WHAT) 8.orange(WHAT) 9.juice(WHAT) 10.then(WHEN) 11.bring(PREDICATE) 12.it(WHAT) 13.to(null) 14.me(WHO) </role>
+	<arc name="t17">2-1(pp) 6-1(pp) 2-4(pp) 2-6(na) 7-8(ic) 8-9(ic) 6-7(pp) 11-12(pp) 11-10(pp) 11-14(pp) 6-11(na) </arc>
+
+	<example name="t18">our mom please bring me the pop come back from the table</example>
+	<role name="t18">0.Armar(ACTOR) 1.please 2.bring(PREDICATE) 3.me(WHO) 4.the(WHAT) 5.popcorn(WHAT) 6.bag(WHAT) 7.from(null) 8.the(Where) 9.table(Where) </role>
+	<arc name="t18">2-0(pp) 4-5(ic) 5-6(ic) 6-8(ic) 8-9(ic) 2-4(pp) 2-3(pp) 2-8(pp)</arc>
+
+	<example name="t19">our mom put the screen cap from the table to the dishwasher then close it</example>
+	<role name="t19">0.Armar(ACTOR) 1.put(PREDICATE) 2.the(WHAT) 3.green(WHAT) 4.cup(WHAT) 5.from(null) 6.the(Where) 7.table(Where) 8.to(null) 9.the(Where) 10.dishwasher(Where) 11.then(null) 12.close(Predicate) 13.it(WHAT) </role>
+	<arc name="t19">1-0(pp) 2-3(ic) 3-4(ic) 6-7(ic) 7-9(ic) 9-10(ic) 1-2(pp) 1-6(pp) 1-9(pp) 1-12(na) 12-0(pp) 12-13(pp) 1-12(na)</arc>
+
+	<example name="t20">ARMA open the fridge and bring me the orange juice</example>
+	<role name="t20">0.Armar(Actor) 1.open(Predicate) 2.the(WHAT) 3.fridge(WHAT) 4.and(null) 5.bring(PREDICATE) 6.me(Who) 7.the(WHAT) 8.orange(WHAT) 9.juice(WHAT) </role>
+	<arc name="t20">1-0(pp) 1-5(na) 1-3(pp) 2-3(ic) 5-0(pp) 5-6(pp) 7-8(ic) 8-9(ic) 5-7(pp) </arc>
+
+	<example name="t21">can you grab me a box of popcorn on the table is next to the cereal box</example>
+	<role name="t21">0.Can(null) 1.you(ACTOR) 2.grab(PREDICATE) 3.me(WHO) 4.the(WHAT) 5.box(WHAT) 6.of(What) 7.popcorn(WHAT) 8.on(null) 9.the(WHERE) 10.table(WHERE) 11.it(WHAT) 12.s(Predicate) 13.next() 14.to(null) 15.the(Where) 16.cereal(Where) 17.box(Where) </role>
+	<arc name="t21">2-1(pp) 4-5(ic) 5-6(ic) 6-7(ic) 5-7(ic) 7-11(ic) 2-4(pp) 2-3(pp) 9-10(ic) 2-9(pp)  15-16(ic) 16-17(ic) 2-12(na) 12-11(pp) 12-15(pp)</arc>
+
+	<example name="t22">can you please put the green cup on the table in the dishwasher and please dont forget to close the dishwasher after work</example>
+	<role name="t22">0.Can(null) 1.you(ACTOR) 2.please 3.put(PREDICATE) 4.the(WHAT) 5.green(WHAT) 6.cup(WHAT) 7.on(What) 8.the(WHAT) 9.table(WHAT) 10.in(null) 11.the(WHERE) 12.dishwasher(WHERE) 13.and(null) 14.please(null) 15.do(Predicate) 16.nt(Predicate) 17.forget(PREDICATE) 18.to(Predicate) 19.close(Predicate) 20.the(WHAT) 21.dishwasher(WHAT) 22.afterwards(HOW)</role>
+	<arc name="t22">3-1(pp) 4-5(ic) 5-6(ic) 6-7(ic) 7-8(i) 8-9(ic) 3-4(pp) 11-12(ic) 3-11(pp) 15-1(pp) 15-16(ic) 16-17(ic) 17-18(ic) 18-19(ic) 20-21(ic) 21-22(ic) 15-20(pp)</arc>
+
+	<example name="t23">can you please bring me the orange juice from the fridge please</example>
+	<role name="t23">0.Can(null) 1.you(ACTOR) 2.please 3.bring(PREDICATE) 4.me(WHO) 5.the(WHAT) 6.orange(WHAT) 7.juice(WHAT) 8.from(null) 9.the(Where) 10.fridge(Where) 11.please(null) </role>
+	<arc name="t23">3-1(pp) 5-6(ic) 6-7(ic) 9-10(ic) 3-5(pp) 3-4(pp) </arc>
+
+	<example name="t24">hey Ima bring me to Popcaan back from the table</example>
+	<role name="t24">0.Hey 1.Armar(ACTOR) 2.bring(PREDICATE) 3.me(WHO) 4.the(WHAT) 5.popcorn(WHAT) 6.bag(WHAT) 7.from(null) 8.the(Where) 9.table(Where) </role>
+	<arc name="t24">2-1(pp) 4-5(ic) 5-6(ic) 8-9(ic) 2-4(pp) 2-3(pp) </arc>
+
+	<example name="t25">hey Ima get the green card from the table and put it in the dishwasher</example>
+	<role name="t25">0.Hey 1.Armar(ACTOR) 2.get(PREDICATE) 3.the(WHAT) 4.green(WHAT) 5.cup(WHAT) 6.from(null) 7.the(Where) 8.table(Where) 9.and(null) 10.put(PREDICATE) 11.it(WHAT) 12.in(null) 13.the(Where) 14.dishwasher(Where) </role>
+	<arc name="t25">2-1(pp) 3-4(ic) 4-5(ic) 7-8(ic) 2-3(pp) 10-1(pp) 13-14(ic) 10-11(pp) 2-10(na) </arc>
+
+	<example name="t26">hey, open the fridge get the orange juice and bring it to me</example>
+	<role name="t26">0.Hey 1.Armar(ACTOR) 2.open(PREDICATE) 3.the(WHAT) 4.fridge(WHAT) 5.get(PREDICATE) 6.the(WHAT) 7.orange(WHAT) 8.juice(WHAT) 9.and(null) 10.bring(PREDICATE) 11.it(WHAT) 12.to(null) 13.me(WHO) </role>
+	<arc name="t26">2-1(pp) 3-4(ic) 2-3(pp) 0-1(ic) 5-1(pp) 6-7(ic) 7-8(ic) 5-6(pp) 0-1(ic) 10-1(pp) 10-11(pp) 10-13(pp) 2-5(na) 5-10(na) </arc>
+
+	<example name="t27">please go to the kitchen table and pick up the popcorn bag and bring it to me</example>
+	<role name="t27">0.Please(null) 1.go(PREDICATE) 2.to(null) 3.the(Where) 4.kitchen(Where) 5.table(Where) 6.and(null) 7.pick(PREDICATE) 8.up(PREDICATE) 9.the(WHAT) 10.popcorn(WHAT) 11.bag(WHAT) 12.and(null) 13.bring(PREDICATE) 14.it(WHAT) 15.to(null) 16.me(WHO) </role>
+	<arc name="t27">3-4(ic) 4-5(ic) 1-3(pp) 7-8(ic) 9-10(ic) 10-11(ic) 7-9(pp) 13-14(pp) 13-16(pp) 1-7(na) 7-13(na) </arc>
+
+	<example name="t28">he scared to go to the kitchen table and pick up the green cab take it to the dishwasher and put it in the applicants out after work clothes for dishwasher</example>
+	<role name="t28">0.Please(null) 1.go(PREDICATE) 2.to(null) 3.the(WHAT) 4.kitchen(WHAT) 5.table(WHAT) 6.and(null) 7.pick(PREDICATE) 8.up(PREDICATE) 9.the(WHAT) 10.green(WHAT) 11.cup(WHAT) 12.take(PREDICATE) 13.it(WHAT) 14.to(null) 15.the(Where) 16.dishwasher(Where) 17.and(null) 18.put(PREDICATE) 19.it(WHAT) 20.in(null) 21.the(Where) 22.upt-per(Where) 23.shelf(Where) 24.afterwards(When) 25.close(Predicate) 26.the(WHAT) 27.dishwasher(WHAT) </role>
+	<arc name="t28">3-4(ic) 4-5(ic) 1-3(pp) 7-8(ic) 9-10(ic) 10-11(ic) 7-9(pp) 15-16(ic) 12-13(pp) 21-22(ic) 22-23(ic) 18-19(pp) 26-27(ic) 24-25(ic) 1-7(na) 7-12(na) 12-18(na) 18-25(na) 25-26(pp)</arc>
+
+	<example name="t29">go to the fridge and open the door take out the orange juice and go to die again bring it to me</example>
+	<role name="t29">0.Go(PREDICATE) 1.to(null) 2.the(Where) 3.fridge(Where) 4.and(null) 5.open(PREDICATE) 6.the(WHAT) 7.door(WHAT) 8.take(PREDICATE) 9.out(PREDICATE) 10.the(WHAT) 11.orange(WHAT) 12.juice(WHAT) 13.and(null) 14.close(PREDICATE) 15.the(WHAT) 16.door(WHAT) 17.again(WHEN) 18.bring(PREDICATE) 19.it(WHAT) 20.to(null) 21.me(WHO) </role>
+	<arc name="t29">2-3(ic) 0-2(pp) 6-7(ic) 5-6(pp) 8-9(ic) 10-11(ic) 11-12(ic) 8-10(pp) 15-16(ic) 14-15(pp) 14-17(pp) 18-19(pp) 18-21(pp) 0-5(na) 5-8(na) 8-14(na) 14-18(na) </arc>
+
+	<example name="t30">can you bring me the popcorn from the kitchen table</example>
+	<role name="t30">0.Can(null) 1.you(ACTOR) 2.bring(PREDICATE) 3.me(WHO) 4.the(WHAT) 5.popcorn(WHAT) 6.from(null) 7.the(Where) 8.kitchen(Where) 9.table(Where) </role>
+	<arc name="t30">2-1(pp) 4-5(ic) 2-7(pp) 7-8(ic) 8-9(ic) 2-4(pp) 2-3(pp) </arc>
+
+	<example name="t31">can you put the green cab from the kitchen table and the dishwasher</example>
+	<role name="t31">0.Can(null) 1.you(ACTOR) 2.put(PREDICATE) 3.the(WHAT) 4.green(WHAT) 5.cup(WHAT) 6.from(What) 7.the(WHAT) 8.kitchen(WHAT) 9.table(WHAT) 10.in(null) 11.the(WHERE) 12.dishwasher(WHERE) </role>
+	<arc name="t31">2-1(pp) 3-4(ic) 4-5(ic) 5-6(ic) 6-7(ic) 7-8(ic) 8-9(ic) 2-3(pp) 11-12(ic) 2-11(pp) </arc>
+
+	<example name="t32">can you bring me the orange juice from the fridge</example>
+	<role name="t32">0.Can(null) 1.you(ACTOR) 2.bring(PREDICATE) 3.me(WHO) 4.the(WHAT) 5.orange(WHAT) 6.juice(WHAT) 7.from(null) 8.the(Where) 9.fridge(Where) </role>
+	<arc name="t32">2-1(pp) 4-5(ic) 5-6(ic) 2-8(pp) 8-9(ic) 2-4(pp) 2-3(pp) </arc>
+
+	<example name="t33">hey, please go to the kitchen table on the right side and help me the popcorn</example>
+	<role name="t33">0.Hey 1.Armar(ACTOR) 2.please(null) 3.go(PREDICATE) 4.to(null) 5.the(WHAT) 6.kitchen(WHAT) 7.table(WHAT) 8.on(What) 9.the(What) 10.right(What) 11.side(What) 12.and(null) 13.hand(PREDICATE) 14.me(WHO) 15.the(WHAT) 16.popcorn(WHAT) </role>
+	<arc name="t33">3-1(pp) 5-6(ic) 6-7(ic) 7-8(ic) 8-9(ic) 3-5(pp) 9-10(ic) 10-11(ic) 13-1(pp) 15-16(ic) 13-15(pp) 13-14(pp) 3-13(na) </arc>
+
+	<example name="t34">hey Im out please take the green cap open the dishwasher and put the green Cup in the dishwasher and then close the dishwasher</example>
+	<role name="t34">0.Hey 1.Armar(ACTOR) 2.please 3.take(Predicate) 4.the(WHAT) 5.green(WHAT) 6.cup(WHAT) 7.open(PREDICATE) 8.the(WHAT) 9.dishwasher(WHAT) 10.and(null) 11.put(PREDICATE) 12.the(WHAT) 13.green(WHAT) 14.cup(WHAT) 15.in(null) 16.the(Where) 17.dishwasher(Where) 18.and(null) 19.then(null) 20.close(Predicate) 21.the(WHAT) 22.dishwasher(WHAT) 23.again(HOW) </role>
+	<arc name="t34">3-1(pp) 4-5(ic) 5-6(ic) 3-4(pp) 7-1(pp) 8-9(ic) 7-8(pp) 11-1(pp) 12-13(ic) 13-14(ic) 11-16(pp) 16-17(ic) 11-12(pp) 21-22(ic) 2-7(na) 7-11(na) 11-20(na) 20-21(pp) 20-23(pp)</arc>
+
+	<example name="t35">hey imma go to the French Open the French take the orange juice close the fridge and then bring me the orange juice</example>
+	<role name="t35">0.Hey 1.Armar(ACTOR) 2.go(PREDICATE) 3.to(null) 4.the(WHAT) 5.fridge(WHAT) 6.open(PREDICATE) 7.the(WHAT) 8.fridge(WHAT) 9.take(PREDICATE) 10.the(WHAT) 11.orange(WHAT) 12.juice(WHAT) 13.close(Predicate) 14.the(WHAT) 15.fridge(WHAT) 16.and(null) 17.then(WHEN) 18.bring(PREDICATE) 19.me(WHO) 20.the(WHAT) 21.orange(WHAT) 22.juice(WHAT) </role>
+	<arc name="t35">2-1(pp) 4-5(ic) 2-4(pp) 6-1(pp) 7-8(ic) 6-7(pp) 9-0(pp) 10-11(ic) 11-12(ic) 9-10(pp) 14-15(ic) 20-21(ic) 21-22(ic) 18-20(pp) 18-17(pp) 18-19(pp) 2-6(na) 6-9(na) 9-13(na) 13-18(na)</arc>
+
+	<example name="t36">okay Im go to the kitchen table get the popcorn and bring it to me</example>
+	<role name="t36">0.okay 1.go(PREDICATE) 2.to(null) 3.the(WHAT) 4.kitchen(WHAT) 5.table(WHAT) 6.ehm(null) 7.get(PREDICATE) 8.the(WHAT) 9.popcorn(WHAT) 10.and(null) 11.bring(PREDICATE) 12.it(WHAT) 13.to(null) 14.me(WHO) </role>
+	<arc name="t36">3-4(ic) 4-5(ic) 1-3(pp) 8-9(ic) 7-8(pp) 11-12(pp) 11-14(pp) 1-7(na) 7-11(na) </arc>
+
+	<example name="t37">Im go to the table take the green card let me go to the dishwasher open the dishwasher and put the green green cap am in the dishwasher and close the dishwasher</example>
+	<role name="t37">0.uhm 1.go(PREDICATE) 2.to(null) 3.the(WHAT) 4.table(WHAT) 5.uhm(null) 6.take(PREDICATE) 7.the(WHAT) 8.green(WHAT) 9.cup(WHAT) 10.uhm 11.then(WHEN) 12.go(PREDICATE) 13.to(null) 14.the(WHAT) 15.dishwasher(WHAT) 16.open(PREDICATE) 17.the(WHAT) 18.dishwasher(WHAT) 19.uhm 20.put(PREDICATE) 21.the(WHAT) 22.green(WHAT) 23.green(WHAT) 24.cup(WHAT) 25.ehm 26.in(null) 27.the(WHERE) 28.dishwasher(WHERE) 29.and(null) 30.close(PREDICATE) 31.the(WHAT) 32.dishwasher(WHAT) </role>
+	<arc name="t37">3-4(ic) 1-3(pp) 7-8(ic) 8-9(ic) 6-7(pp) 14-15(ic) 12-14(pp) 12-11(pp) 17-18(ic) 16-17(pp) 21-22(ic) 22-23(ic) 23-24(ic) 20-21(pp) 27-28(ic) 20-27(pp) 30-0(pp) 31-32(ic) 30-31(pp) 1-6(na) 6-12(na) 12-16(na) 16-20(na) 20-30(na)</arc>
+
+	<example name="t38">Im go to the to the fridge open the fridge and get there orange juice close the fridge and bring the orange juice to me</example>
+	<role name="t38">0.uhm(null) 1.go(PREDICATE) 2.to(null) 3.to(null) 4.the(WHAT) 5.fridge(WHAT) 6.open(PREDICATE) 7.the(WHAT) 8.fridge(WHAT) 9.uhm(null) 10.get(PREDICATE) 11.the(WHAT) 12.orange(WHAT) 13.juice(WHAT) 14.uhm(null) 15.close(Predicate) 16.the(WHAT) 17.fridge(WHAT) 18.uhm(WHAT) 19.bring(PREDICATE) 20.the(WHAT) 21.orange(WHAT) 22.juice(WHAT) 23.to(null) 24.me(WHO) </role>
+	<arc name="t38">4-5(ic) 1-4(pp) 7-8(ic) 6-7(pp) 11-12(ic) 12-13(ic) 10-11(pp) 16-17(ic) 17-18(ic) 20-21(ic) 21-22(ic) 19-20(pp) 19-24(pp) 1-6(na) 6-10(na) 10-15(na) 15-19(na)</arc>
+
+	<example name="t39">go to the table in front of the window and take the popcorn and bring it to me</example>
+	<role name="t39">0.go(PREDICATE) 1.to(null) 2.the(WHAT) 3.table(WHAT) 4.in(null) 5.front(WHERE) 6.of(Where) 7.the(WHERE) 8.window(WHERE) 9.and(null) 10.take(PREDICATE) 11.the(WHAT) 12.popcorn(WHAT) 13.and(null) 14.bring(PREDICATE) 15.it(WHAT) 16.to(null) 17.me(WHO) </role>
+	<arc name="t39">2-3(ic) 0-2(pp) 5-6(ic) 6-7(ic) 7-8(ic) 0-5(pp) 11-12(ic) 10-11(pp) 14-15(pp) 14-17(pp) 0-10(na) 10-14(na) </arc>
+
+	<example name="t40">go to the table and take the cream Cup bring the cup to the dishwasher first open the dishwasher put the cup inside it and then close the dishwasher</example>
+	<role name="t40">0.go(PREDICATE) 1.to(null) 2.the(WHAT) 3.table(WHAT) 4.and(null) 5.take(PREDICATE) 6.the(WHAT) 7.green(WHAT) 8.cup(WHAT) 9.then(WHEN) 10.bring(PREDICATE) 11.the(WHAT) 12.cup(WHAT) 13.to(null) 14.the(Where) 15.dishwasher(Where) 16.first(WHEN) 17.open(PREDICATE) 18.the(WHAT) 19.dishwasher(WHAT) 20.put(PREDICATE) 21.the(WHAT) 22.cup(WHAT) 23.inside(null) 24.it(WHAT) 25.and(null) 26.then(null) 27.close(Predicate) 28.the(WHAT) 29.dishwasher(WHAT) </role>
+	<arc name="t40">2-3(ic) 0-2(pp) 6-7(ic) 7-8(ic) 5-6(pp) 11-12(ic) 10-14(pp) 14-15(ic) 10-11(pp) 9-16(ic) 10-9(pp) 18-19(ic) 17-18(pp) 21-22(ic) 22-24(ic) 20-21(pp) 28-29(ic) 0-5(na) 5-10(na) 10-17(na) 17-20(na) 20-27(na) 27-28(pp)</arc>
+
+	<example name="t41">go to the fridge open the fridge and take the orange juice bring the orange juice to me please</example>
+	<role name="t41">0.go(PREDICATE) 1.to(null) 2.the(Where) 3.fridge(Where) 4.open(PREDICATE) 5.the(WHAT) 6.fridge(WHAT) 7.and(null) 8.take(PREDICATE) 9.the(WHAT) 10.orange(WHAT) 11.juice(WHAT) 12.bring(PREDICATE) 13.the(WHAT) 14.orange(WHAT) 15.juice(WHAT) 16.to(null) 17.me(WHO) 18.please(null) </role>
+	<arc name="t41">2-3(ic) 0-2(pp) 5-6(ic) 4-5(pp) 9-10(ic) 10-11(ic) 8-9(pp) 13-14(ic) 14-15(ic) 12-13(pp) 12-17(pp) 0-4(na) 4-8(na) 8-12(na) </arc>
+
+	<example name="t42">hey imma go to the table grab the popcorn and bring it to me</example>
+	<role name="t42">0.hey 1.armar(ACTOR) 2.go(PREDICATE) 3.to(null) 4.the(WHAT) 5.table(WHAT) 6.grab(PREDICATE) 7.the(WHAT) 8.popcorn(WHAT) 9.and(null) 10.bring(PREDICATE) 11.it(WHAT) 12.to(null) 13.me(WHO) </role>
+	<arc name="t42">2-1(pp) 4-5(ic) 2-4(pp) 6-0(pp) 7-8(ic) 6-7(pp) 10-0(pp) 10-11(pp) 10-13(pp) 2-6(na) 6-10(na) </arc>
+
+	<example name="t43">hey Ima go to the table grab the green cup and put it in the dishwasher</example>
+	<role name="t43">0.hey 1.armar(ACTOR) 2.go(PREDICATE) 3.to(null) 4.the(WHAT) 5.table(WHAT) 6.grab(PREDICATE) 7.the(WHAT) 8.green(WHAT) 9.cup(WHAT) 10.and(null) 11.put(PREDICATE) 12.it(WHAT) 13.in(null) 14.the(Where) 15.dishwasher(Where) </role>
+	<arc name="t43">2-1(pp) 4-5(ic) 2-4(pp) 6-1(pp) 7-8(ic) 8-9(ic) 6-7(pp) 11-1(pp) 11-14(pp) 14-15(ic) 11-12(pp) 2-6(na) 6-11(na) </arc>
+
+	<example name="t44">hey imma go to the fridge open the fridge take the orange juice close the fridge and bring orange juice to me</example>
+	<role name="t44">0.hey 1.armar(ACTOR) 2.go(PREDICATE) 3.to(null) 4.the(WHAT) 5.fridge(WHAT) 6.open(PREDICATE) 7.the(WHAT) 8.fridge(WHAT) 9.take(PREDICATE) 10.the(WHAT) 11.orange(WHAT) 12.juice(WHAT) 13.close(Predicate) 14.the(WHAT) 15.fridge(WHAT) 16.and(null) 17.bring(PREDICATE) 18.the(WHAT) 19.orange(WHAT) 20.juice(WHAT) 21.to(null) 22.me(WHO) </role>
+	<arc name="t44">2-1(pp) 4-5(ic) 2-4(pp) 6-1(pp) 7-8(ic) 6-7(pp) 9-1(pp) 10-11(ic) 11-12(ic) 9-10(pp) 14-15(ic) 18-19(ic) 19-20(ic) 17-18(pp) 17-22(pp) 2-6(na) 6-9(na) 9-13(na) 13-14(pp) 14-17(na)</arc>
+
+	<example name="t45">go to the table and grip the popcorn bag</example>
+	<role name="t45">0.go(PREDICATE) 1.to(null) 2.the(WHAT) 3.table(WHAT) 4.and(null) 5.grab(PREDICATE) 6.the(WHAT) 7.popcorn(WHAT) 8.bag(WHAT) </role>
+	<arc name="t45">2-3(ic) 0-2(pp) 6-7(ic) 7-8(ic) 5-6(pp) 0-5(na) </arc>
+
+	<example name="t46">go to the table grab the green Cup chair and go to the dishwasher if it is closed please open it find a free place for the green cab into it and close the dishwasher</example>
+	<role name="t46">0.go(PREDICATE) 1.to(null) 2.the(Where) 3.table(Where) 4.grab(PREDICATE) 5.the(WHAT) 6.green(WHAT) 7.cup(WHAT) 8.turn(Predicate) 9.and(null) 10.go(PREDICATE) 11.to(null) 12.the(Where) 13.dishwasher(Where) 14.if(null) 15.it 16.is(null) 17.closed(null) 18.please 19.open(PREDICATE) 20.it(WHAT) 21.find(PREDICATE) 22.a(WHAT) 23.free(WHAT) 24.place(WHAT) 25.put(PREDICATE) 26.the(WHAT) 27.greeen(WHAT) 28.cup(WHAT) 29.into(null) 30.it(Where) 31.and(null) 32.close(PREDICATE) 33.the(WHAT) 34.dishwasher(WHAT) </role>
+	<arc name="t46">2-3(ic) 0-2(pp) 5-6(ic) 6-7(ic) 4-5(pp) 12-13(ic) 10-12(pp) 19-20(pp) 22-23(ic) 23-24(ic) 21-22(pp) 26-27(ic) 27-28(ic) 25-30(pp) 25-26(pp) 33-34(ic) 32-33(pp) 0-4(na) 4-8(na) 8-10(na) 19-21(na) 21-25(na) 25-32(na) </arc>
+
+	<example name="t47">go to the table crap the green top 10 and go to the dishwasher open it if its closed find a free place and put a green cab into it</example>
+	<role name="t47">0.go(PREDICATE) 1.to(null) 2.the(Where) 3.table(Where) 4.grab(PREDICATE) 5.the(WHAT) 6.green(WHAT) 7.cup(WHAT) 8.turn(null) 9.and(null) 10.go(PREDICATE) 11.to(null) 12.the(WHAT) 13.dishwasher(WHAT) 14.open(PREDICATE) 15.it(WHAT) 16.if(null) 17.it(WHAT) 18.is(null) 19.closed(null) 20.find(PREDICATE) 21.a(WHAT) 22.free(WHAT) 23.place(WHAT) 24.and(null) 25.put(PREDICATE) 26.the(WHAT) 27.greeen(WHAT) 28.cup(WHAT) 29.into(null) 30.it(WHAT) </role>
+	<arc name="t47">2-3(ic) 0-2(pp) 5-6(ic) 6-7(ic) 4-5(pp) 12-13(ic) 10-12(pp) 14-15(pp) 21-22(ic) 22-23(ic) 20-21(pp) 26-27(ic) 27-28(ic) 28-30(ic) 25-26(pp) 0-4(na) 10-14(na) 20-25(na) </arc>
+
+	<example name="t48">go to the fridge open it if its loud search the orange juice and grab it pull it out of the fridge and close the door</example>
+	<role name="t48">0.go(PREDICATE) 1.to(null) 2.the(WHAT) 3.fridge(WHAT) 4.open(PREDICATE) 5.it(WHAT) 6.if(null) 7.it(null) 8.s(null) 9.closed(null) 10.searched(PREDICATE) 11.the(WHAT) 12.orange(WHAT) 13.juice(WHAT) 14.and(null) 15.grab(PREDICATE) 16.it(WHAT) 17.pull(PREDICATE) 18.it(WHAT) 19.out(null) 20.of(null) 21.the(Where) 22.fridge(Where) 23.and(null) 24.close(PREDICATE) 25.the(WHAT) 26.door(WHAT) </role>
+	<arc name="t48">2-3(ic) 0-2(pp) 4-5(pp) 11-12(ic) 12-13(ic) 10-11(pp) 15-16(pp) 17-21(pp) 21-22(ic) 17-18(pp) 25-26(ic) 24-25(pp) 0-4(na) 10-15(na) 15-17(na) 17-24(na) </arc>
+
+	<example name="t49">imma go to the table and give me the popcorn bag</example>
+	<role name="t49">0.Armar(ACTOR) 1.go(PREDICATE) 2.to(null) 3.the(Where) 4.table(Where) 5.and(null) 6.give(PREDICATE) 7.me(WHO) 8.the(WHAT) 9.popcorn(WHAT) 10.bag(WHAT) </role>
+	<arc name="t49">1-0(pp) 3-4(ic) 1-3(pp) 6-0(pp) 8-9(ic) 9-10(ic) 6-8(pp) 6-7(pp) 1-6(na) </arc>
+
+	<example name="t50">imma go to the table take the green top put it into the dishwasher close to disposal</example>
+	<role name="t50">0.Armar(ACTOR) 1.go(PREDICATE) 2.to(null) 3.the(WHAT) 4.table(WHAT) 5.take(PREDICATE) 6.the(WHAT) 7.green(WHAT) 8.cup(WHAT) 9.put(PREDICATE) 10.it(WHAT) 11.into(null) 12.the(Where) 13.dishwasher(Where) 14.close(null) 15.the(WHAT) 16.dishwasher(WHAT) </role>
+	<arc name="t50">1-0(pp) 3-4(ic) 1-3(pp) 5-0(pp) 6-7(ic) 7-8(ic) 5-6(pp) 9-0(pp) 9-12(pp) 12-13(ic) 9-10(pp) 15-16(ic) 1-5(na) 5-9(na) </arc>
+
+	<example name="t51">imma go to the French take the orange juice from it and give it to me</example>
+	<role name="t51">0.Armar(ACTOR) 1.go(PREDICATE) 2.to(null) 3.the(WHAT) 4.fridge(WHAT) 5.uhm(null) 6.take(PREDICATE) 7.the(WHAT) 8.orange(WHAT) 9.juice(WHAT) 10.from(null) 11.it(Where) 12.and(null) 13.give(PREDICATE) 14.it(WHAT) 15.to(null) 16.me(WHO) </role>
+	<arc name="t51">1-0(pp) 3-4(ic) 1-3(pp) 6-0(pp) 7-8(ic) 8-9(ic) 6-11(pp) 6-7(pp) 13-0(pp) 13-14(pp) 13-16(pp) 1-6(na) 6-13(na) </arc>
+
+	<example name="t52">Im with you please pass me the popcorn</example>
+	<role name="t52">0.Armar(WHO) 1.would(null) 2.you(WHO) 3.please() 4.pass(Predicate) 5.me(WHO) 6.the(WHAT) 7.popcorn(WHAT) </role>
+	<arc name="t52">6-7(ic) 4-6(pp) 0-2(ic) 2-5(ic) 4-0(pp) </arc>
+
+	<example name="t53">imma could you please clean up the table and put the green Cup in the dishwasher</example>
+	<role name="t53">0.Armar() 1.could(null) 2.you(ACTOR) 3.please() 4.clean(PREDICATE) 5.up(PREDICATE) 6.the(WHAT) 7.the(WHAT) 8.table(WHAT) 9.and(null) 10.put(PREDICATE) 11.the(WHAT) 12.green(WHAT) 13.cup(WHAT) 14.in(null) 15.the(Where) 16.dishwasher(Where) </role>
+	<arc name="t53">4-2(pp) 4-5(ic) 6-7(ic) 7-8(ic) 4-6(pp) 4-2(pp) 10-2(pp) 11-12(ic) 12-13(ic) 10-15(p) 15-16(ic) 10-11(pp) 4-10(na) </arc>
+
+	<example name="t54">how could you bring me the orange juice is stored in the fridge</example>
+	<role name="t54">0.Armar(ACTOR) 1.could(null) 2.you(ACTOR) 3.bring(PREDICATE) 4.me(WHO) 5.the(WHAT) 6.orange(WHAT) 7.juice(WHAT) 8.it(ACTOR) 9.s(Predicate) 10.stored(PREDICATE) 11.in(null) 12.the(WHERE) 13.fridge(WHERE) </role>
+	<arc name="t54">0-2(ic) 2-8(ic) 3-0(pp) 5-6(ic) 6-7(ic) 3-5(pp) 3-4(pp) 0-2(ic) 2-8(ic) 9-8(pp) 12-13(ic) 9-12(pp) 3-9(na) </arc>
+
+	<example name="t55">go to the table take the popcorn give it to me</example>
+	<role name="t55">0.go(PREDICATE) 1.to(null) 2.the(Where) 3.table(Where) 4.take(PREDICATE) 5.the(WHAT) 6.popcorn(WHAT) 7.give(PREDICATE) 8.it(WHAT) 9.to(null) 10.me(WHO) </role>
+	<arc name="t55">2-3(ic) 0-2(pp) 5-6(ic) 4-5(pp) 7-8(pp) 7-10(pp) 0-4(na) 4-7(na) </arc>
+
+	<example name="t56">dear, could you go to the table take the green card and put it in the dishwasher please close the door</example>
+	<role name="t56">0.dear() 1.Armar() 2.could(null) 3.you(Actor) 4.go(PREDICATE) 5.to(null) 6.the(WHAT) 7.table(WHAT) 8.take(PREDICATE) 9.the(WHAT) 10.green(WHAT) 11.cup(WHAT) 12.and(null) 13.put(PREDICATE) 14.it(WHAT) 15.in(null) 16.the(Where) 17.dishwasher(Where) 18.please() 19.close(Predicate) 20.the(WHAT) 21.door(WHAT) </role>
+	<arc name="t56">6-7(ic) 4-0(pp) 4-3(pp) 9-10(ic) 10-11(ic) 8-9(pp) 13-16(pp) 16-17(ic) 13-14(pp) 20-21(ic) 19-20(pp) 4-8(na) 8-13(na) 13-19(na) </arc>
+
+	<example name="t57">hello, could you go to the table and take to clean cup please put it in the dishwasher and closest</example>
+	<role name="t57">0.hello(null) 1.Armar(Actor) 2.could(null) 3.you(Actor) 4.go(PREDICATE) 5.to(null) 6.the(WHAT) 7.table(WHAT) 8.and(null) 9.take(PREDICATE) 10.the(WHAT) 11.green(WHAT) 12.cup(WHAT) 13.please(null) 14.put(PREDICATE) 15.it(WHAT) 16.in(null) 17.the(Where) 18.dishwasher(Where) 19.and(null) 20.close(PREDICATE) 21.it(WHAT) </role>
+	<arc name="t57">6-7(ic) 4-6(pp) 1-3(ic) 4-1(pp) 10-11(ic) 11-12(ic) 9-10(pp) 14-17(pp) 17-18(ic) 14-15(pp) 20-21(pp) 4-9(na) 9-14(na) 14-20(na) </arc>
+
+	<example name="t58">imma go to the fridge open the door take a orange juice. And take it to me</example>
+	<role name="t58">0.Armar(ACTOR) 1.go(PREDICATE) 2.to(null) 3.the(WHAT) 4.fridge(WHAT) 5.open(PREDICATE) 6.the(WHAT) 7.door(WHAT) 8.take(PREDICATE) 9.a(WHAT) 10.orange(WHAT) 11.juice(WHAT) 12.close(null) 13.the(WHAT) 14.door(WHAT) 15.and(null) 16.take(PREDICATE) 17.it(WHAT) 18.to(null) 19.me(WHO) </role>
+	<arc name="t58">1-0(pp) 3-4(ic) 1-3(pp) 5-0(pp) 6-7(ic) 5-6(pp) 8-0(pp) 9-10(ic) 10-11(ic) 8-9(pp) 13-14(ic) 16-17(pp) 16-19(pp) 1-5(na) 5-8(na) </arc>
+
+	<example name="t59">can you please give me the popcorn and stand in front of you on the table</example>
+	<role name="t59">0.can(null) 1.you(ACTOR) 2.please() 3.give(Predicate) 4.me(WHO) 5.the(WHAT) 6.popcorn(WHAT) 7.it(Actor) 8.s(Predicate) 9.uhm(null) 10.in(null) 11.front() 12.of(null) 13.you() 14.on(null) 15.the(Where) 16.table(Where) </role>
+	<arc name="t59">3-1(pp) 5-6(ic) 6-7(ic) 3-5(pp) 3-4(pp) 11-15(ic) 15-16(ic) 3-8(na) 8-7(pp) 15-16(ic) 8-15(pp)</arc>
+
+	<example name="t60">can you please take the green tops from the table and put it in the dishwasher</example>
+	<role name="t60">0.can(null) 1.you(Actor) 2.please(PREDICATE) 3.take(Predicate) 4.the(WHAT) 5.green(WHAT) 6.cup(WHAT) 7.from(null) 8.the(Where) 9.table(Where) 10.and(null) 11.put(PREDICATE) 12.it(WHAT) 13.in(null) 14.the(Where) 15.dishwasher(Where) </role>
+	<arc name="t60">2-3(ic) 4-5(ic) 5-6(ic) 3-8(pp) 8-9(ic) 2-4(pp) 2-1(pp) 11-14(pp) 14-15(ic) 11-12(pp) 2-11(na) </arc>
+
+	<example name="t61">please send me the orange juice from the fridge</example>
+	<role name="t61">0.please() 1.handle(PREDICATE) 2.me(WHO) 3.the(WHAT) 4.orange(WHAT) 5.juice(WHAT) 6.from(null) 7.the() 8.fridge() </role>
+	<arc name="t61">3-4(ic) 4-5(ic) 1-3(pp) 1-2(pp) </arc>
+
+	<example name="t62">hey Im not going get the book come back for me please</example>
+	<role name="t62">0.hey(null) 1.Armar(Actor) 2.go(PREDICATE) 3.and(null) 4.get(PREDICATE) 5.the(WHAT) 6.popcorn(WHAT) 7.bag(WHAT) 8.for(null) 9.me(WHO) 10.please(null) </role>
+	<arc name="t62">5-6(ic) 6-7(ic) 4-5(pp) 4-9(pp) 2-4(na) 2-1(pp) 4-1(pp)</arc>
+
+	<example name="t63">Im a put the cream cup into the dishwasher</example>
+	<role name="t63">0.Armar(ACTOR) 1.put(PREDICATE) 2.the(WHAT) 3.green(WHAT) 4.cup(WHAT) 5.into(null) 6.the(Where) 7.dishwasher(Where) </role>
+	<arc name="t63">1-0(pp) 2-3(ic) 3-4(ic) 1-6(pp) 6-7(ic) 1-2(pp) </arc>
+
+	<example name="t64">I wont go to the fridge and get me orange juice</example>
+	<role name="t64">0.Armar(ACTOR) 1.go(PREDICATE) 2.to(null) 3.the(WHAT) 4.fridge(WHAT) 5.and(null) 6.get(PREDICATE) 7.me(WHO) 8.orange(WHAT) 9.juice(WHAT) </role>
+	<arc name="t64">1-0(pp) 3-4(ic) 1-3(pp) 6-0(pp) 8-9(ic) 6-8(pp) 6-7(pp) 1-6(na) </arc>
+
+	<example name="t65">can you bring me the popcorn from the table</example>
+	<role name="t65">0.can(null) 1.you(ACTOR) 2.bring(PREDICATE) 3.me(WHO) 4.the(WHAT) 5.popcorn(WHAT) 6.from(null) 7.the(Where) 8.table(Where) </role>
+	<arc name="t65">2-1(pp) 4-5(ic) 2-7(pp) 7-8(ic) 2-4(pp) 2-3(pp) </arc>
+
+	<example name="t66">can you put the green cab into the dishwasher</example>
+	<role name="t66">0.can(null) 1.you(ACTOR) 2.put(PREDICATE) 3.the(WHAT) 4.green(WHAT) 5.cup(WHAT) 6.into(null) 7.the(Where) 8.dishwasher(Where) </role>
+	<arc name="t66">2-1(pp) 3-4(ic) 4-5(ic) 2-7(pp) 7-8(ic) 2-3(pp) </arc>
+
+	<example name="t67">can you bring me the orange juice from the fridge</example>
+	<role name="t67">0.can(null) 1.you(ACTOR) 2.bring(PREDICATE) 3.me(WHO) 4.the(WHAT) 5.orange(WHAT) 6.juice(WHAT) 7.from(null) 8.the(Where) 9.fridge(Where) </role>
+	<arc name="t67">2-1(pp) 4-5(ic) 5-6(ic) 2-8(pp) 8-9(ic) 2-4(pp) 2-3(pp) </arc>
+
+	<example name="t68">hello Anna I need some popcorn can you please go to the table grab the popcorn box turn to turn to me and then come back and hand it to me</example>
+	<role name="t68">0.hello() 1.Armar() 2.uhm() 3.I(ACTOR) 4.need(PREDICATE) 5.some(WHAT) 6.popcorn(WHAT) 7.could(null) 8.you(WHO) 9.please(null) 10.go(PREDICATE) 11.to(null) 12.the(WHAT) 13.table(WHAT) 14.grab(PREDICATE) 15.the(WHAT) 16.popcorn(WHAT) 17.box(WHAT) 18.turn(PREDICATE) 19.to(PREDICATE) 20.turn(PREDICATE) 21.to(null) 22.me(WHO) 23.and(null) 24.then(WHEN) 25.come(PREDICATE) 26.back(HOW) 27.and(null) 28.hand(Predicate) 29.it(WHAT) 30.to(null) 31.me(WHO)</role>
+	<arc name="t68">4-3(pp) 5-6(ic) 4-5(pp) 4-8(pp) 10-3(pp) 12-13(ic) 10-12(pp) 14-3(pp) 15-16(ic) 16-17(ic) 14-15(pp) 18-3(pp) 18-19(ic) 20-3(pp) 20-22(pp) 25-3(pp) 25-24(pp) 25-26(pp) 28-3(pp) 28-29(pp) 28-31(pp) 4-10(na) 10-14(na) 14-18(na) 18-20(na) 20-25(na) 25-28(na) </arc>
+
+	<example name="t69">hi Arman could you please go to the table and find the green cap its between the boxes then please go grab grab the green cap and then go to the dishwasher and put it inside it but be careful with it with it upside down because it otherwise it wont be clean and then close the dishwasher and turn it on</example>
+	<role name="t69">0.Hi() 1.Armar(WHO) 2.could(null) 3.you(WHO) 4.please(PREDICATE) 5.go(PREDICATE) 6.to(null) 7.the(WHAT) 8.table(WHAT) 9.and(null) 10.find(PREDICATE) 11.the(WHAT) 12.green(WHAT) 13.cup(WHAT) 14.it() 15.s(null) 16.between(null) 17.the() 18.boxes() 19.then(HOW) 20.please(null) 21.go(PREDICATE) 22.grab(PREDICATE) 23.the(WHAT) 24.green(WHAT) 25.cup(WHAT) 26.and(null) 27.then(WHEN) 28.go(PREDICATE) 29.to(null) 30.the(WHAT) 31.dishwasher(WHAT) 32.and(null) 33.put(PREDICATE) 34.it(WHAT) 35.inside(null) 36.it(Where) 37.but(null) 38.be(null) 39.careful() 40.put(PREDICATE) 41.it(WHAT) 42.eh() 43.with(null) 44.the(How) 45.upside(How) 46.down(How) 47.because(null) 48.it() 49.otherwise() 50.it() 51.wont(null) 52.be(null) 53.clean() 54.and(null) 55.then(WHEN) 56.eh() 57.close(Predicate) 58.the(WHAT) 59.dishwasher(WHAT) 60.and(null) 61.turn(PREDICATE) 62.it(WHAT) 63.on(null) </role>
+	<arc name="t69">4-5(ic) 7-8(ic) 4-7(pp) 1-3(ic) 4-1(pp) 11-12(ic) 12-13(ic) 10-11(pp) 21-19(pp) 23-24(ic) 24-25(ic) 22-23(pp) 30-31(ic) 28-30(pp) 28-27(pp) 33-36(pp) 33-34(pp) 40-44(pp) 44-45(ic) 40-41(pp) 53-58(ic) 58-59(ic) 56-53(pp) 57-55(pp) 56-49(pp) 61-50(pp) 61-62(pp) 4-10(na) 21-22(na) 22-28(na) 28-33(na) 40-57(na) 57-61(na) </arc>
+
+	<example name="t70">I may I please go to the table find the green cab its between the vodka then grab it go to the dishwasher and put back up inside and then close the dishwasher and turn it on</example>
+	<role name="t70">0.Armar(Actor) 1.eh() 2.please(null) 3.go(PREDICATE) 4.to(null) 5.the(WHAT) 6.table(WHAT) 7.find(PREDICATE) 8.the(WHAT) 9.green(WHAT) 10.cup(WHAT) 11.ehm() 12.it() 13.s(null) 14.between(null) 15.the() 16.boxes() 17.then(WHEN) 18.grab(PREDICATE) 19.it(WHAT) 20.go(PREDICATE) 21.to(null) 22.the(Where) 23.dishwasher(Where) 24.and(null) 25.put(PREDICATE) 26.the(WHAT) 27.cup(WHAT) 28.inside(Where) 29.and(null) 30.then(WHEN) 31.eh() 32.close(Predicate) 33.the(WHAT) 34.dishwasher(WHAT) 35.turn(Predicate) 36.it(WHAT) 37.on(null) </role>
+	<arc name="t70">5-6(ic) 3-5(pp) 3-0(pp) 8-9(ic) 9-10(ic) 7-8(pp) 18-19(pp) 18-17(pp) 22-23(ic) 20-22(pp) 26-27(ic) 25-26(pp) 25-28(pp) 33-34(ic) 34-36(ic) 32-33(pp) 32-30(pp) 3-7(na) 18-20(na) 20-25(na) 25-32(na) 32-35(na) 35-36(pp)</arc>
+
+	<example name="t71">imma Im sexy please go to the fridge open it and scan for the orange juice it should be in front of you then grab it then close the fridge and turnover and come here and send it to me</example>
+	<role name="t71">0.Armar() 1.I() 2.m() 3.thursty() 4.please(null) 5.go(PREDICATE) 6.to(null) 7.the(WHAT) 8.fridge(WHAT) 9.open(PREDICATE) 10.it(WHAT) 11.eh() 12.and(null) 13.scan(PREDICATE) 14.for(null) 15.the(WHAT) 16.orange(WHAT) 17.juice(WHAT) 18.it() 19.should(null) 20.be(null) 21.in(null) 22.front() 23.of(null) 24.you() 25.then(WHEN) 26.grab(PREDICATE) 27.it(WHAT) 28.then(WHEN) 29.close(PREDICATE) 30.the(WHAT) 31.fridge(WHAT) 32.and(null) 33.eh(null) 34.turn(PREDICATE) 35.over(PREDICATE) 36.and(null) 37.come(PREDICATE) 38.here(HOW) 39.and(null) 40.hand(Predicate) 41.it(WHAT) 42.to(null) 43.me(WHO) </role>
+	<arc name="t71">7-8(ic) 5-7(pp) 9-10(pp) 15-16(ic) 16-17(ic) 13-15(pp) 26-27(pp) 26-25(pp) 30-31(ic) 29-30(pp) 29-28(pp) 34-35(ic) 37-38(pp) 5-9(na) 9-13(na) 26-29(na) 29-34(na) 34-37(na) 37-40(na)</arc>
+
+	<example name="t72">hey, I need some f***** could you please bring me some popcorn thank you</example>
+	<role name="t72">0.Hey() 1.Armar() 2.i(ACTOR) 3.need(PREDICATE) 4.some(WHAT) 5.popcorn(WHAT) 6.could(null) 7.you(Actor) 8.please(PREDICATE) 9.bring(PREDICATE) 10.me(WHO) 11.some(WHAT) 12.popcorn(WHAT) 13.thank() 14.you() </role>
+	<arc name="t72">3-2(pp) 4-5(ic) 3-4(pp) 3-7(pp) 8-7(pp) 8-9(ic) 11-12(ic) 8-11(pp) 8-10(pp) 3-8(na) </arc>
+
+	<example name="t73">hey, could you please put the green cup from table into the dishwasher and turn it on thank you</example>
+	<role name="t73">0.Hey() 1.armar() 2.could(null) 3.you(ACTOR) 4.please(PREDICATE) 5.put(PREDICATE) 6.the(WHAT) 7.green(WHAT) 8.cup(WHAT) 9.from(What) 10.the(WHAT) 11.table(WHAT) 12.into(null) 13.the(WHAT) 14.dishwasher(WHAT) 15.and(null) 16.turn(PREDICATE) 17.it(WHAT) 18.on(null) 19.thank() 20.you() </role>
+	<arc name="t73">4-3(pp) 4-5(ic) 6-7(ic) 7-8(ic) 8-9(ic) 9-10(ic) 10-11(ic) 11-13(ic) 13-14(ic) 16-3(pp) 16-17(pp) 4-16(na) </arc>
+
+	<example name="t74">Alma Im so she could you please bring me some orange juice from the fridge thank you</example>
+	<role name="t74">0.Hey() 1.armar() 2.i() 3.m() 4.thirsty() 5.could(null) 6.you(Actor) 7.bring(PREDICATE) 8.me(WHO) 9.some(WHAT) 10.orange(WHAT) 11.juice(WHAT) 12.from(null) 13.the(Where) 14.fridge(Where) 15.thank(PREDICATE) 16.you(WHO) </role>
+	<arc name="t74">9-10(ic) 10-11(ic) 11-13(ic) 13-14(ic) 7-9(pp) 7-8(pp) 15-16(pp) 7-15(na) 7-6(pp)</arc>
+
+	<example name="t75">hello Mr bring me to come back from the table</example>
+	<role name="t75">0.Hello() 1.Armar(ACTOR) 2.bring(PREDICATE) 3.me(WHO) 4.the(WHAT) 5.popcorn(WHAT) 6.bag(WHAT) 7.from(What) 8.the(WHAT) 9.table(WHAT) </role>
+	<arc name="t75">2-1(pp) 4-5(ic) 5-6(ic) 6-7(ic) 7-8(ic) 8-9(ic) 2-4(pp) 2-3(pp) </arc>
+
+	<example name="t76">hello Mr but the green cup from the table into the dishwasher and close the dishwasher</example>
+	<role name="t76">0.Hello() 1.Armar(ACTOR) 2.put(PREDICATE) 3.the(WHAT) 4.green(WHAT) 5.cup(WHAT) 6.from(null) 7.the() 8.into(null) 9.the(Where) 10.dishwasher(Where) 11.and(null) 12.close(PREDICATE) 13.the(WHAT) 14.dishwasher(WHAT) </role>
+	<arc name="t76">2-1(pp) 3-4(ic) 4-5(ic) 2-9(pp) 9-10(ic) 2-3(pp) 12-1(pp) 13-14(ic) 12-13(pp) 2-12(na)</arc>
+
+	<example name="t77">hello Mr open the fridge and bring me the orange juice after that go to the fridge and close the fridge</example>
+	<role name="t77">0.Hello() 1.Armar(ACTOR) 2.open(PREDICATE) 3.the(WHAT) 4.fridge(WHAT) 5.and(null) 6.bring(PREDICATE) 7.me(Who) 8.the(WHAT) 9.orange(WHAT) 10.juice(WHAT) 11.After(null) 12.that(WHAT) 13.go(PREDICATE) 14.to(null) 15.the(WHAT) 16.fridge(WHAT) 17.and(null) 18.close(PREDICATE) 19.the(WHAT) 20.fridge(WHAT) </role>
+	<arc name="t77">2-1(pp) 6-1(pp) 3-4(ic) 2-3(pp) 6-7(pp) 8-9(ic) 9-10(ic) 6-8(pp) 13-1(pp) 12-15(ic) 15-16(ic) 13-12(pp) 19-20(ic) 18-19(pp) 2-6(na) 6-13(na) 13-18(na) </arc>
+
+	<example name="t78">Im a bring me the popcorn which is on the table please</example>
+	<role name="t78">0.Armar(ACTOR) 1.bring(PREDICATE) 2.me(WHO) 3.the(WHAT) 4.popcorn(WHAT) 5.which() 6.is(null) 7.on(null) 8.the() 9.table() 10.please(null) </role>
+	<arc name="t78">1-0(pp) 3-4(ic) 1-3(pp) 1-2(pp)</arc>
+
+	<example name="t79">how much is the queen come and put it into the dishwasher and load the dishwasher please</example>
+	<role name="t79">0.Armar(ACTOR) 1.take(PREDICATE) 2.the(WHAT) 3.green(WHAT) 4.cup(WHAT) 5.and(null) 6.put(PREDICATE) 7.it(WHAT) 8.into(null) 9.the(Where) 10.dishwasher(Where) 11.and(null) 12.the() 13.close(Predicate) 14.the(WHAT) 15.dishwasher(WHAT) 16.please(null) </role>
+	<arc name="t79">1-0(pp) 2-3(ic) 3-4(ic) 1-2(pp) 6-0(pp) 6-9(pp) 9-10(ic) 6-7(pp) 12-13(ic)  14-15(ic) 1-6(na) 6-13(na) </arc>
+
+	<example name="t80">imma open the fridge and pink the orange juice of the world know the fridge and bring me the orange</example>
+	<role name="t80">0.armar(Actor) 1.open(Predicate) 2.the(WHAT) 3.fridge(WHAT) 4.and(null) 5.take(PREDICATE) 6.the(WHAT) 7.orange(WHAT) 8.juice(WHAT) 9.afterwards(WHEN) 10.close(Predicate) 11.the(What) 12.fridge(What) 13.and(null) 14.bring(PREDICATE) 15.me(ACTOR) 16.the(WHAT) 17.orange(WHAT) 18.juice(WHAT) </role>
+	<arc name="t80">1-0(pp) 1-5(na) 1-2(pp) 2-3(ic) 10-11(pp) 11-12(ic) 5-10(pp) 6-7(ic) 7-8(ic) 5-6(pp) 5-9(pp) 14-15(pp) 16-17(ic) 17-18(ic) 14-16(pp) 5-10(na) 10-14(na)</arc>
+
+	<example name="t81">hello Robin bring me the popcorn</example>
+	<role name="t81">0.Hello() 1.Robot(ACTOR) 2.bring(PREDICATE) 3.me(WHO) 4.the(WHAT) 5.popcorn(WHAT) </role>
+	<arc name="t81">2-1(pp) 4-5(ic) 2-4(pp) 2-3(pp) </arc>
+
+	<example name="t82">close the dishwasher and bring me the green Cup</example>
+	<role name="t82">0.Close(Predicate) 1.the(WHAT) 2.dishwasher(WHAT) 3.and(null) 4.bring(PREDICATE) 5.me(WHO) 6.the(WHAT) 7.green(WHAT) 8.cup(WHAT) </role>
+	<arc name="t82">0-1(pp) 1-2(ic) 6-7(ic) 7-8(ic) 4-6(pp) 4-5(pp) 0-4(na)</arc>
+
+	<example name="t83">bring me the orange juice</example>
+	<role name="t83">0.Bring(PREDICATE) 1.me(WHO) 2.the(WHAT) 3.orange(WHAT) 4.juice(WHAT) </role>
+	<arc name="t83">2-3(ic) 3-4(ic) 0-2(pp) 0-1(pp) </arc>
+
+	<example name="t84">hello, please bring the popcorn from the table</example>
+	<role name="t84">0.Hello() 1.Armar(ACTOR) 2.please(null) 3.bring(PREDICATE) 4.me(WHO) 5.the(WHAT) 6.popcorn(WHAT) 7.from(What) 8.the(WHAT) 9.table(WHAT) </role>
+	<arc name="t84">3-1(pp) 5-6(ic) 6-7(ic) 7-8(ic) 8-9(ic) 3-5(pp) 3-4(pp) </arc>
+
+	<example name="t85">hello Alma please put the green cup into the dishwasher please close the dishwasher</example>
+	<role name="t85">0.Hello() 1.Armar(ACTOR) 2.please() 3.put(PREDICATE) 4.the(WHAT) 5.green(WHAT) 6.cup(WHAT) 7.into(null) 8.the(WHAT) 9.dishwasher(WHAT) 10.please() 11.close(Predicate) 12.the(WHAT) 13.dishwasher(WHAT) </role>
+	<arc name="t85">3-1(pp) 4-5(ic) 5-6(ic) 6-8(ic) 8-9(ic) 3-4(pp) 11-1(pp) 12-13(ic) 11-12(pp) 3-11(na) </arc>
+
+	<example name="t86">hello, please open the fridge and bring me the orange juice</example>
+	<role name="t86">0.Hello() 1.Armar(ACTOR) 2.please() 3.open(PREDICATE) 4.the(WHAT) 5.fridge(WHAT) 6.and(null) 7.bring(PREDICATE) 8.me(ACTOR) 9.the(WHAT) 10.orange(WHAT) 11.juice(WHAT) </role>
+	<arc name="t86">3-1(pp) 4-5(ic) 2-4(pp) 7-8(pp) 9-10(ic) 10-11(ic) 7-9(pp) 3-7(na) </arc>
+
+	<example name="t87">Mr could you please bring me the popcorn which is on the left side of the green. Thank you</example>
+	<role name="t87">0.Amar(ACTOR) 1.could(null) 2.you(ACTOR) 3.please() 4.bring(PREDICATE) 5.me(WHO) 6.the(WHAT) 7.popcorn(WHAT) 8.which(WHAT) 9.is(What) 10.on(What) 11.the(WHAT) 12.left(WHAT) 13.side(WHAT) 14.of(What) 15.the(WHAT) 16.green(WHAT) 17.cup(WHAT) 18.Thank() 19.you() </role>
+	<arc name="t87">0-2(ic) 4-0(pp) 6-7(ic) 7-8(ic) 4-6(pp) 4-5(pp) 11-12(ic) 12-13(ic) 13-14(ic) 14-15(ic) 15-16(ic) 16-17(ic) </arc>
+
+	<example name="t88">Omar I need all my cash tonight for the party so please also place the green cab from the table into the dishwasher and switch it on but it dont forget to close the dishwasher before ok</example>
+	<role name="t88">0.Armar() 1.i(ACTOR) 2.need(PREDICATE) 3.all(WHAT) 4.my(WHAT) 5.cups(WHAT) 6.tonight(When) 7.for(null) 8.the(WHERE) 9.party(WHERE) 10.so() 11.please(null) 12.also() 13.place(Predicate) 14.the(WHAT) 15.green(WHAT) 16.cup(WHAT) 17.from(null) 18.the(WHAT) 19.table(WHAT) 20.into(null) 21.the(WHAT) 22.dishwasher(WHAT) 23.and(null) 24.switch(PREDICATE) 25.it(WHAT) 26.on(null) 27.but(null) 28.do(null) 29.nt(null) 30.forget(PREDICATE) 31.to(null) 32.close(null) 33.the(WHAT) 34.dishwasher(WHAT) 35.before(HOW) 36.okay(HOW) </role>
+	<arc name="t88">2-1(pp) 3-4(ic) 4-5(ic) 2-3(pp) 8-9(ic) 2-6(pp) 2-8(pp) 14-15(ic) 15-16(ic) 16-18(ic) 18-19(ic) 19-21(ic) 21-22(ic) 24-25(pp) 33-34(ic) 35-36(ic) 2-13(na) 13-24(na) 24-30(na)</arc>
+
+	<example name="t89">good morning amor I would like to have orange juice for breakfast so could you please place it from the fridge on to the black table but dont confuse it with a multimeter mind use okay thank you</example>
+	<role name="t89">0.Good() 1.morning() 2.Armar() 3.I(ACTOR) 4.would(null) 5.like(PREDICATE) 6.to(null) 7.have(PREDICATE) 8.orange(WHAT) 9.juice(WHAT) 10.for(WHEN) 11.breakfast(WHEN) 12.so() 13.could() 14.you(ACTOR) 15.please(null) 16.place(PREDICATE) 17.it(WHAT) 18.from(null) 19.the(WHAT) 20.fridge(WHAT) 21.onto(null) 22.the(WHAT) 23.black(WHAT) 24.table(WHAT) 25.but(null) 26.do(null) 27.nt(null) 28.confuse(PREDICATE) 29.it(WHAT) 30.with(null) 31.the(WHAT) 32.multi(WHAT) 33.vitamine(WHAT) 34.juice(WHAT) 35.okay() 36.thank(PREDICATE) 37.you(WHO) </role>
+	<arc name="t89">5-3(pp) 5-3(pp) 5-2(pp) 7-14(pp) 8-9(ic) 7-8(pp) 10-11(ic) 7-10(pp) 16-14(pp) 17-19(ic) 19-20(ic) 20-22(ic) 22-23(ic) 23-24(ic) 16-17(pp) 29-31(ic) 31-32(ic) 32-33(ic) 33-34(ic) 28-29(pp) 36-37(pp) 5-7(na) 7-16(na) 28-36(na) </arc>
+
+	<example name="t90">Mr could you please bring me the popcorn is on the back table between the serious and the green couch</example>
+	<role name="t90">0.Armar(ACTOR) 1.could(null) 2.you(ACTOR) 3.please(PREDICATE) 4.bring(PREDICATE) 5.me(WHO) 6.the(WHAT) 7.popcorn(WHAT) 8.it(ACTOR) 9.s(null) 10.is(predicate) 11.on(null) 12.the(Where) 13.black(Where) 14.table(Where) 15.between(null) 16.the(Where) 17.cereals(Where) 18.and(null) 19.the(Where) 20.green(Where) 21.cup(Where) </role>
+	<arc name="t90">0-2(ic) 2-8(ic) 3-0(pp) 3-4(ic) 6-7(ic) 3-6(pp) 3-5(pp) 12-13(ic) 13-14(ic) 14-16(ic) 16-17(ic) 19-20(ic) 20-21(ic) 4-10(na) 10-4(pp) </arc>
+
+	<example name="t91">amarte could you please place the green cap to the red top into the dishwasher and close the door please</example>
+	<role name="t91">0.Armar() 1.could(null) 2.you(ACTOR) 3.please() 4.place(PREDICATE) 5.the(WHAT) 6.green(WHAT) 7.cup(WHAT) 8.to(null) 9.the(WHAT) 10.red(WHAT) 11.cups(WHAT) 12.into(null) 13.the(Where) 14.dishwasher(Where) 15.and(null) 16.close(PREDICATE) 17.the(WHAT) 18.door(WHAT) 19.please(null) </role>
+	<arc name="t91">4-2(pp) 5-6(ic) 6-7(ic) 7-9(ic) 9-10(ic) 10-11(ic) 4-13(pp) 13-14(ic) 4-5(pp) 16-2(pp) 17-18(ic) 16-17(pp) 4-16(na) </arc>
+
+	<example name="t92">hey Mr could you bring me the orange juice is in the fridge in front of the month you with your man juice and water bottle</example>
+	<role name="t92">0.hey() 1.amar() 2.could(null) 3.you(ACTOR) 4.bring(PREDICATE) 5.me(WHO) 6.the(WHAT) 7.orange(WHAT) 8.juice(WHAT) 9.it(ACTOR) 10.s(predicate) 11.in(null) 12.the(Where) 13.fridge(Where) 14.in(null) 15.front(WHAT) 16.of(null) 17.the(WHAT) 18.multi(WHAT) 19.vitamin(WHAT) 20.juice(WHAT) 21.and(null) 22.the(WHAT) 23.water(WHAT) 24.bottle(WHAT) </role>
+	<arc name="t92">4-3(pp) 1-6(ic) 6-7(ic) 7-8(ic) 4-5(pp) 12-13(ic) 13-15(ic) 15-17(ic) 17-18(ic) 18-19(ic) 19-20(ic) 22-23(ic) 23-24(ic) 4-10(na) 10-9(pp) 10-12(pp) </arc>
+
+	<example name="t93">hi, bring me the book on from the table</example>
+	<role name="t93">0.Hi() 1.Armar(ACTOR) 2.bring(PREDICATE) 3.me(WHO) 4.the(WHAT) 5.popcorn(WHAT) 6.from(null) 7.the(WHAT) 8.table(WHAT) </role>
+	<arc name="t93">2-1(pp) 4-5(ic) 5-7(ic) 7-8(ic) 2-4(pp) 2-3(pp) </arc>
+
+	<example name="t94">, instead of the dishwasher</example>
+	<role name="t94">0.Hi() 1.Armar(Actor) 2.close(Predicate) 3.the(WHAT) 4.door(WHAT) 5.of(what) 6.the(WHAT) 7.dishwasher(WHAT) </role>
+	<arc name="t94">2-1(pp) 2-3(pp) 3-4(ic) 4-5(ic) 5-6(ic) 6-7(ic) </arc>
+
+	<example name="t95">iono bring me the orange juice from the fridge</example>
+	<role name="t95">0.Hi() 1.Armar(ACTOR) 2.bring(PREDICATE) 3.me(WHO) 4.the(WHAT) 5.orange(WHAT) 6.juice(WHAT) 7.from(null) 8.the(WHAT) 9.fridge(WHAT) </role>
+	<arc name="t95">2-1(pp) 4-5(ic) 5-6(ic) 6-8(ic) 8-9(ic) 2-4(pp) 2-3(pp) </arc>
+
+	<example name="t96">hey Ima bring me the popcorn from the table</example>
+	<role name="t96">0.Hey() 1.Armar(ACTOR) 2.bring(PREDICATE) 3.me(WHO) 4.the(WHAT) 5.popcorn(WHAT) 6.from(null) 7.the(WHAT) 8.table(WHAT) </role>
+	<arc name="t96">2-1(pp) 4-5(ic) 5-7(ic) 7-8(ic) 2-4(pp) 2-3(pp) </arc>
+
+	<example name="t97">hey Im at least based ink link up from the kitchen table into that dishwasher</example>
+	<role name="t97">0.Hey() 1.Armar(ACTOR) 2.please(PREDICATE) 3.place(Predicate) 4.the(what) 5.green(what) 6.cup(what) 7.from(null) 8.the(WHERE) 9.kitchen(WHERE) 10.table(WHERE) 11.into(null) 12.the(WHERE) 13.dishwasher(WHERE) </role>
+	<arc name="t97">3-1(pp) 4-5(ic) 5-6(ic) 6-8(ic) 8-9(ic) 9-10(ic) 10-12(ic) 12-13(ic) 3-4(pp) </arc>
+
+	<example name="t98">hey Ima bring me the orange juice from the fridge please</example>
+	<role name="t98">0.Hey() 1.Armar(ACTOR) 2.bring(PREDICATE) 3.me(WHO) 4.the(WHAT) 5.orange(WHAT) 6.juice(WHAT) 7.from(null) 8.the(WHAT) 9.fridge(WHAT) 10.please(null) </role>
+	<arc name="t98">2-1(pp) 4-5(ic) 5-6(ic) 6-8(ic) 8-9(ic) 2-4(pp) 2-3(pp) </arc>
+
+	<example name="t99">hello Mr bring me the popcorn bag from the table</example>
+	<role name="t99">0.Hallo() 1.Armar(ACTOR) 2.bring(PREDICATE) 3.me(WHO) 4.the(WHAT) 5.popcorn(WHAT) 6.bag(WHAT) 7.from(null) 8.the(where) 9.table(where) </role>
+	<arc name="t99">2-1(pp) 4-5(ic) 5-6(ic) 2-8(pp) 8-9(ic) 2-4(pp) 2-3(pp) </arc>
+
+	<example name="t100">hello armor ;-) up from the table into the dishwasher and close the door</example>
+	<role name="t100">0.Hello() 1.Armar(ACTOR) 2.bring(PREDICATE) 3.the(WHAT) 4.green(WHAT) 5.cup(WHAT) 6.from(null) 7.the(WHAT) 8.table(WHAT) 9.into(null) 10.the(where) 11.dish(where) 12.washer(WHAT) 13.and(null) 14.close(PREDICATE) 15.the(WHAT) 16.door(WHAT) </role>
+	<arc name="t100">2-1(pp) 3-4(ic) 4-5(ic) 5-7(ic) 7-8(ic) 2-10(pp) 10-11(ic) 11-12(ic) 2-3(pp) 14-1(pp) 15-16(ic) 14-15(pp) 2-14(na) </arc>
+
+	<example name="t101">hello, go to the fridge open the fridge door and bring me the orange juice that is located there and close the door of the fridge</example>
+	<role name="t101">0.Hello() 1.Armar(ACTOR) 2.Go(predicate) 3.to() 4.the(what) 5.fridge(what) 6.Open(predicate) 7.the(WHAT) 8.fridge(WHAT) 9.door(WHAT) 10.and(null) 11.bring(PREDICATE) 12.me(WHO) 13.the(WHAT) 14.orange(WHAT) 15.juice(WHAT) 16.that(ACTOR) 17.is(null) 18.located(PREDICATE) 19.there(where) 20.and(null) 21.close(PREDICATE) 22.the(WHAT) 23.door(WHAT) 24.of(null) 25.the(WHAT) 26.fridge(WHAT) </role>
+	<arc name="t101">2-1(pp) 2-4(pp) 4-5(ic) 11-1(pp) 6-7(pp) 7-8(ic) 8-9(ic) 13-14(ic) 14-15(ic) 11-12(pp) 18-16(pp) 18-19(pp) 21-1(pp) 22-23(ic) 23-25(ic) 25-26(ic) 21-22(pp) 2-6(na) 6-11(na) 11-18(na) 18-21(na) </arc>
+
+	<example name="t102">, bring me the bag of popcorn from the table</example>
+	<role name="t102">0.Armar(ACTOR) 1.bring(PREDICATE) 2.me(WHO) 3.the(WHAT) 4.bag(WHAT) 5.of(null) 6.popcorn(WHAT) 7.from(null) 8.the(where) 9.table(where) </role>
+	<arc name="t102">1-0(pp) 3-4(ic) 4-6(ic) 1-8(pp) 8-9(ic) 1-3(pp) 1-2(pp) </arc>
+
+	<example name="t103">farmer place to pick up from the table into the dishwasher and close it afterwards</example>
+	<role name="t103">0.Armar(ACTOR) 1.place(predicate) 2.the(what) 3.green(what) 4.cup(what) 5.from() 6.the() 7.table() 8.into(null) 9.the(where) 10.dishwasher(where) 11.and(null) 12.close(PREDICATE) 13.it(WHAT) 14.afterwards(HOW) </role>
+	<arc name="t103">1-0(pp) 1-2(pp) 1-12(na) 2-3(ic) 3-4(ic) 12-0(pp) 9-10(ic) </arc>
+
+	<example name="t104">, bring me the orange juice from the fridge</example>
+	<role name="t104">0.Armar(ACTOR) 1.bring(PREDICATE) 2.me(WHO) 3.the(WHAT) 4.orange(WHAT) 5.juice(WHAT) 6.from(null) 7.the(where) 8.fridge(where) </role>
+	<arc name="t104">1-0(pp) 3-4(ic) 4-5(ic) 1-7(pp) 7-8(ic) 1-3(pp) 1-2(pp) </arc>
+
+	<example name="t105">Mr bring me the popcorn from the table</example>
+	<role name="t105">0.Armar(ACTOR) 1.bring(PREDICATE) 2.me(WHO) 3.the(WHAT) 4.popcorn(WHAT) 5.from(null) 6.the(where) 7.table(where) </role>
+	<arc name="t105">1-0(pp) 3-4(ic) 1-6(pp) 6-7(ic) 1-3(pp) 1-2(pp) </arc>
+
+	<example name="t106">Omar Epps the green cup from the table and put it into the dishwasher</example>
+	<role name="t106">0.Armar(ACTOR) 1.get(PREDICATE) 2.the(WHAT) 3.green(WHAT) 4.cup(WHAT) 5.from(null) 6.the(where) 7.table(where) 8.and(null) 9.put(PREDICATE) 10.it(WHAT) 11.into(null) 12.the(WHAT) 13.dishwasher(WHAT) </role>
+	<arc name="t106">1-0(pp) 2-3(ic) 3-4(ic) 1-6(pp) 6-7(ic) 1-2(pp) 9-0(pp) 10-12(ic) 12-13(ic) 9-10(pp) 1-9(na) </arc>
+
+	<example name="t107">Mr bring me the orange juice its in the fridge</example>
+	<role name="t107">0.Armarbring(PREDICATE) 1.me(WHO) 2.the(WHAT) 3.orange(WHAT) 4.juice(WHAT) 5.it(actor) 6.s(predicate) 7.in(null) 8.the(where) 9.fridge(where) </role>
+	<arc name="t107">2-3(ic) 3-4(ic) 0-2(pp) 0-1(pp) 8-9(ic) 6-5(pp) 6-8(pp) 0-6(na) </arc>
+
+	<example name="t108">hello Mr bring me the popcorn from the table he stands between the tires and copy thank you very much</example>
+	<role name="t108">0.Hello() 1.Armar(ACTOR) 2.bring(PREDICATE) 3.me(WHO) 4.the(WHAT) 5.popcorn(WHAT) 6.from(null) 7.the(where) 8.table(where) 9.He(actor) 10.stands(predicate) 11.between(null) 12.Vitalis(what) 13.and(null) 14.cup(what) 15.Thank(PREDICATE) 16.you(WHO) 17.very(HOW) 18.much(HOW) </role>
+	<arc name="t108">2-1(pp) 4-5(ic) 2-7(pp) 7-8(ic) 2-4(pp) 3-9(ic) 2-3(pp) 15-16(pp) 17-18(ic) 15-17(pp) 2-10(na) 10-9(pp)</arc>
+
+	<example name="t109">hello Mr from the Queen, just between popcorn and estimate in the dishwasher thank you</example>
+	<role name="t109">0.Hello() 1.Armar(ACTOR) 2.bring(PREDICATE) 3.the(WHAT) 4.green(WHAT) 5.cup(WHAT) 6.which() 7.is(null) 8.between(null) 9.popcorn() 10.and(null) 11.Nesquik() 12.in() 13.the() 14.dishwasher() 15.Thank(PREDICATE) 16.you(WHO) </role>
+	<arc name="t109">2-1(pp) 3-4(ic) 4-5(ic) 2-3(pp) 15-16(pp) </arc>
+
+	<example name="t110">hello Mr bring me the one liter of orange juice which is at the front in the fridge Im very thirsty the orange juice is between Apollinaris and much of the time in nectar in a blue collar / text you</example>
+	<role name="t110">0.Hello() 1.Armar(ACTOR) 2.bring(PREDICATE) 3.me(WHO) 4.the(WHAT) 5.one(WHAT) 6.liter(WHAT) 7.of(null) 8.orange(WHAT) 9.juice(WHAT) 10.which() 11.is(null) 12.at(null) 13.the() 14.front() 15.in(null) 16.the() 17.fridge() 18.I() 19.am(null) 20.very(null) 21.thirsty(null) 22.The() 23.orange() 24.juice() 25.is() 26.between(null) 27.Apollinaris() 28.and(null) 29.multivitamin() 30.Naktar() 31.in(null) 32.a() 33.blue() 34.colour() 35.box() </role>
+	<arc name="t110">2-1(pp) 4-5(ic) 5-6(ic) 6-8(ic) 8-9(ic)  2-4(pp) 2-3(pp)</arc>
+
+	<example name="t111">hello mom please bring me the popcorn from the table</example>
+	<role name="t111">0.Hello() 1.Armar(ACTOR) 2.please(null) 3.bring(PREDICATE) 4.me(WHO) 5.the(WHAT) 6.popcorn(WHAT) 7.from(null) 8.the(where) 9.table(where) </role>
+	<arc name="t111">3-1(pp) 5-6(ic) 3-8(pp) 8-9(ic) 3-5(pp) 3-4(pp) </arc>
+
+	<example name="t112">hello mom could you take the green cup from the table into the dishwasher please</example>
+	<role name="t112">0.Hello() 1.Armar() 2.could(null) 3.you(ACTOR) 4.take(PREDICATE) 5.the(WHAT) 6.green(WHAT) 7.cup(WHAT) 8.from(null) 9.the(WHAT) 10.table(WHAT) 11.into(null) 12.the(where) 13.dishwasher(where) 14.please(null) </role>
+	<arc name="t112">4-3(pp) 5-6(ic) 6-7(ic) 7-9(ic) 9-10(ic) 4-12(pp) 12-13(ic)</arc>
+
+	<example name="t113">hello mom could you bring me the orange juice from the fridge please</example>
+	<role name="t113">0.Hello() 1.Armar() 2.could(null) 3.you(ACTOR) 4.bring(PREDICATE) 5.me(WHO) 6.the(WHAT) 7.orange(WHAT) 8.juice(WHAT) 9.from(null) 10.the(where) 11.fridge(where) 12.please(null) </role>
+	<arc name="t113">4-3(pp) 6-7(ic) 7-8(ic) 4-10(pp) 10-11(ic)</arc>
+
+
+
+
+
+	----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+
+
+
+	<example name="h1">okay go to the table grab popcorn come to me give me the popcorn which is in your hand</example>
+	<role name="h1">0.okay 1.go(Predicate) 2.to 3.the(Where) 4.table(Where) 5.grab(Predicate) 6.popcorn(What) 7.come(Predicate) 8.to 9.me(Who) 10.give(Predicate) 11.me(Who) 12.the(What) 13.popcorn(What) 14.which(What) 15.is(What) 16.in(What) 17.your(What) 18.hand(What)</role>
+	<arc name="h1">1-5(na) 5-7(na) 7-10(na) 1-3(pp) 3-4(ic) 5-6(pp) 7-9(pp) 10-11(pp) 10-12(pp) 12-13(ic) 13-14(ic) 14-15(ic) 15-16(ic) 16-17(ic) 17-18(ic)</arc> 
+
+	<example name="h2">okay Armar go to the table take the green cup go to the dishwasher open it</example> 
+	<role name="h2">0.okay 1.Armar(Actor) 2.go(Predicate) 3.to 4.the(Where) 5.table(Where) 6.take(Predicate) 7.the(What) 8.green(What) 9.cup(What) 10.go(Predicate) 11.to 12.the(Where) 13.dishwasher(Where) 14.open(Predicate) 15.it(What)</role>
+	<arc name="h2">2-6(na) 6-10(na) 10-14(na) 2-1(pp) 2-4(pp) 6-1(pp) 6-7(pp) 7-8(ic) 8-9(ic) 10-1(pp) 10-12(pp) 12-13(ic) 14-1(pp) 14-15(pp) </arc>
+
+	<example name="h3">okay Armar go to the fridge open it look for the orange juice and take it </example>
+	<role name="h3">0.okay 1.Armar(Actor) 2.go(Predicate) 3.to 4.the(Where) 5.fridge(Where) 6.open(Predicate) 7.it(What) 8.look(Predicate) 9.for(Predicate) 10.the(What) 11.orange(What) 12.juice(What) 13.and 14.take(Predicate) 15.it(What)</role>
+	<arc name="h3">2-6(na) 6-8(na) 8-14(na) 2-1(pp) 2-4(pp) 4-5(ic) 6-1(pp) 6-7(pp) 8-1(pp) 8-9(ic) 8-10(pp) 10-11(ic) 11-12(ic) 14-1(pp) 14-15(pp)</arc>
+
+	<example name="h4">Armar can you please bring me the popcorn bag</example> 
+	<role name="h4">0.Armar(Actor) 1.can 2.you 3.please 4.bring(Predicate) 5.me(Who) 6.the(What) 7.popcorn(What) 8.bag(What)</role> 
+	<arc name="h4">4-0(pp) 4-5(pp) 4-6(pp) 6-7(ic) 7-8(ic)</arc>
+
+	<example name="h5">Armar i would like to have a cup of orange juice you will find the cup on the table and the juice in the fridge</example>
+	<role name="h5">0.Armar 1.i(Actor) 2.would 3.like 4.to 5.have(Predicate) 6.a(What) 7.cup(What) 8.of(What) 9.orange(What) 10.juice(What) 11.you(Actor) 12.will 13.find(Predicate) 14.the(What) 15.cup(What) 16.on 17.the(Where) 18.table(Where) 19.and 20.the(What) 21.juice(What) 22.in 23.the(Where) 24.fridge(Where) 25.find</role>
+	<arc name="h5">5-13(na) 13-25(na) 5-1(pp) 5-6(pp) 6-7(ic) 7-8(ic) 8-9(ic) 9-10(ic) 13-11(pp) 13-14(pp) 14-15(ic) 13-17(pp) 17-18(ic) 25-11(pp) 25-20(pp) 25-23(pp) 20-21(ic) 23-24(ic)</arc>
+
+	<example name="h6">Armar I would like to have the orange juice you can find it in the fridge somewhere in the front</example> 
+	<role name="h6">0.Armar 1.I(Actor) 2.would 3.like 4.to 5.have(Predicate) 6.the(What) 7.orange(What) 8.juice(What) 9.you(Actor) 10.can 11.find(Predicate) 12.it(What) 13.in 14.the(Where) 15.fridge(Where) 16.somewhere(Where) 17.in(Where) 18.the(Where) 19.front(Where</role> 
+	<arc name="h6">5-1(pp) 5-6(pp) 6-7(ic) 7-8(ic) 11-9(pp) 11-12(pp) 11-14(pp) 14-15(ic) 15-16(ic) 16-17(ic) 17-18(ic) 18-19(ic)</arc>
+
+	<example name="h7">Armar please put the green cup into the dishwasher and dont forget to close it afterwards</example>
+	<role name="h7">0.Armar(Actor) 1.please 2.put(Predicate) 3.the(What) 4.green(What) 5.cup(What) 6.into 7.the(What) 8.dishwasher(What) 9.and 10.dont 11.forget(Predicate) 12.to 13.close(Predicate) 14.it(What) 15.afterwards(How)</role>
+	<arc name="h7">2-0(pp) 2-3(pp) 3-4(ic) 4-5(ic) 2-7(pp) 7-8(ic) 11-0(pp) 11-13(ic) 11-14(pp) 11-15(pp)</arc>
+
+	<example name="h8">Armar could you bring me the popcorn from the kitchen table please</example> 
+	<role name="h8">0.Armar(Actor) 1.could 2.you(Actor) 3.bring(Predicate) 4.me(Who) 5.the(What) 6.popcorn(What) 7.from 8.the(Where) 9.kitchen(Where) 10.table(Where) 11.please</role> 
+	<arc name="h8">0-2(ic) 3-0(pp) 3-4(pp) 3-5(pp) 5-6(ic) 3-8(pp) 8-9(ic) 9-10(ic)</arc>
+
+	<example name="h9">Armar could you please take the green cup and move to the dishwasher then open the dishwasher and put the cup into the dishwasher after that you can close the dishwasher </example>
+	<role name="h9">0.Armar(Actor) 1.could 2.you(Actor) 3.please 4.take(Predicate) 5.the(What) 6.green(What) 7.cup(What) 8.and 9.move(Predicate) 10.to 11.the(What) 12.dishwasher(What) 13.then 14.open(Predicate) 15.the(What) 16.dishwasher(What) 17.and 18.put(Predicate) 19.the(What) 20.cup(What) 21.into 22.the(Where) 23.dishwasher(Where) 24.after(When) 25.that(When) 26.you 27.can 28.close(Predicate) 29.the(What) 30.dishwasher(What)</role>
+	<arc name="h9">4-9(na) 9-14(na) 14-18(na) 18-28(na) 0-2(ic) 4-0(pp) 4-5(pp) 5-6(ic) 6-7(ic) 9-0(pp) 9-11(pp) 11-12(ic) 14-0(pp) 14-15(pp) 15-16(ic) 18-0(pp) 18-19(pp) 19-20(ic) 18-22(pp) 22-23(ic) 28-0(pp) 28-24(pp) 24-25(ic) 28-29(pp) 29-30(ic)</arc>
+
+	<example name="h10">Armar could you please take the green cup from the kitchen table and then move to the dishwasher and open it and then put the cup into the dishwasher and close it again</example>
+	<role name="h10">0.Armar(Actor) 1.could 2.you(Actor) 3.please 4.take(Predicate) 5.the(What) 6.green(What) 7.cup(What) 8.from 9.the(Where) 10.kitchen(Where) 11.table(Where) 12.and 13.then(When) 14.move(Predicate) 15.to 16.the(What) 17.dishwasher(What) 18.and 19.open(Predicate) 20.it(What) 21.and 22.then(When) 23.put(Predicate) 24.the(What) 25.cup(What) 26.into 27.the(Where) 28.dishwasher(Where) 29.and 30.close(Predicate) 31.it(What) 32.again(When)</role>
+	<arc name="h10">4-14(na) 14-19(na) 19-23(na) 23-30(na) 0-2(ic) 4-0(pp) 4-5(pp) 5-6(ic) 6-7(ic) 4-9(pp) 9-10(ic) 10-11(ic) 14-0(pp) 14-13(pp) 14-16(pp) 16-17(ic) 19-0(pp) 19-20(pp) 23-0(pp) 23-22(pp) 23-24(pp) 24-25(ic) 23-27(pp) 27-28(ic) 30-0(pp) 30-31(pp) 30-32(pp)</arc>
+
+
+
+	<example name="h11">Armar would you please go to the fridge and open it take out the orange juice and bring it to me </example>
+	<role name="h11">0.Armar 1.would(null) 2.you(Actor) 3.please(null) 4.go(PREDICATE) 5.to(null) 6.the(Where) 7.fridge(Where) 8.and(null) 9.open(PREDICATE) 10.it(WHAT) 11.take(PREDICATE) 12.out(PREDICATE) 13.the(WHAT) 14.orange(WHAT) 15.juice(WHAT) 16.and(null) 17.bring(PREDICATE) 18.it(WHAT) 19.to(null) 20.me(WHO) </role>
+	<arc name="h11">6-7(ic) 4-6(pp) 4-2(pp) 9-10(pp) 11-12(ic) 13-14(ic) 14-15(ic) 11-13(pp) 17-18(pp) 17-20(pp) 4-9(na) 9-11(na) 11-17(na) </arc>
+
+	<example name="h12">hey Armar can you go to the table and grab me the popcorn bag please and then yeah can you bring it back to me </example>
+	<role name="h12">0.hey 1.Armar 2.can 3.you(Actor) 4.go(PREDICATE) 5.to(null) 6.the(Where) 7.table(Where) 8.and(null) 9.grab(PREDICATE) 10.me(WHO) 11.the(WHAT) 12.popcorn(WHAT) 13.bag(WHAT) 14.please 15.and(null) 16.then(When) 17.yeah 18.can(null) 19.you(ACTOR) 20.bring(PREDICATE) 21.it(WHAT) 22.back(HOW) 23.to(null) 24.me(WHO) </role>
+	<arc name="h12">6-7(ic) 4-3(pp) 4-6(pp) 11-12(ic) 12-13(ic) 9-3(pp) 9-11(pp) 9-10(pp) 20-19(pp) 20-21(pp) 20-16(pp) 4-9(na) 9-14(na) 14-20(na) </arc>
+
+
+	<example name="h13">hey Armar can you please go to the table and grab the green cup and then can you go to the dishwasher put it in the dishwasher close the dishwasher and come back </example>
+	<role name="h13">0.hey 1.Armar(Actor) 2.can(null) 3.you(Actor) 4.please 5.go(PREDICATE) 6.to(null) 7.the(WHAT) 8.table(WHAT) 9.and(null) 10.grab(PREDICATE) 11.the(WHAT) 12.green(WHAT) 13.cup(WHAT) 14.and(null) 15.then(HOW) 16.can(null) 17.you(WHO) 18.go(PREDICATE) 19.to(null) 20.the(WHAT) 21.dishwasher(WHAT) 22.put(PREDICATE) 23.it(WHAT) 24.in(null) 25.the(WHAT) 26.dishwasher(WHAT) 27.close(null) 28.the(WHAT) 29.dishwasher(WHAT) 30.and(null) 31.come(PREDICATE) 32.back(HOW) </role>
+	<arc name="h13">7-8(ic) 1-3(ic) 5-7(pp) 11-12(ic) 12-13(ic) 10-11(pp) 20-21(ic) 18-20(pp) 18-17(pp) 18-15(pp) 23-25(ic) 25-26(ic) 22-23(pp) 28-29(ic) 31-32(pp) 4-10(na) 10-18(na) 18-22(na) </arc>
+
+
+	<example name="h14">hey Armar can you please go to the fridge open it grab me the orange juice and then close the fridge and bring the orange juice to me please </example>
+	<role name="h14">0.hey 1.Armar(Actor) 2.can(null) 3.you(Actor) 4.please 5.go(PREDICATE) 6.to(null) 7.the(WHAT) 8.fridge(WHAT) 9.open(PREDICATE) 10.it(WHAT) 11.grab(PREDICATE) 12.me(WHO) 13.the(WHAT) 14.orange(WHAT) 15.juice(WHAT) 16.and(null) 17.then(WHEN) 18.close(PREDICATE) 19.the(WHAT) 20.fridge(WHAT) 21.and(null) 22.bring(PREDICATE) 23.the(WHAT) 24.orange(WHAT) 25.juice(WHAT) 26.to(null) 27.me(WHO) 28.please(null) </role>
+	<arc name="h14">7-8(ic) 1-3(ic) 5-1(pp) 9-1(pp) 11-1(pp) 18-1(pp) 22-1(pp) 9-10(pp) 13-14(ic) 14-15(ic) 11-13(pp) 11-12(pp) 19-20(ic) 18-19(pp) 18-17(pp) 23-24(ic) 24-25(ic) 22-23(pp) 22-27(pp) 4-9(na) 9-11(na) 11-18(na) 18-22(na) </arc>
+
+
+	<example name="h15">hey Armar go to kitchen table take the popcorn bag and bring it to me </example>
+	<role name="h15">0.hey 1.Armar(Actor) 2.go(PREDICATE) 3.to(null) 4.kitchen(WHAT) 5.table(WHAT) 6.take(PREDICATE) 7.the(WHAT) 8.popcorn(WHAT) 9.bag(WHAT) 10.and(null) 11.bring(PREDICATE) 12.it(WHAT) 13.to(null) 14.me(WHO) </role>
+	<arc name="h15">4-5(ic) 2-1(pp) 6-1(pp) 11-1(pp) 2-4(pp) 7-8(ic) 8-9(ic) 6-7(pp) 11-12(pp) 11-14(pp) 2-6(na) 6-11(na) </arc>
+
+	<example name="h16">hey Armar go to the kitchen table and take the green cup then go to the dishwasher and put the cup in it </example>
+	<role name="h16">0.hey(null) 1.Armar(Actor) 2.go(PREDICATE) 3.to(null) 4.the(WHAT) 5.kitchen(WHAT) 6.table(WHAT) 7.and(null) 8.take(PREDICATE) 9.the(WHAT) 10.green(WHAT) 11.cup(WHAT) 12.then(WHEN) 13.go(PREDICATE) 14.to(null) 15.the(WHAT) 16.dishwasher(WHAT) 17.and(null) 18.put(PREDICATE) 19.the(WHAT) 20.cup(WHAT) 21.in(null) 22.it(Where) </role>
+	<arc name="h16">2-1(pp) 8-1(pp) 13-1(pp) 18-1(pp) 4-5(ic) 5-6(ic) 2-4(pp) 9-10(ic) 10-11(ic) 8-9(pp) 15-16(ic) 13-15(pp) 13-12(pp) 19-20(ic) 18-22(p) 18-19(pp) 2-8(na) 8-13(na) 13-18(na) </arc>
+
+
+	<example name="h17">hey Armar go to fridge and take the orange juice then bring it to me </example>
+	<role name="h17">0.hey(null) 1.Armar(Actor) 2.go(PREDICATE) 3.to(null) 4.fridge(Where) 5.and(null) 6.take(PREDICATE) 7.the(WHAT) 8.orange(WHAT) 9.juice(WHAT) 10.then(WHEN) 11.bring(PREDICATE) 12.it(WHAT) 13.to(null) 14.me(WHO) </role>
+	<arc name="h17">2-1(pp) 6-1(pp) 2-4(pp) 2-6(na) 7-8(ic) 8-9(ic) 6-7(pp) 11-12(pp) 11-10(pp) 11-14(pp) 6-11(na) </arc>
+
+	<example name="h18">Armar please bring me the popcorn bag from the table </example>
+	<role name="h18">0.Armar(ACTOR) 1.please 2.bring(PREDICATE) 3.me(WHO) 4.the(WHAT) 5.popcorn(WHAT) 6.bag(WHAT) 7.from(null) 8.the(Where) 9.table(Where) </role>
+	<arc name="h18">2-0(pp) 4-5(ic) 5-6(ic) 6-8(ic) 8-9(ic) 2-4(pp) 2-3(pp) 2-8(pp)</arc>
+
+	<example name="h19">Armar put the green cup from the table to the dishwasher then close it </example>
+	<role name="h19">0.Armar(ACTOR) 1.put(PREDICATE) 2.the(WHAT) 3.green(WHAT) 4.cup(WHAT) 5.from(null) 6.the(Where) 7.table(Where) 8.to(null) 9.the(Where) 10.dishwasher(Where) 11.then(null) 12.close(Predicate) 13.it(WHAT) </role>
+	<arc name="h19">1-0(pp) 2-3(ic) 3-4(ic) 6-7(ic) 7-9(ic) 9-10(ic) 1-2(pp) 1-6(pp) 1-9(pp) 1-12(na) 12-0(pp) 12-13(pp) 1-12(na)</arc>
+
+	<example name="h20">Armar open the fridge and bring me the orange juice </example>
+	<role name="h20">0.Armar(Actor) 1.open(Predicate) 2.the(WHAT) 3.fridge(WHAT) 4.and(null) 5.bring(PREDICATE) 6.me(Who) 7.the(WHAT) 8.orange(WHAT) 9.juice(WHAT) </role>
+	<arc name="h20">1-0(pp) 1-5(na) 1-3(pp) 2-3(ic) 5-0(pp) 5-6(pp) 7-8(ic) 8-9(ic) 5-7(pp) </arc>
+
+	<example name="h21">Can you grab me the box of popcorn on the table its next to the cereal box </example>
+	<role name="h21">0.Can(null) 1.you(ACTOR) 2.grab(PREDICATE) 3.me(WHO) 4.the(WHAT) 5.box(WHAT) 6.of(What) 7.popcorn(WHAT) 8.on(null) 9.the(WHERE) 10.table(WHERE) 11.it(WHAT) 12.s(Predicate) 13.next() 14.to(null) 15.the(Where) 16.cereal(Where) 17.box(Where) </role>
+	<arc name="h21">2-1(pp) 4-5(ic) 5-6(ic) 6-7(ic) 5-7(ic) 7-11(ic) 2-4(pp) 2-3(pp) 9-10(ic) 2-9(pp)  15-16(ic) 16-17(ic) 2-12(na) 12-11(pp) 12-15(pp)</arc>
+
+	<example name="h22">Can you please put the green cup on the table in the dishwasher and please dont forget to close the dishwasher afterwards</example>
+	<role name="h22">0.Can(null) 1.you(ACTOR) 2.please 3.put(PREDICATE) 4.the(WHAT) 5.green(WHAT) 6.cup(WHAT) 7.on(What) 8.the(WHAT) 9.table(WHAT) 10.in(null) 11.the(WHERE) 12.dishwasher(WHERE) 13.and(null) 14.please(null) 15.do(Predicate) 16.nt(Predicate) 17.forget(PREDICATE) 18.to(Predicate) 19.close(Predicate) 20.the(WHAT) 21.dishwasher(WHAT) 22.afterwards(HOW)</role>
+	<arc name="h22">3-1(pp) 4-5(ic) 5-6(ic) 6-7(ic) 7-8(i) 8-9(ic) 3-4(pp) 11-12(ic) 3-11(pp) 15-1(pp) 15-16(ic) 16-17(ic) 17-18(ic) 18-19(ic) 20-21(ic) 21-22(ic) 15-20(pp)</arc>
+
+	<example name="h23">Can you please bring me the orange juice from the fridge please </example>
+	<role name="h23">0.Can(null) 1.you(ACTOR) 2.please 3.bring(PREDICATE) 4.me(WHO) 5.the(WHAT) 6.orange(WHAT) 7.juice(WHAT) 8.from(null) 9.the(Where) 10.fridge(Where) 11.please(null) </role>
+	<arc name="h23">3-1(pp) 5-6(ic) 6-7(ic) 9-10(ic) 3-5(pp) 3-4(pp) </arc>
+
+	<example name="h24">Hey Armar bring me the popcorn bag from the table </example>
+	<role name="h24">0.Hey 1.Armar(ACTOR) 2.bring(PREDICATE) 3.me(WHO) 4.the(WHAT) 5.popcorn(WHAT) 6.bag(WHAT) 7.from(null) 8.the(Where) 9.table(Where) </role>
+	<arc name="h24">2-1(pp) 4-5(ic) 5-6(ic) 8-9(ic) 2-4(pp) 2-3(pp) </arc>
+
+	<example name="h25">Hey Armar get the green cup from the table and put it in the dishwasher </example>
+	<role name="h25">0.Hey 1.Armar(ACTOR) 2.get(PREDICATE) 3.the(WHAT) 4.green(WHAT) 5.cup(WHAT) 6.from(null) 7.the(Where) 8.table(Where) 9.and(null) 10.put(PREDICATE) 11.it(WHAT) 12.in(null) 13.the(Where) 14.dishwasher(Where) </role>
+	<arc name="h25">2-1(pp) 3-4(ic) 4-5(ic) 7-8(ic) 2-3(pp) 10-1(pp) 13-14(ic) 10-11(pp) 2-10(na) </arc>
+	
+	<example name="h26">Hey Armar open the fridge get the orange juice and bring it to me </example>
+	<role name="h26">0.Hey 1.Armar(ACTOR) 2.open(PREDICATE) 3.the(WHAT) 4.fridge(WHAT) 5.get(PREDICATE) 6.the(WHAT) 7.orange(WHAT) 8.juice(WHAT) 9.and(null) 10.bring(PREDICATE) 11.it(WHAT) 12.to(null) 13.me(WHO) </role>
+	<arc name="h26">2-1(pp) 3-4(ic) 2-3(pp) 0-1(ic) 5-1(pp) 6-7(ic) 7-8(ic) 5-6(pp) 0-1(ic) 10-1(pp) 10-11(pp) 10-13(pp) 2-5(na) 5-10(na) </arc>
+	
+	<example name="h27">Please go to the kitchen table and pick up the popcorn bag and bring it to me </example>
+	<role name="h27">0.Please(null) 1.go(PREDICATE) 2.to(null) 3.the(Where) 4.kitchen(Where) 5.table(Where) 6.and(null) 7.pick(PREDICATE) 8.up(PREDICATE) 9.the(WHAT) 10.popcorn(WHAT) 11.bag(WHAT) 12.and(null) 13.bring(PREDICATE) 14.it(WHAT) 15.to(null) 16.me(WHO) </role>
+	<arc name="h27">3-4(ic) 4-5(ic) 1-3(pp) 7-8(ic) 9-10(ic) 10-11(ic) 7-9(pp) 13-14(pp) 13-16(pp) 1-7(na) 7-13(na) </arc>
+	
+	<example name="h28">Please go to the kitchen table and pick up the green cup take it to the dishwasher and put it in the upt-per shelf afterwards close the dishwasher </example>
+	<role name="h28">0.Please(null) 1.go(PREDICATE) 2.to(null) 3.the(WHAT) 4.kitchen(WHAT) 5.table(WHAT) 6.and(null) 7.pick(PREDICATE) 8.up(PREDICATE) 9.the(WHAT) 10.green(WHAT) 11.cup(WHAT) 12.take(PREDICATE) 13.it(WHAT) 14.to(null) 15.the(Where) 16.dishwasher(Where) 17.and(null) 18.put(PREDICATE) 19.it(WHAT) 20.in(null) 21.the(Where) 22.upt-per(Where) 23.shelf(Where) 24.afterwards(When) 25.close(Predicate) 26.the(WHAT) 27.dishwasher(WHAT) </role>
+	<arc name="h28">3-4(ic) 4-5(ic) 1-3(pp) 7-8(ic) 9-10(ic) 10-11(ic) 7-9(pp) 15-16(ic) 12-13(pp) 21-22(ic) 22-23(ic) 18-19(pp) 26-27(ic) 24-25(ic) 1-7(na) 7-12(na) 12-18(na) 18-25(na) 25-26(pp)</arc>
+	
+	<example name="h29">Go to the fridge and open the door take out the orange juice and close the door again bring it to me </example>
+	<role name="h29">0.Go(PREDICATE) 1.to(null) 2.the(Where) 3.fridge(Where) 4.and(null) 5.open(PREDICATE) 6.the(WHAT) 7.door(WHAT) 8.take(PREDICATE) 9.out(PREDICATE) 10.the(WHAT) 11.orange(WHAT) 12.juice(WHAT) 13.and(null) 14.close(PREDICATE) 15.the(WHAT) 16.door(WHAT) 17.again(WHEN) 18.bring(PREDICATE) 19.it(WHAT) 20.to(null) 21.me(WHO) </role>
+	<arc name="h29">2-3(ic) 0-2(pp) 6-7(ic) 5-6(pp) 8-9(ic) 10-11(ic) 11-12(ic) 8-10(pp) 15-16(ic) 14-15(pp) 14-17(pp) 18-19(pp) 18-21(pp) 0-5(na) 5-8(na) 8-14(na) 14-18(na) </arc>
+	
+	<example name="h30">Can you bring me the popcorn from the kitchen table </example>
+	<role name="h30">0.Can(null) 1.you(ACTOR) 2.bring(PREDICATE) 3.me(WHO) 4.the(WHAT) 5.popcorn(WHAT) 6.from(null) 7.the(Where) 8.kitchen(Where) 9.table(Where) </role>
+	<arc name="h30">2-1(pp) 4-5(ic) 2-7(pp) 7-8(ic) 8-9(ic) 2-4(pp) 2-3(pp) </arc>
+
+
+	<example name="h31">Can you put the green cup from the kitchen table in the dishwasher </example>
+	<role name="h31">0.Can(null) 1.you(ACTOR) 2.put(PREDICATE) 3.the(WHAT) 4.green(WHAT) 5.cup(WHAT) 6.from(What) 7.the(WHAT) 8.kitchen(WHAT) 9.table(WHAT) 10.in(null) 11.the(WHERE) 12.dishwasher(WHERE) </role>
+	<arc name="h31">2-1(pp) 3-4(ic) 4-5(ic) 5-6(ic) 6-7(ic) 7-8(ic) 8-9(ic) 2-3(pp) 11-12(ic) 2-11(pp) </arc>
+
+	<example name="h32">Can you bring me the orange juice from the fridge </example>
+	<role name="h32">0.Can(null) 1.you(ACTOR) 2.bring(PREDICATE) 3.me(WHO) 4.the(WHAT) 5.orange(WHAT) 6.juice(WHAT) 7.from(null) 8.the(Where) 9.fridge(Where) </role>
+	<arc name="h32">2-1(pp) 4-5(ic) 5-6(ic) 2-8(pp) 8-9(ic) 2-4(pp) 2-3(pp) </arc>
+
+	<example name="h33">Hey Armar please go to the kitchen table on the right side and hand me the popcorn </example>
+	<role name="h33">0.Hey 1.Armar(ACTOR) 2.please(null) 3.go(PREDICATE) 4.to(null) 5.the(WHAT) 6.kitchen(WHAT) 7.table(WHAT) 8.on(What) 9.the(What) 10.right(What) 11.side(What) 12.and(null) 13.hand(PREDICATE) 14.me(WHO) 15.the(WHAT) 16.popcorn(WHAT) </role>
+	<arc name="h33">3-1(pp) 5-6(ic) 6-7(ic) 7-8(ic) 8-9(ic) 3-5(pp) 9-10(ic) 10-11(ic) 13-1(pp) 15-16(ic) 13-15(pp) 13-14(pp) 3-13(na) </arc>
+
+	<example name="h34">Hey Armar please take the green cup open the dishwasher and put the green cup in the dishwasher and then close the dishwasher again </example>
+	<role name="h34">0.Hey 1.Armar(ACTOR) 2.please 3.take(Predicate) 4.the(WHAT) 5.green(WHAT) 6.cup(WHAT) 7.open(PREDICATE) 8.the(WHAT) 9.dishwasher(WHAT) 10.and(null) 11.put(PREDICATE) 12.the(WHAT) 13.green(WHAT) 14.cup(WHAT) 15.in(null) 16.the(Where) 17.dishwasher(Where) 18.and(null) 19.then(null) 20.close(Predicate) 21.the(WHAT) 22.dishwasher(WHAT) 23.again(HOW) </role>
+	<arc name="h34">3-1(pp) 4-5(ic) 5-6(ic) 3-4(pp) 7-1(pp) 8-9(ic) 7-8(pp) 11-1(pp) 12-13(ic) 13-14(ic) 11-16(pp) 16-17(ic) 11-12(pp) 21-22(ic) 2-7(na) 7-11(na) 11-20(na) 20-21(pp) 20-23(pp)</arc>
+
+	<example name="h35">Hey Armar go to the fridge open the fridge take the orange juice close the fridge and then bring me the orange juice </example>
+	<role name="h35">0.Hey 1.Armar(ACTOR) 2.go(PREDICATE) 3.to(null) 4.the(WHAT) 5.fridge(WHAT) 6.open(PREDICATE) 7.the(WHAT) 8.fridge(WHAT) 9.take(PREDICATE) 10.the(WHAT) 11.orange(WHAT) 12.juice(WHAT) 13.close(Predicate) 14.the(WHAT) 15.fridge(WHAT) 16.and(null) 17.then(WHEN) 18.bring(PREDICATE) 19.me(WHO) 20.the(WHAT) 21.orange(WHAT) 22.juice(WHAT) </role>
+	<arc name="h35">2-1(pp) 4-5(ic) 2-4(pp) 6-1(pp) 7-8(ic) 6-7(pp) 9-0(pp) 10-11(ic) 11-12(ic) 9-10(pp) 14-15(ic) 20-21(ic) 21-22(ic) 18-20(pp) 18-17(pp) 18-19(pp) 2-6(na) 6-9(na) 9-13(na) 13-18(na)</arc>
+
+	<example name="h36">okay go to the kitchen table ehm get the popcorn and bring it to me </example>
+	<role name="h36">0.okay 1.go(PREDICATE) 2.to(null) 3.the(WHAT) 4.kitchen(WHAT) 5.table(WHAT) 6.ehm(null) 7.get(PREDICATE) 8.the(WHAT) 9.popcorn(WHAT) 10.and(null) 11.bring(PREDICATE) 12.it(WHAT) 13.to(null) 14.me(WHO) </role>
+	<arc name="h36">3-4(ic) 4-5(ic) 1-3(pp) 8-9(ic) 7-8(pp) 11-12(pp) 11-14(pp) 1-7(na) 7-11(na) </arc>
+
+	<example name="h37">uhm go to the table uhm take the green cup uhm then go to the dishwasher open the dishwasher uhm put the green green cup ehm in the dishwasher and close the dishwasher </example>
+	<role name="h37">0.uhm 1.go(PREDICATE) 2.to(null) 3.the(WHAT) 4.table(WHAT) 5.uhm(null) 6.take(PREDICATE) 7.the(WHAT) 8.green(WHAT) 9.cup(WHAT) 10.uhm 11.then(WHEN) 12.go(PREDICATE) 13.to(null) 14.the(WHAT) 15.dishwasher(WHAT) 16.open(PREDICATE) 17.the(WHAT) 18.dishwasher(WHAT) 19.uhm 20.put(PREDICATE) 21.the(WHAT) 22.green(WHAT) 23.green(WHAT) 24.cup(WHAT) 25.ehm 26.in(null) 27.the(WHERE) 28.dishwasher(WHERE) 29.and(null) 30.close(PREDICATE) 31.the(WHAT) 32.dishwasher(WHAT) </role>
+	<arc name="h37">3-4(ic) 1-3(pp) 7-8(ic) 8-9(ic) 6-7(pp) 14-15(ic) 12-14(pp) 12-11(pp) 17-18(ic) 16-17(pp) 21-22(ic) 22-23(ic) 23-24(ic) 20-21(pp) 27-28(ic) 20-27(pp) 30-0(pp) 31-32(ic) 30-31(pp) 1-6(na) 6-12(na) 12-16(na) 16-20(na) 20-30(na)</arc>
+
+	<example name="h38">uhm go to to the fridge open the fridge uhm get the orange juice uhm close the fridge uhm bring the orange juice to me </example>
+	<role name="h38">0.uhm(null) 1.go(PREDICATE) 2.to(null) 3.to(null) 4.the(WHAT) 5.fridge(WHAT) 6.open(PREDICATE) 7.the(WHAT) 8.fridge(WHAT) 9.uhm(null) 10.get(PREDICATE) 11.the(WHAT) 12.orange(WHAT) 13.juice(WHAT) 14.uhm(null) 15.close(Predicate) 16.the(WHAT) 17.fridge(WHAT) 18.uhm(WHAT) 19.bring(PREDICATE) 20.the(WHAT) 21.orange(WHAT) 22.juice(WHAT) 23.to(null) 24.me(WHO) </role>
+	<arc name="h38">4-5(ic) 1-4(pp) 7-8(ic) 6-7(pp) 11-12(ic) 12-13(ic) 10-11(pp) 16-17(ic) 17-18(ic) 20-21(ic) 21-22(ic) 19-20(pp) 19-24(pp) 1-6(na) 6-10(na) 10-15(na) 15-19(na)</arc>
+
+	<example name="h39">go to the table in front of the window and take the popcorn and bring it to me </example>
+	<role name="h39">0.go(PREDICATE) 1.to(null) 2.the(WHAT) 3.table(WHAT) 4.in(null) 5.front(WHERE) 6.of(Where) 7.the(WHERE) 8.window(WHERE) 9.and(null) 10.take(PREDICATE) 11.the(WHAT) 12.popcorn(WHAT) 13.and(null) 14.bring(PREDICATE) 15.it(WHAT) 16.to(null) 17.me(WHO) </role>
+	<arc name="h39">2-3(ic) 0-2(pp) 5-6(ic) 6-7(ic) 7-8(ic) 0-5(pp) 11-12(ic) 10-11(pp) 14-15(pp) 14-17(pp) 0-10(na) 10-14(na) </arc>
+
+	<example name="h40">go to the table and take the green cup then bring the cup to the dishwasher first open the dishwasher put the cup inside it and then close the dishwasher </example>
+	<role name="h40">0.go(PREDICATE) 1.to(null) 2.the(WHAT) 3.table(WHAT) 4.and(null) 5.take(PREDICATE) 6.the(WHAT) 7.green(WHAT) 8.cup(WHAT) 9.then(WHEN) 10.bring(PREDICATE) 11.the(WHAT) 12.cup(WHAT) 13.to(null) 14.the(Where) 15.dishwasher(Where) 16.first(WHEN) 17.open(PREDICATE) 18.the(WHAT) 19.dishwasher(WHAT) 20.put(PREDICATE) 21.the(WHAT) 22.cup(WHAT) 23.inside(null) 24.it(WHAT) 25.and(null) 26.then(null) 27.close(Predicate) 28.the(WHAT) 29.dishwasher(WHAT) </role>
+	<arc name="h40">2-3(ic) 0-2(pp) 6-7(ic) 7-8(ic) 5-6(pp) 11-12(ic) 10-14(pp) 14-15(ic) 10-11(pp) 9-16(ic) 10-9(pp) 18-19(ic) 17-18(pp) 21-22(ic) 22-24(ic) 20-21(pp) 28-29(ic) 0-5(na) 5-10(na) 10-17(na) 17-20(na) 20-27(na) 27-28(pp)</arc>
+
+	<example name="h41">go to the fridge open the fridge and take the orange juice bring the orange juice to me please </example>
+	<role name="h41">0.go(PREDICATE) 1.to(null) 2.the(Where) 3.fridge(Where) 4.open(PREDICATE) 5.the(WHAT) 6.fridge(WHAT) 7.and(null) 8.take(PREDICATE) 9.the(WHAT) 10.orange(WHAT) 11.juice(WHAT) 12.bring(PREDICATE) 13.the(WHAT) 14.orange(WHAT) 15.juice(WHAT) 16.to(null) 17.me(WHO) 18.please(null) </role>
+	<arc name="h41">2-3(ic) 0-2(pp) 5-6(ic) 4-5(pp) 9-10(ic) 10-11(ic) 8-9(pp) 13-14(ic) 14-15(ic) 12-13(pp) 12-17(pp) 0-4(na) 4-8(na) 8-12(na) </arc>
+
+	<example name="h42">hey armar go to the table grab the popcorn and bring it to me </example>
+	<role name="h42">0.hey 1.armar(ACTOR) 2.go(PREDICATE) 3.to(null) 4.the(WHAT) 5.table(WHAT) 6.grab(PREDICATE) 7.the(WHAT) 8.popcorn(WHAT) 9.and(null) 10.bring(PREDICATE) 11.it(WHAT) 12.to(null) 13.me(WHO) </role>
+	<arc name="h42">2-1(pp) 4-5(ic) 2-4(pp) 6-0(pp) 7-8(ic) 6-7(pp) 10-0(pp) 10-11(pp) 10-13(pp) 2-6(na) 6-10(na) </arc>
+
+	<example name="h43">hey armar go to the table grab the green cup and put it in the dishwasher </example>
+	<role name="h43">0.hey 1.armar(ACTOR) 2.go(PREDICATE) 3.to(null) 4.the(WHAT) 5.table(WHAT) 6.grab(PREDICATE) 7.the(WHAT) 8.green(WHAT) 9.cup(WHAT) 10.and(null) 11.put(PREDICATE) 12.it(WHAT) 13.in(null) 14.the(Where) 15.dishwasher(Where) </role>
+	<arc name="h43">2-1(pp) 4-5(ic) 2-4(pp) 6-1(pp) 7-8(ic) 8-9(ic) 6-7(pp) 11-1(pp) 11-14(pp) 14-15(ic) 11-12(pp) 2-6(na) 6-11(na) </arc>
+
+	<example name="h44">hey armar go to the fridge open the fridge take the orange juice close the fridge and bring the orange juice to me </example>
+	<role name="h44">0.hey 1.armar(ACTOR) 2.go(PREDICATE) 3.to(null) 4.the(WHAT) 5.fridge(WHAT) 6.open(PREDICATE) 7.the(WHAT) 8.fridge(WHAT) 9.take(PREDICATE) 10.the(WHAT) 11.orange(WHAT) 12.juice(WHAT) 13.close(Predicate) 14.the(WHAT) 15.fridge(WHAT) 16.and(null) 17.bring(PREDICATE) 18.the(WHAT) 19.orange(WHAT) 20.juice(WHAT) 21.to(null) 22.me(WHO) </role>
+	<arc name="h44">2-1(pp) 4-5(ic) 2-4(pp) 6-1(pp) 7-8(ic) 6-7(pp) 9-1(pp) 10-11(ic) 11-12(ic) 9-10(pp) 14-15(ic) 18-19(ic) 19-20(ic) 17-18(pp) 17-22(pp) 2-6(na) 6-9(na) 9-13(na) 13-14(pp) 14-17(na)</arc>
+
+	<example name="h45">go to the table and grab the popcorn bag </example>
+	<role name="h45">0.go(PREDICATE) 1.to(null) 2.the(WHAT) 3.table(WHAT) 4.and(null) 5.grab(PREDICATE) 6.the(WHAT) 7.popcorn(WHAT) 8.bag(WHAT) </role>
+	<arc name="h45">2-3(ic) 0-2(pp) 6-7(ic) 7-8(ic) 5-6(pp) 0-5(na) </arc>
+
+	<example name="h46">go to the table grab the green cup turn and go to the dishwasher if it is closed please open it find a free place put the greeen cup into it and close the dishwasher </example>
+	<role name="h46">0.go(PREDICATE) 1.to(null) 2.the(Where) 3.table(Where) 4.grab(PREDICATE) 5.the(WHAT) 6.green(WHAT) 7.cup(WHAT) 8.turn(Predicate) 9.and(null) 10.go(PREDICATE) 11.to(null) 12.the(Where) 13.dishwasher(Where) 14.if(null) 15.it 16.is(null) 17.closed(null) 18.please 19.open(PREDICATE) 20.it(WHAT) 21.find(PREDICATE) 22.a(WHAT) 23.free(WHAT) 24.place(WHAT) 25.put(PREDICATE) 26.the(WHAT) 27.greeen(WHAT) 28.cup(WHAT) 29.into(null) 30.it(Where) 31.and(null) 32.close(PREDICATE) 33.the(WHAT) 34.dishwasher(WHAT) </role>
+	<arc name="h46">2-3(ic) 0-2(pp) 5-6(ic) 6-7(ic) 4-5(pp) 12-13(ic) 10-12(pp) 19-20(pp) 22-23(ic) 23-24(ic) 21-22(pp) 26-27(ic) 27-28(ic) 25-30(pp) 25-26(pp) 33-34(ic) 32-33(pp) 0-4(na) 4-8(na) 8-10(na) 19-21(na) 21-25(na) 25-32(na) </arc>
+
+	<example name="h47">go to the table grab the green cup turn and go to the dishwasher open it if it is closed find a free place and put the greeen cup into it </example>
+	<role name="h47">0.go(PREDICATE) 1.to(null) 2.the(Where) 3.table(Where) 4.grab(PREDICATE) 5.the(WHAT) 6.green(WHAT) 7.cup(WHAT) 8.turn(null) 9.and(null) 10.go(PREDICATE) 11.to(null) 12.the(WHAT) 13.dishwasher(WHAT) 14.open(PREDICATE) 15.it(WHAT) 16.if(null) 17.it(WHAT) 18.is(null) 19.closed(null) 20.find(PREDICATE) 21.a(WHAT) 22.free(WHAT) 23.place(WHAT) 24.and(null) 25.put(PREDICATE) 26.the(WHAT) 27.greeen(WHAT) 28.cup(WHAT) 29.into(null) 30.it(WHAT) </role>
+	<arc name="h47">2-3(ic) 0-2(pp) 5-6(ic) 6-7(ic) 4-5(pp) 12-13(ic) 10-12(pp) 14-15(pp) 21-22(ic) 22-23(ic) 20-21(pp) 26-27(ic) 27-28(ic) 28-30(ic) 25-26(pp) 0-4(na) 10-14(na) 20-25(na) </arc>
+
+	<example name="h48">go to the fridge open it if its closed searched the orange juice and grab it pull it out of the fridge and close the door </example>
+	<role name="h48">0.go(PREDICATE) 1.to(null) 2.the(WHAT) 3.fridge(WHAT) 4.open(PREDICATE) 5.it(WHAT) 6.if(null) 7.it(null) 8.s(null) 9.closed(null) 10.searched(PREDICATE) 11.the(WHAT) 12.orange(WHAT) 13.juice(WHAT) 14.and(null) 15.grab(PREDICATE) 16.it(WHAT) 17.pull(PREDICATE) 18.it(WHAT) 19.out(null) 20.of(null) 21.the(Where) 22.fridge(Where) 23.and(null) 24.close(PREDICATE) 25.the(WHAT) 26.door(WHAT) </role>
+	<arc name="h48">2-3(ic) 0-2(pp) 4-5(pp) 11-12(ic) 12-13(ic) 10-11(pp) 15-16(pp) 17-21(pp) 21-22(ic) 17-18(pp) 25-26(ic) 24-25(pp) 0-4(na) 10-15(na) 15-17(na) 17-24(na) </arc>
+
+	<example name="h49">Armar go to the table and give me the popcorn bag </example>
+	<role name="h49">0.Armar(ACTOR) 1.go(PREDICATE) 2.to(null) 3.the(Where) 4.table(Where) 5.and(null) 6.give(PREDICATE) 7.me(WHO) 8.the(WHAT) 9.popcorn(WHAT) 10.bag(WHAT) </role>
+	<arc name="h49">1-0(pp) 3-4(ic) 1-3(pp) 6-0(pp) 8-9(ic) 9-10(ic) 6-8(pp) 6-7(pp) 1-6(na) </arc>
+
+	<example name="h50">Armar go to the table take the green cup put it into the dishwasher close the dishwasher </example>
+	<role name="h50">0.Armar(ACTOR) 1.go(PREDICATE) 2.to(null) 3.the(WHAT) 4.table(WHAT) 5.take(PREDICATE) 6.the(WHAT) 7.green(WHAT) 8.cup(WHAT) 9.put(PREDICATE) 10.it(WHAT) 11.into(null) 12.the(Where) 13.dishwasher(Where) 14.close(null) 15.the(WHAT) 16.dishwasher(WHAT) </role>
+	<arc name="h50">1-0(pp) 3-4(ic) 1-3(pp) 5-0(pp) 6-7(ic) 7-8(ic) 5-6(pp) 9-0(pp) 9-12(pp) 12-13(ic) 9-10(pp) 15-16(ic) 1-5(na) 5-9(na) </arc>
+
+
+	<example name="h51">Armar go to the fridge uhm take the orange juice from it and give it to me </example>
+	<role name="h51">0.Armar(ACTOR) 1.go(PREDICATE) 2.to(null) 3.the(WHAT) 4.fridge(WHAT) 5.uhm(null) 6.take(PREDICATE) 7.the(WHAT) 8.orange(WHAT) 9.juice(WHAT) 10.from(null) 11.it(Where) 12.and(null) 13.give(PREDICATE) 14.it(WHAT) 15.to(null) 16.me(WHO) </role>
+	<arc name="h51">1-0(pp) 3-4(ic) 1-3(pp) 6-0(pp) 7-8(ic) 8-9(ic) 6-11(pp) 6-7(pp) 13-0(pp) 13-14(pp) 13-16(pp) 1-6(na) 6-13(na) </arc>
+
+	<example name="h52">Armar would you please pass me the popcorn </example>
+	<role name="h52">0.Armar(WHO) 1.would(null) 2.you(WHO) 3.please() 4.pass(Predicate) 5.me(WHO) 6.the(WHAT) 7.popcorn(WHAT) </role>
+	<arc name="h52">6-7(ic) 4-6(pp) 0-2(ic) 2-5(ic) 4-0(pp) </arc>
+
+	<example name="h53">Armar could you please clean up the the table and put the green cup in the dishwasher </example>
+	<role name="h53">0.Armar() 1.could(null) 2.you(ACTOR) 3.please() 4.clean(PREDICATE) 5.up(PREDICATE) 6.the(WHAT) 7.the(WHAT) 8.table(WHAT) 9.and(null) 10.put(PREDICATE) 11.the(WHAT) 12.green(WHAT) 13.cup(WHAT) 14.in(null) 15.the(Where) 16.dishwasher(Where) </role>
+	<arc name="h53">4-2(pp) 4-5(ic) 6-7(ic) 7-8(ic) 4-6(pp) 4-2(pp) 10-2(pp) 11-12(ic) 12-13(ic) 10-15(p) 15-16(ic) 10-11(pp) 4-10(na) </arc>
+
+	<example name="h54">Armar could you bring me the orange juice its stored in the fridge </example>
+	<role name="h54">0.Armar(ACTOR) 1.could(null) 2.you(ACTOR) 3.bring(PREDICATE) 4.me(WHO) 5.the(WHAT) 6.orange(WHAT) 7.juice(WHAT) 8.it(ACTOR) 9.s(Predicate) 10.stored(PREDICATE) 11.in(null) 12.the(WHERE) 13.fridge(WHERE) </role>
+	<arc name="h54">0-2(ic) 2-8(ic) 3-0(pp) 5-6(ic) 6-7(ic) 3-5(pp) 3-4(pp) 0-2(ic) 2-8(ic) 9-8(pp) 12-13(ic) 9-12(pp) 3-9(na) </arc>
+
+	<example name="h55">go to the table take the popcorn give it to me </example>
+	<role name="h55">0.go(PREDICATE) 1.to(null) 2.the(Where) 3.table(Where) 4.take(PREDICATE) 5.the(WHAT) 6.popcorn(WHAT) 7.give(PREDICATE) 8.it(WHAT) 9.to(null) 10.me(WHO) </role>
+	<arc name="h55">2-3(ic) 0-2(pp) 5-6(ic) 4-5(pp) 7-8(pp) 7-10(pp) 0-4(na) 4-7(na) </arc>
+
+	<example name="h56">dear Armar could you go to the table take the green cup and put it in the dishwasher please close the door </example>
+	<role name="h56">0.dear() 1.Armar() 2.could(null) 3.you(Actor) 4.go(PREDICATE) 5.to(null) 6.the(WHAT) 7.table(WHAT) 8.take(PREDICATE) 9.the(WHAT) 10.green(WHAT) 11.cup(WHAT) 12.and(null) 13.put(PREDICATE) 14.it(WHAT) 15.in(null) 16.the(Where) 17.dishwasher(Where) 18.please() 19.close(Predicate) 20.the(WHAT) 21.door(WHAT) </role>
+	<arc name="h56">6-7(ic) 4-0(pp) 4-3(pp) 9-10(ic) 10-11(ic) 8-9(pp) 13-16(pp) 16-17(ic) 13-14(pp) 20-21(ic) 19-20(pp) 4-8(na) 8-13(na) 13-19(na) </arc>
+
+	<example name="h57">hello Armar could you go to the table and take the green cup please put it in the dishwasher and close it </example>
+	<role name="h57">0.hello(null) 1.Armar(Actor) 2.could(null) 3.you(Actor) 4.go(PREDICATE) 5.to(null) 6.the(WHAT) 7.table(WHAT) 8.and(null) 9.take(PREDICATE) 10.the(WHAT) 11.green(WHAT) 12.cup(WHAT) 13.please(null) 14.put(PREDICATE) 15.it(WHAT) 16.in(null) 17.the(Where) 18.dishwasher(Where) 19.and(null) 20.close(PREDICATE) 21.it(WHAT) </role>
+	<arc name="h57">6-7(ic) 4-6(pp) 1-3(ic) 4-1(pp) 10-11(ic) 11-12(ic) 9-10(pp) 14-17(pp) 17-18(ic) 14-15(pp) 20-21(pp) 4-9(na) 9-14(na) 14-20(na) </arc>
+
+	<example name="h58">Armar go to the fridge open the door take a orange juice close the door and take it to me </example>
+	<role name="h58">0.Armar(ACTOR) 1.go(PREDICATE) 2.to(null) 3.the(WHAT) 4.fridge(WHAT) 5.open(PREDICATE) 6.the(WHAT) 7.door(WHAT) 8.take(PREDICATE) 9.a(WHAT) 10.orange(WHAT) 11.juice(WHAT) 12.close(null) 13.the(WHAT) 14.door(WHAT) 15.and(null) 16.take(PREDICATE) 17.it(WHAT) 18.to(null) 19.me(WHO) </role>
+	<arc name="h58">1-0(pp) 3-4(ic) 1-3(pp) 5-0(pp) 6-7(ic) 5-6(pp) 8-0(pp) 9-10(ic) 10-11(ic) 8-9(pp) 13-14(ic) 16-17(pp) 16-19(pp) 1-5(na) 5-8(na) </arc>
+
+	<example name="h59">can you please give me the popcorn its uhm in front of you on the table </example>
+	<role name="h59">0.can(null) 1.you(ACTOR) 2.please() 3.give(Predicate) 4.me(WHO) 5.the(WHAT) 6.popcorn(WHAT) 7.it(Actor) 8.s(Predicate) 9.uhm(null) 10.in(null) 11.front() 12.of(null) 13.you() 14.on(null) 15.the(Where) 16.table(Where) </role>
+	<arc name="h59">3-1(pp) 5-6(ic) 6-7(ic) 3-5(pp) 3-4(pp) 11-15(ic) 15-16(ic) 3-8(na) 8-7(pp) 15-16(ic) 8-15(pp)</arc>
+
+	<example name="h60">can you please take the green cup from the table and put it in the dishwasher </example>
+	<role name="h60">0.can(null) 1.you(Actor) 2.please(PREDICATE) 3.take(Predicate) 4.the(WHAT) 5.green(WHAT) 6.cup(WHAT) 7.from(null) 8.the(Where) 9.table(Where) 10.and(null) 11.put(PREDICATE) 12.it(WHAT) 13.in(null) 14.the(Where) 15.dishwasher(Where) </role>
+	<arc name="h60">2-3(ic) 4-5(ic) 5-6(ic) 3-8(pp) 8-9(ic) 2-4(pp) 2-1(pp) 11-14(pp) 14-15(ic) 11-12(pp) 2-11(na) </arc>
+
+	<example name="h61">please handle me the orange juice from the fridge </example>
+	<role name="h61">0.please() 1.handle(PREDICATE) 2.me(WHO) 3.the(WHAT) 4.orange(WHAT) 5.juice(WHAT) 6.from(null) 7.the() 8.fridge() </role>
+	<arc name="h61">3-4(ic) 4-5(ic) 1-3(pp) 1-2(pp) </arc>
+
+	<example name="h62">hey Armar go and get the popcorn bag for me please </example>
+	<role name="h62">0.hey(null) 1.Armar(Actor) 2.go(PREDICATE) 3.and(null) 4.get(PREDICATE) 5.the(WHAT) 6.popcorn(WHAT) 7.bag(WHAT) 8.for(null) 9.me(WHO) 10.please(null) </role>
+	<arc name="h62">5-6(ic) 6-7(ic) 4-5(pp) 4-9(pp) 2-4(na) 2-1(pp) 4-1(pp)</arc>
+
+	<example name="h63">Armar put the green cup into the dishwasher </example>
+	<role name="h63">0.Armar(ACTOR) 1.put(PREDICATE) 2.the(WHAT) 3.green(WHAT) 4.cup(WHAT) 5.into(null) 6.the(Where) 7.dishwasher(Where) </role>
+	<arc name="h63">1-0(pp) 2-3(ic) 3-4(ic) 1-6(pp) 6-7(ic) 1-2(pp) </arc>
+
+	<example name="h64">Armar go to the fridge and get me orange juice </example>
+	<role name="h64">0.Armar(ACTOR) 1.go(PREDICATE) 2.to(null) 3.the(WHAT) 4.fridge(WHAT) 5.and(null) 6.get(PREDICATE) 7.me(WHO) 8.orange(WHAT) 9.juice(WHAT) </role>
+	<arc name="h64">1-0(pp) 3-4(ic) 1-3(pp) 6-0(pp) 8-9(ic) 6-8(pp) 6-7(pp) 1-6(na) </arc>
+
+	<example name="h65">can you bring me the popcorn from the table </example>
+	<role name="h65">0.can(null) 1.you(ACTOR) 2.bring(PREDICATE) 3.me(WHO) 4.the(WHAT) 5.popcorn(WHAT) 6.from(null) 7.the(Where) 8.table(Where) </role>
+	<arc name="h65">2-1(pp) 4-5(ic) 2-7(pp) 7-8(ic) 2-4(pp) 2-3(pp) </arc>
+
+	<example name="h66">can you put the green cup into the dishwasher </example>
+	<role name="h66">0.can(null) 1.you(ACTOR) 2.put(PREDICATE) 3.the(WHAT) 4.green(WHAT) 5.cup(WHAT) 6.into(null) 7.the(Where) 8.dishwasher(Where) </role>
+	<arc name="h66">2-1(pp) 3-4(ic) 4-5(ic) 2-7(pp) 7-8(ic) 2-3(pp) </arc>
+
+	<example name="h67">can you bring me the orange juice from the fridge </example>
+	<role name="h67">0.can(null) 1.you(ACTOR) 2.bring(PREDICATE) 3.me(WHO) 4.the(WHAT) 5.orange(WHAT) 6.juice(WHAT) 7.from(null) 8.the(Where) 9.fridge(Where) </role>
+	<arc name="h67">2-1(pp) 4-5(ic) 5-6(ic) 2-8(pp) 8-9(ic) 2-4(pp) 2-3(pp) </arc>
+
+	<example name="h68">hello Armar uhm I need some popcorn could you please go to the table grab the popcorn box turn to turn to me and then come back and hand it to me</example>
+	<role name="h68">0.hello() 1.Armar() 2.uhm() 3.I(ACTOR) 4.need(PREDICATE) 5.some(WHAT) 6.popcorn(WHAT) 7.could(null) 8.you(WHO) 9.please(null) 10.go(PREDICATE) 11.to(null) 12.the(WHAT) 13.table(WHAT) 14.grab(PREDICATE) 15.the(WHAT) 16.popcorn(WHAT) 17.box(WHAT) 18.turn(PREDICATE) 19.to(PREDICATE) 20.turn(PREDICATE) 21.to(null) 22.me(WHO) 23.and(null) 24.then(WHEN) 25.come(PREDICATE) 26.back(HOW) 27.and(null) 28.hand(Predicate) 29.it(WHAT) 30.to(null) 31.me(WHO)</role>
+	<arc name="h68">4-3(pp) 5-6(ic) 4-5(pp) 4-8(pp) 10-3(pp) 12-13(ic) 10-12(pp) 14-3(pp) 15-16(ic) 16-17(ic) 14-15(pp) 18-3(pp) 18-19(ic) 20-3(pp) 20-22(pp) 25-3(pp) 25-24(pp) 25-26(pp) 28-3(pp) 28-29(pp) 28-31(pp) 4-10(na) 10-14(na) 14-18(na) 18-20(na) 20-25(na) 25-28(na) </arc>
+
+	<example name="h69">Hi Armar could you please go to the table and find the green cup it s between the boxes then please go grab the green cup and then go to the dishwasher and put it inside it but be careful put it eh with the upside down because it otherwise it wont be clean and then eh close the dishwasher and turn it on </example>
+	<role name="h69">0.Hi() 1.Armar(WHO) 2.could(null) 3.you(WHO) 4.please(PREDICATE) 5.go(PREDICATE) 6.to(null) 7.the(WHAT) 8.table(WHAT) 9.and(null) 10.find(PREDICATE) 11.the(WHAT) 12.green(WHAT) 13.cup(WHAT) 14.it() 15.s(null) 16.between(null) 17.the() 18.boxes() 19.then(HOW) 20.please(null) 21.go(PREDICATE) 22.grab(PREDICATE) 23.the(WHAT) 24.green(WHAT) 25.cup(WHAT) 26.and(null) 27.then(WHEN) 28.go(PREDICATE) 29.to(null) 30.the(WHAT) 31.dishwasher(WHAT) 32.and(null) 33.put(PREDICATE) 34.it(WHAT) 35.inside(null) 36.it(Where) 37.but(null) 38.be(null) 39.careful() 40.put(PREDICATE) 41.it(WHAT) 42.eh() 43.with(null) 44.the(How) 45.upside(How) 46.down(How) 47.because(null) 48.it() 49.otherwise() 50.it() 51.wont(null) 52.be(null) 53.clean() 54.and(null) 55.then(WHEN) 56.eh() 57.close(Predicate) 58.the(WHAT) 59.dishwasher(WHAT) 60.and(null) 61.turn(PREDICATE) 62.it(WHAT) 63.on(null) </role>
+	<arc name="h69">4-5(ic) 7-8(ic) 4-7(pp) 1-3(ic) 4-1(pp) 11-12(ic) 12-13(ic) 10-11(pp) 21-19(pp) 23-24(ic) 24-25(ic) 22-23(pp) 30-31(ic) 28-30(pp) 28-27(pp) 33-36(pp) 33-34(pp) 40-44(pp) 44-45(ic) 40-41(pp) 53-58(ic) 58-59(ic) 56-53(pp) 57-55(pp) 56-49(pp) 61-50(pp) 61-62(pp) 4-10(na) 21-22(na) 22-28(na) 28-33(na) 40-57(na) 57-61(na) </arc>
+
+
+	<example name="h70">Armar eh please go to the table find the green cup ehm it s between the boxes then grab it go to the dishwasher and put the cup inside and then eh close the dishwasher turn it on </example>
+	<role name="h70">0.Armar(Actor) 1.eh() 2.please(null) 3.go(PREDICATE) 4.to(null) 5.the(WHAT) 6.table(WHAT) 7.find(PREDICATE) 8.the(WHAT) 9.green(WHAT) 10.cup(WHAT) 11.ehm() 12.it() 13.s(null) 14.between(null) 15.the() 16.boxes() 17.then(WHEN) 18.grab(PREDICATE) 19.it(WHAT) 20.go(PREDICATE) 21.to(null) 22.the(Where) 23.dishwasher(Where) 24.and(null) 25.put(PREDICATE) 26.the(WHAT) 27.cup(WHAT) 28.inside(Where) 29.and(null) 30.then(WHEN) 31.eh() 32.close(Predicate) 33.the(WHAT) 34.dishwasher(WHAT) 35.turn(Predicate) 36.it(WHAT) 37.on(null) </role>
+	<arc name="h70">5-6(ic) 3-5(pp) 3-0(pp) 8-9(ic) 9-10(ic) 7-8(pp) 18-19(pp) 18-17(pp) 22-23(ic) 20-22(pp) 26-27(ic) 25-26(pp) 25-28(pp) 33-34(ic) 34-36(ic) 32-33(pp) 32-30(pp) 3-7(na) 18-20(na) 20-25(na) 25-32(na) 32-35(na) 35-36(pp)</arc>
+
+	<example name="h71">Armar Im thursty please go to the fridge open it eh and scan for the orange juice it should be in front of you then grab it then close the fridge and eh turn over and come here and hand it to me</example>
+	<role name="h71">0.Armar() 1.I() 2.m() 3.thursty() 4.please(null) 5.go(PREDICATE) 6.to(null) 7.the(WHAT) 8.fridge(WHAT) 9.open(PREDICATE) 10.it(WHAT) 11.eh() 12.and(null) 13.scan(PREDICATE) 14.for(null) 15.the(WHAT) 16.orange(WHAT) 17.juice(WHAT) 18.it() 19.should(null) 20.be(null) 21.in(null) 22.front() 23.of(null) 24.you() 25.then(WHEN) 26.grab(PREDICATE) 27.it(WHAT) 28.then(WHEN) 29.close(PREDICATE) 30.the(WHAT) 31.fridge(WHAT) 32.and(null) 33.eh(null) 34.turn(PREDICATE) 35.over(PREDICATE) 36.and(null) 37.come(PREDICATE) 38.here(HOW) 39.and(null) 40.hand(Predicate) 41.it(WHAT) 42.to(null) 43.me(WHO) </role>
+	<arc name="h71">7-8(ic) 5-7(pp) 9-10(pp) 15-16(ic) 16-17(ic) 13-15(pp) 26-27(pp) 26-25(pp) 30-31(ic) 29-30(pp) 29-28(pp) 34-35(ic) 37-38(pp) 5-9(na) 9-13(na) 26-29(na) 29-34(na) 34-37(na) 37-40(na)</arc>
+
+	<example name="h72">Hey Armar i need some popcorn could you please bring me some popcorn thank you </example>
+	<role name="h72">0.Hey() 1.Armar() 2.i(ACTOR) 3.need(PREDICATE) 4.some(WHAT) 5.popcorn(WHAT) 6.could(null) 7.you(Actor) 8.please(PREDICATE) 9.bring(PREDICATE) 10.me(WHO) 11.some(WHAT) 12.popcorn(WHAT) 13.thank() 14.you() </role>
+	<arc name="h72">3-2(pp) 4-5(ic) 3-4(pp) 3-7(pp) 8-7(pp) 8-9(ic) 11-12(ic) 8-11(pp) 8-10(pp) 3-8(na) </arc>
+
+	<example name="h73">Hey armar could you please put the green cup from the table into the dishwasher and turn it on thank you </example>
+	<role name="h73">0.Hey() 1.armar() 2.could(null) 3.you(ACTOR) 4.please(PREDICATE) 5.put(PREDICATE) 6.the(WHAT) 7.green(WHAT) 8.cup(WHAT) 9.from(What) 10.the(WHAT) 11.table(WHAT) 12.into(null) 13.the(WHAT) 14.dishwasher(WHAT) 15.and(null) 16.turn(PREDICATE) 17.it(WHAT) 18.on(null) 19.thank() 20.you() </role>
+	<arc name="h73">4-3(pp) 4-5(ic) 6-7(ic) 7-8(ic) 8-9(ic) 9-10(ic) 10-11(ic) 11-13(ic) 13-14(ic) 16-3(pp) 16-17(pp) 4-16(na) </arc>
+
+	<example name="h74">Hey armar i m thirsty could you bring me some orange juice from the fridge thank you </example>
+	<role name="h74">0.Hey() 1.armar() 2.i() 3.m() 4.thirsty() 5.could(null) 6.you(Actor) 7.bring(PREDICATE) 8.me(WHO) 9.some(WHAT) 10.orange(WHAT) 11.juice(WHAT) 12.from(null) 13.the(Where) 14.fridge(Where) 15.thank(PREDICATE) 16.you(WHO) </role>
+	<arc name="h74">9-10(ic) 10-11(ic) 11-13(ic) 13-14(ic) 7-9(pp) 7-8(pp) 15-16(pp) 7-15(na) 7-6(pp)</arc>
+
+	<example name="h75">Hello Armar bring me the popcorn bag from the table </example>
+	<role name="h75">0.Hello() 1.Armar(ACTOR) 2.bring(PREDICATE) 3.me(WHO) 4.the(WHAT) 5.popcorn(WHAT) 6.bag(WHAT) 7.from(What) 8.the(WHAT) 9.table(WHAT) </role>
+	<arc name="h75">2-1(pp) 4-5(ic) 5-6(ic) 6-7(ic) 7-8(ic) 8-9(ic) 2-4(pp) 2-3(pp) </arc>
+
+	<example name="h76">Hello Armar put the green cup from the into the dishwasher and close the dishwasher </example>
+	<role name="h76">0.Hello() 1.Armar(ACTOR) 2.put(PREDICATE) 3.the(WHAT) 4.green(WHAT) 5.cup(WHAT) 6.from(null) 7.the() 8.into(null) 9.the(Where) 10.dishwasher(Where) 11.and(null) 12.close(PREDICATE) 13.the(WHAT) 14.dishwasher(WHAT) </role>
+	<arc name="h76">2-1(pp) 3-4(ic) 4-5(ic) 2-9(pp) 9-10(ic) 2-3(pp) 12-1(pp) 13-14(ic) 12-13(pp) 2-12(na)</arc>
+
+	<example name="h77">Hello Armar open the fridge and bring me the orange juice After that go to the fridge and close the fridge </example>
+	<role name="h77">0.Hello() 1.Armar(ACTOR) 2.open(PREDICATE) 3.the(WHAT) 4.fridge(WHAT) 5.and(null) 6.bring(PREDICATE) 7.me(Who) 8.the(WHAT) 9.orange(WHAT) 10.juice(WHAT) 11.After(null) 12.that(WHAT) 13.go(PREDICATE) 14.to(null) 15.the(WHAT) 16.fridge(WHAT) 17.and(null) 18.close(PREDICATE) 19.the(WHAT) 20.fridge(WHAT) </role>
+	<arc name="h77">2-1(pp) 6-1(pp) 3-4(ic) 2-3(pp) 6-7(pp) 8-9(ic) 9-10(ic) 6-8(pp) 13-1(pp) 12-15(ic) 15-16(ic) 13-12(pp) 19-20(ic) 18-19(pp) 2-6(na) 6-13(na) 13-18(na) </arc>
+
+	<example name="h78">Armar bring me the popcorn which is on the table please </example>
+	<role name="h78">0.Armar(ACTOR) 1.bring(PREDICATE) 2.me(WHO) 3.the(WHAT) 4.popcorn(WHAT) 5.which() 6.is(null) 7.on(null) 8.the() 9.table() 10.please(null) </role>
+	<arc name="h78">1-0(pp) 3-4(ic) 1-3(pp) 1-2(pp)</arc>
+
+	<example name="h79">Armar take the green cup and put it into the dishwasher and the close the dishwasher please</example>
+	<role name="h79">0.Armar(ACTOR) 1.take(PREDICATE) 2.the(WHAT) 3.green(WHAT) 4.cup(WHAT) 5.and(null) 6.put(PREDICATE) 7.it(WHAT) 8.into(null) 9.the(Where) 10.dishwasher(Where) 11.and(null) 12.the() 13.close(Predicate) 14.the(WHAT) 15.dishwasher(WHAT) 16.please(null) </role>
+	<arc name="h79">1-0(pp) 2-3(ic) 3-4(ic) 1-2(pp) 6-0(pp) 6-9(pp) 9-10(ic) 6-7(pp) 12-13(ic)  14-15(ic) 1-6(na) 6-13(na) </arc>
+
+	<example name="h80">armar open the fridge and take the orange juice afterwards close the fridge and bring me the orange juice </example>
+	<role name="h80">0.armar(Actor) 1.open(Predicate) 2.the(WHAT) 3.fridge(WHAT) 4.and(null) 5.take(PREDICATE) 6.the(WHAT) 7.orange(WHAT) 8.juice(WHAT) 9.afterwards(WHEN) 10.close(Predicate) 11.the(What) 12.fridge(What) 13.and(null) 14.bring(PREDICATE) 15.me(ACTOR) 16.the(WHAT) 17.orange(WHAT) 18.juice(WHAT) </role>
+	<arc name="h80">1-0(pp) 1-5(na) 1-2(pp) 2-3(ic) 10-11(pp) 11-12(ic) 5-10(pp) 6-7(ic) 7-8(ic) 5-6(pp) 5-9(pp) 14-15(pp) 16-17(ic) 17-18(ic) 14-16(pp) 5-10(na) 10-14(na)</arc>
+
+
+	
+	<example name="h81">Hello Robot bring me the popcorn </example>
+	<role name="h81">0.Hello() 1.Robot(ACTOR) 2.bring(PREDICATE) 3.me(WHO) 4.the(WHAT) 5.popcorn(WHAT) </role>
+	<arc name="h81">2-1(pp) 4-5(ic) 2-4(pp) 2-3(pp) </arc>
+
+	<example name="h82">Close the dishwasher and bring me the green cup </example>
+	<role name="h82">0.Close(Predicate) 1.the(WHAT) 2.dishwasher(WHAT) 3.and(null) 4.bring(PREDICATE) 5.me(WHO) 6.the(WHAT) 7.green(WHAT) 8.cup(WHAT) </role>
+	<arc name="h82">0-1(pp) 1-2(ic) 6-7(ic) 7-8(ic) 4-6(pp) 4-5(pp) 0-4(na)</arc>
+
+	<example name="h83">Bring me the orange juice </example>
+	<role name="h83">0.Bring(PREDICATE) 1.me(WHO) 2.the(WHAT) 3.orange(WHAT) 4.juice(WHAT) </role>
+	<arc name="h83">2-3(ic) 3-4(ic) 0-2(pp) 0-1(pp) </arc>
+
+	<example name="h84">Hello Armar please bring me the popcorn from the table </example>
+	<role name="h84">0.Hello() 1.Armar(ACTOR) 2.please(null) 3.bring(PREDICATE) 4.me(WHO) 5.the(WHAT) 6.popcorn(WHAT) 7.from(What) 8.the(WHAT) 9.table(WHAT) </role>
+	<arc name="h84">3-1(pp) 5-6(ic) 6-7(ic) 7-8(ic) 8-9(ic) 3-5(pp) 3-4(pp) </arc>
+
+	<example name="h85">Hello Armar please put the green cup into the dishwasher please close the dishwasher </example>
+	<role name="h85">0.Hello() 1.Armar(ACTOR) 2.please() 3.put(PREDICATE) 4.the(WHAT) 5.green(WHAT) 6.cup(WHAT) 7.into(null) 8.the(WHAT) 9.dishwasher(WHAT) 10.please() 11.close(Predicate) 12.the(WHAT) 13.dishwasher(WHAT) </role>
+	<arc name="h85">3-1(pp) 4-5(ic) 5-6(ic) 6-8(ic) 8-9(ic) 3-4(pp) 11-1(pp) 12-13(ic) 11-12(pp) 3-11(na) </arc>
+
+	<example name="h86">Hello Armar please open the fridge and bring me the orange juice </example>
+	<role name="h86">0.Hello() 1.Armar(ACTOR) 2.please() 3.open(PREDICATE) 4.the(WHAT) 5.fridge(WHAT) 6.and(null) 7.bring(PREDICATE) 8.me(ACTOR) 9.the(WHAT) 10.orange(WHAT) 11.juice(WHAT) </role>
+	<arc name="h86">3-1(pp) 4-5(ic) 2-4(pp) 7-8(pp) 9-10(ic) 10-11(ic) 7-9(pp) 3-7(na) </arc>
+
+	<example name="h87">Amar could you please bring me the popcorn which is on the left side of the green cup Thank you </example>
+	<role name="h87">0.Amar(ACTOR) 1.could(null) 2.you(ACTOR) 3.please() 4.bring(PREDICATE) 5.me(WHO) 6.the(WHAT) 7.popcorn(WHAT) 8.which(WHAT) 9.is(What) 10.on(What) 11.the(WHAT) 12.left(WHAT) 13.side(WHAT) 14.of(What) 15.the(WHAT) 16.green(WHAT) 17.cup(WHAT) 18.Thank() 19.you() </role>
+	<arc name="h87">0-2(ic) 4-0(pp) 6-7(ic) 7-8(ic) 4-6(pp) 4-5(pp) 11-12(ic) 12-13(ic) 13-14(ic) 14-15(ic) 15-16(ic) 16-17(ic) </arc>
+
+	<example name="h88">Armar i need all my cups tonight for the party so please also place the green cup from the table into the dishwasher and switch it on but do nt forget to close the dishwasher before okay </example>
+	<role name="h88">0.Armar() 1.i(ACTOR) 2.need(PREDICATE) 3.all(WHAT) 4.my(WHAT) 5.cups(WHAT) 6.tonight(When) 7.for(null) 8.the(WHERE) 9.party(WHERE) 10.so() 11.please(null) 12.also() 13.place(Predicate) 14.the(WHAT) 15.green(WHAT) 16.cup(WHAT) 17.from(null) 18.the(WHAT) 19.table(WHAT) 20.into(null) 21.the(WHAT) 22.dishwasher(WHAT) 23.and(null) 24.switch(PREDICATE) 25.it(WHAT) 26.on(null) 27.but(null) 28.do(null) 29.nt(null) 30.forget(PREDICATE) 31.to(null) 32.close(null) 33.the(WHAT) 34.dishwasher(WHAT) 35.before(HOW) 36.okay(HOW) </role>
+	<arc name="h88">2-1(pp) 3-4(ic) 4-5(ic) 2-3(pp) 8-9(ic) 2-6(pp) 2-8(pp) 14-15(ic) 15-16(ic) 16-18(ic) 18-19(ic) 19-21(ic) 21-22(ic) 24-25(pp) 33-34(ic) 35-36(ic) 2-13(na) 13-24(na) 24-30(na)</arc>
+
+	<example name="h89">Good morning Armar I would like to have orange juice for breakfast so could you please place it from the fridge onto the black table but do nt confuse it with the multi vitamine juice okay thank you </example>
+	<role name="h89">0.Good() 1.morning() 2.Armar() 3.I(ACTOR) 4.would(null) 5.like(PREDICATE) 6.to(null) 7.have(PREDICATE) 8.orange(WHAT) 9.juice(WHAT) 10.for(WHEN) 11.breakfast(WHEN) 12.so() 13.could() 14.you(ACTOR) 15.please(null) 16.place(PREDICATE) 17.it(WHAT) 18.from(null) 19.the(WHAT) 20.fridge(WHAT) 21.onto(null) 22.the(WHAT) 23.black(WHAT) 24.table(WHAT) 25.but(null) 26.do(null) 27.nt(null) 28.confuse(PREDICATE) 29.it(WHAT) 30.with(null) 31.the(WHAT) 32.multi(WHAT) 33.vitamine(WHAT) 34.juice(WHAT) 35.okay() 36.thank(PREDICATE) 37.you(WHO) </role>
+	<arc name="h89">5-3(pp) 5-3(pp) 5-2(pp) 7-14(pp) 8-9(ic) 7-8(pp) 10-11(ic) 7-10(pp) 16-14(pp) 17-19(ic) 19-20(ic) 20-22(ic) 22-23(ic) 23-24(ic) 16-17(pp) 29-31(ic) 31-32(ic) 32-33(ic) 33-34(ic) 28-29(pp) 36-37(pp) 5-7(na) 7-16(na) 28-36(na) </arc>
+
+	<example name="h90">Armar could you please bring me the popcorn it s is on the black table between the cereals and the green cup </example>
+	<role name="h90">0.Armar(ACTOR) 1.could(null) 2.you(ACTOR) 3.please(PREDICATE) 4.bring(PREDICATE) 5.me(WHO) 6.the(WHAT) 7.popcorn(WHAT) 8.it(ACTOR) 9.s(null) 10.is(predicate) 11.on(null) 12.the(Where) 13.black(Where) 14.table(Where) 15.between(null) 16.the(Where) 17.cereals(Where) 18.and(null) 19.the(Where) 20.green(Where) 21.cup(Where) </role>
+	<arc name="h90">0-2(ic) 2-8(ic) 3-0(pp) 3-4(ic) 6-7(ic) 3-6(pp) 3-5(pp) 12-13(ic) 13-14(ic) 14-16(ic) 16-17(ic) 19-20(ic) 20-21(ic) 4-10(na) 10-4(pp) </arc>
+
+	<example name="h91">Armar could you please place the green cup to the red cups into the dishwasher and close the door please </example>
+	<role name="h91">0.Armar() 1.could(null) 2.you(ACTOR) 3.please() 4.place(PREDICATE) 5.the(WHAT) 6.green(WHAT) 7.cup(WHAT) 8.to(null) 9.the(WHAT) 10.red(WHAT) 11.cups(WHAT) 12.into(null) 13.the(Where) 14.dishwasher(Where) 15.and(null) 16.close(PREDICATE) 17.the(WHAT) 18.door(WHAT) 19.please(null) </role>
+	<arc name="h91">4-2(pp) 5-6(ic) 6-7(ic) 7-9(ic) 9-10(ic) 10-11(ic) 4-13(pp) 13-14(ic) 4-5(pp) 16-2(pp) 17-18(ic) 16-17(pp) 4-16(na) </arc>
+
+	<example name="h92">hey amar could you bring me the orange juice it s in the fridge in front of the multi vitamin juice and the water bottle </example>
+	<role name="h92">0.hey() 1.amar() 2.could(null) 3.you(ACTOR) 4.bring(PREDICATE) 5.me(WHO) 6.the(WHAT) 7.orange(WHAT) 8.juice(WHAT) 9.it(ACTOR) 10.s(predicate) 11.in(null) 12.the(Where) 13.fridge(Where) 14.in(null) 15.front(WHAT) 16.of(null) 17.the(WHAT) 18.multi(WHAT) 19.vitamin(WHAT) 20.juice(WHAT) 21.and(null) 22.the(WHAT) 23.water(WHAT) 24.bottle(WHAT) </role>
+	<arc name="h92">4-3(pp) 1-6(ic) 6-7(ic) 7-8(ic) 4-5(pp) 12-13(ic) 13-15(ic) 15-17(ic) 17-18(ic) 18-19(ic) 19-20(ic) 22-23(ic) 23-24(ic) 4-10(na) 10-9(pp) 10-12(pp) </arc>
+
+	<example name="h93">Hi Armar bring me the popcorn from the table </example>
+	<role name="h93">0.Hi() 1.Armar(ACTOR) 2.bring(PREDICATE) 3.me(WHO) 4.the(WHAT) 5.popcorn(WHAT) 6.from(null) 7.the(WHAT) 8.table(WHAT) </role>
+	<arc name="h93">2-1(pp) 4-5(ic) 5-7(ic) 7-8(ic) 2-4(pp) 2-3(pp) </arc>
+
+	<example name="h94">Hi Armar close the door of the dishwasher </example>
+	<role name="h94">0.Hi() 1.Armar(Actor) 2.close(Predicate) 3.the(WHAT) 4.door(WHAT) 5.of(what) 6.the(WHAT) 7.dishwasher(WHAT) </role>
+	<arc name="h94">2-1(pp) 2-3(pp) 3-4(ic) 4-5(ic) 5-6(ic) 6-7(ic) </arc>
+
+	<example name="h95">Hi Armar bring me the orange juice from the fridge </example>
+	<role name="h95">0.Hi() 1.Armar(ACTOR) 2.bring(PREDICATE) 3.me(WHO) 4.the(WHAT) 5.orange(WHAT) 6.juice(WHAT) 7.from(null) 8.the(WHAT) 9.fridge(WHAT) </role>
+	<arc name="h95">2-1(pp) 4-5(ic) 5-6(ic) 6-8(ic) 8-9(ic) 2-4(pp) 2-3(pp) </arc>
+
+	<example name="h96">Hey Armar bring me the popcorn from the table </example>
+	<role name="h96">0.Hey() 1.Armar(ACTOR) 2.bring(PREDICATE) 3.me(WHO) 4.the(WHAT) 5.popcorn(WHAT) 6.from(null) 7.the(WHAT) 8.table(WHAT) </role>
+	<arc name="h96">2-1(pp) 4-5(ic) 5-7(ic) 7-8(ic) 2-4(pp) 2-3(pp) </arc>
+
+	<example name="h97">Hey Armar please place the green cup from the kitchen table into the dishwasher </example>
+	<role name="h97">0.Hey() 1.Armar(ACTOR) 2.please(PREDICATE) 3.place(Predicate) 4.the(what) 5.green(what) 6.cup(what) 7.from(null) 8.the(WHERE) 9.kitchen(WHERE) 10.table(WHERE) 11.into(null) 12.the(WHERE) 13.dishwasher(WHERE) </role>
+	<arc name="h97">3-1(pp) 4-5(ic) 5-6(ic) 6-8(ic) 8-9(ic) 9-10(ic) 10-12(ic) 12-13(ic) 3-4(pp) </arc>
+
+	<example name="h98">Hey Armar bring me the orange juice from the fridge please </example>
+	<role name="h98">0.Hey() 1.Armar(ACTOR) 2.bring(PREDICATE) 3.me(WHO) 4.the(WHAT) 5.orange(WHAT) 6.juice(WHAT) 7.from(null) 8.the(WHAT) 9.fridge(WHAT) 10.please(null) </role>
+	<arc name="h98">2-1(pp) 4-5(ic) 5-6(ic) 6-8(ic) 8-9(ic) 2-4(pp) 2-3(pp) </arc>
+
+	<example name="h99">Hallo Armar bring me the popcorn bag from the table </example>
+	<role name="h99">0.Hallo() 1.Armar(ACTOR) 2.bring(PREDICATE) 3.me(WHO) 4.the(WHAT) 5.popcorn(WHAT) 6.bag(WHAT) 7.from(null) 8.the(where) 9.table(where) </role>
+	<arc name="h99">2-1(pp) 4-5(ic) 5-6(ic) 2-8(pp) 8-9(ic) 2-4(pp) 2-3(pp) </arc>
+
+	<example name="h100">Hello Armar bring the green cup from the table into the dish washer and close the door </example>
+	<role name="h100">0.Hello() 1.Armar(ACTOR) 2.bring(PREDICATE) 3.the(WHAT) 4.green(WHAT) 5.cup(WHAT) 6.from(null) 7.the(WHAT) 8.table(WHAT) 9.into(null) 10.the(where) 11.dish(where) 12.washer(WHAT) 13.and(null) 14.close(PREDICATE) 15.the(WHAT) 16.door(WHAT) </role>
+	<arc name="h100">2-1(pp) 3-4(ic) 4-5(ic) 5-7(ic) 7-8(ic) 2-10(pp) 10-11(ic) 11-12(ic) 2-3(pp) 14-1(pp) 15-16(ic) 14-15(pp) 2-14(na) </arc>
+
+	<example name="h101">Hello Armar Go to the fridge Open the fridge door and bring me the orange juice that is located there and close the door of the fridge </example>
+	<role name="h101">0.Hello() 1.Armar(ACTOR) 2.Go(predicate) 3.to() 4.the(what) 5.fridge(what) 6.Open(predicate) 7.the(WHAT) 8.fridge(WHAT) 9.door(WHAT) 10.and(null) 11.bring(PREDICATE) 12.me(WHO) 13.the(WHAT) 14.orange(WHAT) 15.juice(WHAT) 16.that(ACTOR) 17.is(null) 18.located(PREDICATE) 19.there(where) 20.and(null) 21.close(PREDICATE) 22.the(WHAT) 23.door(WHAT) 24.of(null) 25.the(WHAT) 26.fridge(WHAT) </role>
+	<arc name="h101">2-1(pp) 2-4(pp) 4-5(ic) 11-1(pp) 6-7(pp) 7-8(ic) 8-9(ic) 13-14(ic) 14-15(ic) 11-12(pp) 18-16(pp) 18-19(pp) 21-1(pp) 22-23(ic) 23-25(ic) 25-26(ic) 21-22(pp) 2-6(na) 6-11(na) 11-18(na) 18-21(na) </arc>
+
+	<example name="h102">Armar bring me the bag of popcorn from the table </example>
+	<role name="h102">0.Armar(ACTOR) 1.bring(PREDICATE) 2.me(WHO) 3.the(WHAT) 4.bag(WHAT) 5.of(null) 6.popcorn(WHAT) 7.from(null) 8.the(where) 9.table(where) </role>
+	<arc name="h102">1-0(pp) 3-4(ic) 4-6(ic) 1-8(pp) 8-9(ic) 1-3(pp) 1-2(pp) </arc>
+
+	<example name="h103">Armar place the green cup from the table into the dishwasher and close it afterwards </example>
+	<role name="h103">0.Armar(ACTOR) 1.place(predicate) 2.the(what) 3.green(what) 4.cup(what) 5.from() 6.the() 7.table() 8.into(null) 9.the(where) 10.dishwasher(where) 11.and(null) 12.close(PREDICATE) 13.it(WHAT) 14.afterwards(HOW) </role>
+	<arc name="h103">1-0(pp) 1-2(pp) 1-12(na) 2-3(ic) 3-4(ic) 12-0(pp) 9-10(ic) </arc>
+
+	<example name="h104">Armar bring me the orange juice from the fridge </example>
+	<role name="h104">0.Armar(ACTOR) 1.bring(PREDICATE) 2.me(WHO) 3.the(WHAT) 4.orange(WHAT) 5.juice(WHAT) 6.from(null) 7.the(where) 8.fridge(where) </role>
+	<arc name="h104">1-0(pp) 3-4(ic) 4-5(ic) 1-7(pp) 7-8(ic) 1-3(pp) 1-2(pp) </arc>
+
+	<example name="h105">Armar bring me the popcorn from the table </example>
+	<role name="h105">0.Armar(ACTOR) 1.bring(PREDICATE) 2.me(WHO) 3.the(WHAT) 4.popcorn(WHAT) 5.from(null) 6.the(where) 7.table(where) </role>
+	<arc name="h105">1-0(pp) 3-4(ic) 1-6(pp) 6-7(ic) 1-3(pp) 1-2(pp) </arc>
+
+	<example name="h106">Armar get the green cup from the table and put it into the dishwasher </example>
+	<role name="h106">0.Armar(ACTOR) 1.get(PREDICATE) 2.the(WHAT) 3.green(WHAT) 4.cup(WHAT) 5.from(null) 6.the(where) 7.table(where) 8.and(null) 9.put(PREDICATE) 10.it(WHAT) 11.into(null) 12.the(WHAT) 13.dishwasher(WHAT) </role>
+	<arc name="h106">1-0(pp) 2-3(ic) 3-4(ic) 1-6(pp) 6-7(ic) 1-2(pp) 9-0(pp) 10-12(ic) 12-13(ic) 9-10(pp) 1-9(na) </arc>
+
+	<example name="h107">Armarbring me the orange juice it s in the fridge </example>
+	<role name="h107">0.Armarbring(PREDICATE) 1.me(WHO) 2.the(WHAT) 3.orange(WHAT) 4.juice(WHAT) 5.it(actor) 6.s(predicate) 7.in(null) 8.the(where) 9.fridge(where) </role>
+	<arc name="h107">2-3(ic) 3-4(ic) 0-2(pp) 0-1(pp) 8-9(ic) 6-5(pp) 6-8(pp) 0-6(na) </arc>
+
+	<example name="h108">Hello Armar bring me the popcorn from the table He stands between Vitalis and cup Thank you very much </example>
+	<role name="h108">0.Hello() 1.Armar(ACTOR) 2.bring(PREDICATE) 3.me(WHO) 4.the(WHAT) 5.popcorn(WHAT) 6.from(null) 7.the(where) 8.table(where) 9.He(actor) 10.stands(predicate) 11.between(null) 12.Vitalis(what) 13.and(null) 14.cup(what) 15.Thank(PREDICATE) 16.you(WHO) 17.very(HOW) 18.much(HOW) </role>
+	<arc name="h108">2-1(pp) 4-5(ic) 2-7(pp) 7-8(ic) 2-4(pp) 3-9(ic) 2-3(pp) 15-16(pp) 17-18(ic) 15-17(pp) 2-10(na) 10-9(pp)</arc>
+
+	<example name="h109">Hello Armar bring the green cup which is between popcorn and Nesquik in the dishwasher Thank you </example>
+	<role name="h109">0.Hello() 1.Armar(ACTOR) 2.bring(PREDICATE) 3.the(WHAT) 4.green(WHAT) 5.cup(WHAT) 6.which() 7.is(null) 8.between(null) 9.popcorn() 10.and(null) 11.Nesquik() 12.in() 13.the() 14.dishwasher() 15.Thank(PREDICATE) 16.you(WHO) </role>
+	<arc name="h109">2-1(pp) 3-4(ic) 4-5(ic) 2-3(pp) 15-16(pp) </arc>
+
+	<example name="h110">Hello Armar bring me the one liter of orange juice which is at the front in the fridge I am very thirsty The orange juice is between Apollinaris and multivitamin Naktar in a blue colour box </example>
+	<role name="h110">0.Hello() 1.Armar(ACTOR) 2.bring(PREDICATE) 3.me(WHO) 4.the(WHAT) 5.one(WHAT) 6.liter(WHAT) 7.of(null) 8.orange(WHAT) 9.juice(WHAT) 10.which() 11.is(null) 12.at(null) 13.the() 14.front() 15.in(null) 16.the() 17.fridge() 18.I() 19.am(null) 20.very(null) 21.thirsty(null) 22.The() 23.orange() 24.juice() 25.is() 26.between(null) 27.Apollinaris() 28.and(null) 29.multivitamin() 30.Naktar() 31.in(null) 32.a() 33.blue() 34.colour() 35.box() </role>
+	<arc name="h110">2-1(pp) 4-5(ic) 5-6(ic) 6-8(ic) 8-9(ic)  2-4(pp) 2-3(pp)</arc>
+
+	<example name="h111">Hello Armar please bring me the popcorn from the table </example>
+	<role name="h111">0.Hello() 1.Armar(ACTOR) 2.please(null) 3.bring(PREDICATE) 4.me(WHO) 5.the(WHAT) 6.popcorn(WHAT) 7.from(null) 8.the(where) 9.table(where) </role>
+	<arc name="h111">3-1(pp) 5-6(ic) 3-8(pp) 8-9(ic) 3-5(pp) 3-4(pp) </arc>
+
+	<example name="h112">Hello Armar could you take the green cup from the table into the dishwasher please </example>
+	<role name="h112">0.Hello() 1.Armar() 2.could(null) 3.you(ACTOR) 4.take(PREDICATE) 5.the(WHAT) 6.green(WHAT) 7.cup(WHAT) 8.from(null) 9.the(WHAT) 10.table(WHAT) 11.into(null) 12.the(where) 13.dishwasher(where) 14.please(null) </role>
+	<arc name="h112">4-3(pp) 5-6(ic) 6-7(ic) 7-9(ic) 9-10(ic) 4-12(pp) 12-13(ic)</arc>
+
+	<example name="h113">Hello Armar could you bring me the orange juice from the fridge please </example>
+	<role name="h113">0.Hello() 1.Armar() 2.could(null) 3.you(ACTOR) 4.bring(PREDICATE) 5.me(WHO) 6.the(WHAT) 7.orange(WHAT) 8.juice(WHAT) 9.from(null) 10.the(where) 11.fridge(where) 12.please(null) </role>
+	<arc name="h113">4-3(pp) 6-7(ic) 7-8(ic) 4-10(pp) 10-11(ic)</arc>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</examplesWithSolutions>
