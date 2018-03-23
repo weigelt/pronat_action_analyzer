@@ -59,10 +59,20 @@ public class RoleIdentifier {
 	private void identifyWithPOS() {
 		for (INode token : this.action.getTokens()) {
 			String posName = (String) token.getAttributeValue("pos");
-			if (posName.equals("PRP") && !token.getAttributeValue("value").equals("it")) {
-				setRole(token, Role.WHO);
-			} else if (posName.equals("PRP") && token.getAttributeValue("value").equals("it")) {
-				setRole(token, Role.WHAT); // TODO: neu
+			if (posName.equals("PRP")) {
+				if (token.getAttributeValue("value").toString().equalsIgnoreCase("i")
+						|| token.getAttributeValue("value").toString().equalsIgnoreCase("you")
+						|| token.getAttributeValue("value").toString().equalsIgnoreCase("he")
+						|| token.getAttributeValue("value").toString().equalsIgnoreCase("she")
+						|| token.getAttributeValue("value").toString().equalsIgnoreCase("we")
+						|| token.getAttributeValue("value").toString().equalsIgnoreCase("they")) {
+					setRole(token, Role.ACTOR);
+				} else if (!token.getAttributeValue("value").toString().equalsIgnoreCase("it")) {
+					setRole(token, Role.WHO);
+				} else if (token.getAttributeValue("value").toString().equalsIgnoreCase("it")) {
+					setRole(token, Role.WHAT); // TODO: neu
+				}
+
 			}
 
 		}
