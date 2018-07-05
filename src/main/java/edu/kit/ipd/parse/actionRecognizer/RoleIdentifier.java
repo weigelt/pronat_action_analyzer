@@ -104,9 +104,9 @@ public class RoleIdentifier {
 			// the third row of output of senna contains Name Entity Types
 			// (Eigenname)
 			String nameEntityType = senna.getResults().get(0)[4];
-			if (nameEntityType.equals("S-PER")) {
+			if (nameEntityType.equalsIgnoreCase("S-PER") || nameEntityType.equalsIgnoreCase("PERSON")) {
 				setRole(token, Role.WHO);
-			} else if (nameEntityType.equals("S-LOC")) {
+			} else if (nameEntityType.equals("S-LOC") || nameEntityType.equalsIgnoreCase("LOCATION")) {
 				setRole(token, Role.WHERE);
 			}
 
@@ -115,9 +115,11 @@ public class RoleIdentifier {
 
 	private void identifyWithNER() {
 		for (INode token : this.action.getTokens()) {
-			if (token.getAttributeValue("ner").toString().equals("S-PER")) {
+			if (token.getAttributeValue("ner").toString().equalsIgnoreCase("S-PER")
+					|| token.getAttributeValue("ner").toString().equalsIgnoreCase("PERSON")) {
 				setRole(token, Role.WHO);
-			} else if (token.getAttributeValue("ner").toString().equals("S-LOC")) {
+			} else if (token.getAttributeValue("ner").toString().equalsIgnoreCase("S-LOC")
+					|| token.getAttributeValue("ner").toString().equalsIgnoreCase("LOCATION")) {
 				setRole(token, Role.WHERE);
 			}
 		}
