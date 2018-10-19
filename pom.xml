@@ -3,42 +3,20 @@
 	<modelVersion>4.0.0</modelVersion>
 	<parent>
 		<groupId>edu.kit.ipd.parse</groupId>
-		<artifactId>parent</artifactId>
-		<version>0.0.1-SNAPSHOT</version>
+		<artifactId>parse</artifactId>
+		<version>0.0.2</version>
 	</parent>
-	<groupId>edu.kit.ipd.parse</groupId>
 	<artifactId>actionRecognizer</artifactId>
 	<repositories>
 		<repository>
-			<id>ipdNexus</id>
-			<name>IPD-Repository</name>
-			<url>http://bob.ipd.kit.edu/nexus/content/repositories/public/</url>
-		</repository>
+        	<id>ipdNexus-public-releases</id>
+        	<name>IPD-Repository</name>
+            <url>http://bob.ipd.kit.edu/nexus/repository/maven-public-releases</url>
+        </repository>
 	</repositories>
 	<dependencies>
 
-		<dependency>
-			<groupId>edu.kit.ipd.parse</groupId>
-			<artifactId>ShallowNLP</artifactId>
-		</dependency>
-		<dependency>
-			<groupId>edu.kit.ipd.parse</groupId>
-			<artifactId>senna-wrapper</artifactId>
-		</dependency>
-		<dependency>
-			<groupId>edu.kit.ipd.parse</groupId>
-			<artifactId>graphBuilder</artifactId>
-		</dependency>
-		<dependency>
-			<groupId>edu.kit.ipd.parse</groupId>
-			<artifactId>SRLabeler</artifactId>
-		</dependency>
 
-		<dependency>
-			<groupId>edu.kit.ipd.parse</groupId>
-			<artifactId>tokenizing</artifactId>
-			<version>0.0.1-SNAPSHOT</version>
-		</dependency>
 
 		<dependency>
 			<groupId>edu.kit.ipd.parse</groupId>
@@ -66,6 +44,35 @@
 		<dependency>
 			<groupId>junit</groupId>
 			<artifactId>junit</artifactId>
+			<scope>test</scope>
+		</dependency>
+		<dependency>
+			<groupId>edu.kit.ipd.parse</groupId>
+			<artifactId>senna-wrapper</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.kohsuke.metainf-services</groupId>
+			<artifactId>metainf-services</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>edu.kit.ipd.parse</groupId>
+			<artifactId>SRLabeler</artifactId>
+			<scope>test</scope>
+		</dependency>
+		<dependency>
+			<groupId>edu.kit.ipd.parse</groupId>
+			<artifactId>tokenizing</artifactId>
+			<version>0.0.1-SNAPSHOT</version>
+			<scope>test</scope>
+		</dependency>
+		<dependency>
+			<groupId>edu.kit.ipd.parse</groupId>
+			<artifactId>graphBuilder</artifactId>
+			<scope>test</scope>
+		</dependency>
+		<dependency>
+			<groupId>edu.kit.ipd.parse</groupId>
+			<artifactId>ShallowNLP</artifactId>
 			<scope>test</scope>
 		</dependency>
 	</dependencies>
