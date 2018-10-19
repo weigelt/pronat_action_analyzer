@@ -6,7 +6,6 @@ import java.util.Properties;
 import edu.kit.ipd.parse.luna.graph.IArc;
 import edu.kit.ipd.parse.luna.graph.INode;
 import edu.kit.ipd.parse.luna.tools.ConfigManager;
-import edu.kit.ipd.parse.srlabeler.SRLabeler;
 
 /**
  * Identifies roles of tokens in ONE action. Evaluates the role for each token
@@ -135,7 +134,7 @@ public class RoleIdentifier {
 			IArc arc = e.next();
 			INode src = arc.getSourceNode();
 			INode trg = arc.getTargetNode();
-			String srlRole = (String) arc.getAttributeValue(SRLabeler.ROLE_VALUE_NAME);
+			String srlRole = (String) arc.getAttributeValue("role");
 			if (this.action.containsToken(src) && arc.getAllAttributeValues().size() > 1) {
 				if (srlRole.equals("A0")) {
 					setRole(trg, Role.ACTOR);
