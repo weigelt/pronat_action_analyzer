@@ -13,6 +13,7 @@ import javax.xml.parsers.ParserConfigurationException;
 
 import org.junit.Before;
 import org.junit.After;
+import org.junit.Ignore;
 import org.junit.Test;
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
@@ -112,6 +113,7 @@ public class Evaluation {
         printAccuracyMap();
     }
 
+    @Ignore
     @Test
     public void test1() {
 //         test("1");
@@ -378,6 +380,7 @@ public class Evaluation {
 
     }
 
+    @Ignore
     public void test(String name) {
         ppd = new PrePipelineData();
         ppd.setTranscription(instructionMap.get(name));
