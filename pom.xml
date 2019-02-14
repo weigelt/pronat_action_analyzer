@@ -76,5 +76,10 @@
 			<artifactId>ShallowNLP</artifactId>
 			<scope>test</scope>
 		</dependency>
+		<dependency>
+			<groupId>edu.kit.ipd.parse</groupId>
+			<artifactId>ner</artifactId>
+			<scope>test</scope>
+		</dependency>
 	</dependencies>
 </project>
