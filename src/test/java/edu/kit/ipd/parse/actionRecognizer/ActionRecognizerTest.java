@@ -5,6 +5,7 @@ import java.net.URISyntaxException;
 import java.util.Arrays;
 import java.util.Iterator;
 
+import edu.kit.ipd.parse.ner.NERTagger;
 import org.junit.Before;
 import org.junit.Test;
 
@@ -31,6 +32,7 @@ public class ActionRecognizerTest {
 	static ShallowNLP snlp;
 	static SRLabeler srLabeler;
 	static GraphBuilder graphBuilder;
+	static NERTagger nert;
 
 	Token[] actual;
 	IGraph graph;
@@ -48,6 +50,8 @@ public class ActionRecognizerTest {
 		snlp.init();
 		srLabeler = new SRLabeler();
 		srLabeler.init();
+		nert = new NERTagger();
+		nert.init();
 		graphBuilder = new GraphBuilder();
 		graphBuilder.init();
 	}
@@ -69,6 +73,7 @@ public class ActionRecognizerTest {
 			//tokenizer.exec(ppd);
 			snlp.exec(ppd);
 			srLabeler.exec(ppd);
+			nert.exec(ppd);
 			graphBuilder.exec(ppd);
 		} catch (PipelineStageException e1) {
 			e1.printStackTrace();

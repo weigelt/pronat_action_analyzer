@@ -8,9 +8,9 @@ import edu.kit.ipd.parse.luna.data.MissingDataException;
 import edu.kit.ipd.parse.luna.data.PrePipelineData;
 import edu.kit.ipd.parse.luna.graph.IGraph;
 import edu.kit.ipd.parse.luna.graph.INode;
-import edu.kit.ipd.parse.luna.graph.INodeType;
 import edu.kit.ipd.parse.luna.pipeline.PipelineStageException;
 import edu.kit.ipd.parse.luna.tools.StringToHypothesis;
+import edu.kit.ipd.parse.ner.NERTagger;
 import edu.kit.ipd.parse.shallownlp.ShallowNLP;
 import edu.kit.ipd.parse.srlabeler.SRLabeler;
 
@@ -19,10 +19,10 @@ public class SRLCorrectionTest {
 	private static ShallowNLP snlp;
 	private static GraphBuilder graphBuilder;
 	private static SRLabeler srLabeler;
-	private PrePipelineData ppd;
 	private static IGraph pg;
-	private static INodeType nodeType;
 	private static ActionRecognizer ar;
+	private static NERTagger nert;
+	private PrePipelineData ppd;
 
 	@BeforeClass
 	public static void setUp() {
@@ -32,11 +32,31 @@ public class SRLCorrectionTest {
 		srLabeler.init();
 		snlp = new ShallowNLP();
 		snlp.init();
+		nert = new NERTagger();
+		nert.init();
 		ar = new ActionRecognizer();
 		ar.init();
 	}
 
-	@SuppressWarnings("deprecation")
+	private static IGraph executePreviousStages(PrePipelineData ppd) {
+		try {
+			snlp.exec(ppd);
+			srLabeler.exec(ppd);
+			graphBuilder.exec(ppd);
+			nert.exec(ppd);
+		} catch (PipelineStageException e) {
+			e.printStackTrace();
+		}
+
+		try {
+			return ppd.getGraph();
+		} catch (MissingDataException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return null;
+	}
+
 	@Test
 	public void testSRLCorrectionThemeRole() {
 		ppd = new PrePipelineData();
@@ -49,24 +69,6 @@ public class SRLCorrectionTest {
 			System.out.println(node.toString());
 		}
 
-	}
-
-	private IGraph executePreviousStages(PrePipelineData ppd) {
-		try {
-			snlp.exec(ppd);
-			srLabeler.exec(ppd);
-			graphBuilder.exec(ppd);
-		} catch (PipelineStageException e) {
-			e.printStackTrace();
-		}
-
-		try {
-			return ppd.getGraph();
-		} catch (MissingDataException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-		return null;
 	}
 
 }
