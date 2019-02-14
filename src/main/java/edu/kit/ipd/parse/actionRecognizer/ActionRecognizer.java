@@ -26,7 +26,7 @@ public class ActionRecognizer extends AbstractAgent {
 
 		// actionGraph has the attribute role, new Predicate token type and new
 		// arcs.
-		this.actionGraph = new ActionGraph(graph);
+		actionGraph = new ActionGraph(graph);
 
 		LinkedList<Action> actions = actionGraph.getActions();
 		for (int i = 0; i < actions.size(); i++) {
@@ -60,7 +60,7 @@ public class ActionRecognizer extends AbstractAgent {
 	}
 
 	public ActionGraph getActionGraph() {
-		return this.actionGraph;
+		return actionGraph;
 	}
 
 }
