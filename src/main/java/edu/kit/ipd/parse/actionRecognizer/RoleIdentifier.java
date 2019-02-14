@@ -16,9 +16,9 @@ import edu.kit.ipd.parse.luna.tools.ConfigManager;
  */
 public class RoleIdentifier {
 
-	private ActionGraph actionGraph;
-	private Action action;
-	private Properties props = ConfigManager.getConfiguration(ActionRecognizer.class);
+	private final ActionGraph actionGraph;
+	private final Action action;
+	private final Properties props = ConfigManager.getConfiguration(ActionRecognizer.class);
 
 	public RoleIdentifier(ActionGraph actionGraph, Action action) {
 		this.actionGraph = actionGraph;
@@ -26,8 +26,22 @@ public class RoleIdentifier {
 	}
 
 	/**
-	 * Executes Role Identifier. Identifies roles with chunk tags, name entity,
-	 * srl,
+	 * Sets the role attribute of the token if null
+	 *
+	 * @param token
+	 *            token whose role is to be set
+	 * @param role
+	 *            the role of the token
+	 */
+	private static void setRole(INode token, Role role) {
+		if (token.getAttributeValue("role") == null) {
+			token.setAttributeValue("role", role);
+		}
+
+	}
+
+	/**
+	 * Executes Role Identifier. Identifies roles with chunk tags, name entity, srl,
 	 */
 	public void execute() {
 		identifyWithSRL();
@@ -43,10 +57,10 @@ public class RoleIdentifier {
 	 * Adds tokens to the map in the action according to the role of each token.
 	 */
 	private void addTokenToMap() {
-		for (INode token : this.action.getTokens()) {
+		for (INode token : action.getTokens()) {
 			Role role = (Role) token.getAttributeValue("role");
 			if (role != null) {
-				this.action.addTokenToMap(token, (Role) token.getAttributeValue("role"));
+				action.addTokenToMap(token, (Role) token.getAttributeValue("role"));
 			}
 		}
 
@@ -56,7 +70,7 @@ public class RoleIdentifier {
 	 * Identifies roles with pos tags.
 	 */
 	private void identifyWithPOS() {
-		for (INode token : this.action.getTokens()) {
+		for (INode token : action.getTokens()) {
 			String posName = (String) token.getAttributeValue("pos");
 			if (posName.equals("PRP")) {
 				if (token.getAttributeValue("value").toString().equalsIgnoreCase("i")
@@ -81,7 +95,7 @@ public class RoleIdentifier {
 	 * Identifies roles with chunk tags.
 	 */
 	private void identifyWithChunk() {
-		for (INode token : this.action.getTokens()) {
+		for (INode token : action.getTokens()) {
 			String chunkName = (String) token.getAttributeValue("chunkName");
 			String pos = (String) token.getAttributeValue("pos");
 			if (chunkName.equals("ADVP")) {
@@ -96,7 +110,7 @@ public class RoleIdentifier {
 	 * Identifies roles with name entity information from SENNA
 	 */
 	private void identifyWithSENNA() {
-		for (INode token : this.action.getTokens()) {
+		for (INode token : action.getTokens()) {
 			JSenna senna = new JSenna();
 			// input the token value in senna
 			senna.enter((String) token.getAttributeValue("value"));
@@ -113,7 +127,10 @@ public class RoleIdentifier {
 	}
 
 	private void identifyWithNER() {
-		for (INode token : this.action.getTokens()) {
+		for (INode token : action.getTokens()) {
+			if (token.getAttributeValue("ner") == null) {
+				continue;
+			}
 			if (token.getAttributeValue("ner").toString().equalsIgnoreCase("S-PER")
 					|| token.getAttributeValue("ner").toString().equalsIgnoreCase("PERSON")) {
 				setRole(token, Role.WHO);
@@ -125,17 +142,17 @@ public class RoleIdentifier {
 	}
 
 	/**
-	 * Uses the SRLabeler role (A0, V, ...) of a token to identify the role
-	 * (actor, what, ...) of this token
+	 * Uses the SRLabeler role (A0, V, ...) of a token to identify the role (actor,
+	 * what, ...) of this token
 	 */
 	private void identifyWithSRL() {
-		Iterator<? extends IArc> e = this.actionGraph.getArcs().iterator();
+		Iterator<? extends IArc> e = actionGraph.getArcs().iterator();
 		while (e.hasNext()) {
 			IArc arc = e.next();
 			INode src = arc.getSourceNode();
 			INode trg = arc.getTargetNode();
 			String srlRole = (String) arc.getAttributeValue("role");
-			if (this.action.containsToken(src) && arc.getAllAttributeValues().size() > 1) {
+			if (action.containsToken(src) && arc.getAllAttributeValues().size() > 1) {
 				if (srlRole.equals("A0")) {
 					setRole(trg, Role.ACTOR);
 				} else if (srlRole.equals("V")) {
@@ -150,24 +167,8 @@ public class RoleIdentifier {
 	}
 
 	/**
-	 * Sets the role attribute of the token if null
-	 *
-	 * @param token
-	 *            token whose role is to be set
-	 * @param role
-	 *            the role of the token
-	 */
-	private void setRole(INode token, Role role) {
-		if (token.getAttributeValue("role") == null) {
-			token.setAttributeValue("role", role);
-		}
-
-	}
-
-	/**
-	 * Evaluates the role for each token and adds it to the attribute "role" of
-	 * the token. so far hardcoded and ALSO identifies the
-	 * actionInstructionNumber
+	 * Evaluates the role for each token and adds it to the attribute "role" of the
+	 * token. so far hardcoded and ALSO identifies the actionInstructionNumber
 	 */
 	// public void executeHardcoded() {
 	// for (INode token : action.getTokens()) {
