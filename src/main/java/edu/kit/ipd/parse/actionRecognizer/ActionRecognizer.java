@@ -14,9 +14,12 @@ public class ActionRecognizer extends AbstractAgent {
 	private static final Logger logger = LoggerFactory.getLogger(ActionRecognizer.class);
 	private ActionGraph actionGraph;
 
+	public ActionRecognizer() {
+		setId("actionRecognizer");
+	}
+
 	@Override
 	public void init() {
-		setId("actionRecognizer");
 	}
 
 	@Override
