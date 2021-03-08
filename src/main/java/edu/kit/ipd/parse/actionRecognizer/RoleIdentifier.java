@@ -149,6 +149,9 @@ public class RoleIdentifier {
 		Iterator<? extends IArc> e = actionGraph.getArcs().iterator();
 		while (e.hasNext()) {
 			IArc arc = e.next();
+			if (!actionGraph.hasArcType("srl")) {
+				continue;
+			}
 			INode src = arc.getSourceNode();
 			INode trg = arc.getTargetNode();
 			String srlRole = (String) arc.getAttributeValue("role");
