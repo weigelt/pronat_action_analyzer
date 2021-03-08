@@ -24,42 +24,52 @@ public class ActionRecognizer extends AbstractAgent {
 
 	@Override
 	protected void exec() {
-		System.out.println();
-		logger.info("!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!Action Recognizer starts execution!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!");
+		if (!checkExecutedbefore()) {
+			System.out.println();
+			logger.info("!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!Action Recognizer starts execution!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!");
 
-		// actionGraph has the attribute role, new Predicate token type and new
-		// arcs.
-		actionGraph = new ActionGraph(graph);
+			// actionGraph has the attribute role, new Predicate token type and new
+			// arcs.
+			actionGraph = new ActionGraph(graph);
 
-		LinkedList<Action> actions = actionGraph.getActions();
-		for (int i = 0; i < actions.size(); i++) {
-			RoleIdentifier roleIdentifier = new RoleIdentifier(actionGraph, actions.get(i));
-			roleIdentifier.execute();
+			LinkedList<Action> actions = actionGraph.getActions();
+			for (int i = 0; i < actions.size(); i++) {
+				RoleIdentifier roleIdentifier = new RoleIdentifier(actionGraph, actions.get(i));
+				roleIdentifier.execute();
 
-			AndAnalyser andAnalyser = new AndAnalyser(actionGraph, actions.get(i), i == 0 ? null : actions.get(i - 1),
-					i == actions.size() - 1 ? null : actions.get(i + 1));
-			andAnalyser.execute();
+				AndAnalyser andAnalyser = new AndAnalyser(actionGraph, actions.get(i), i == 0 ? null : actions.get(i - 1),
+						i == actions.size() - 1 ? null : actions.get(i + 1));
+				andAnalyser.execute();
 
-			actionGraph.addPredicate(actions.get(i).createPredicate());
+				actionGraph.addPredicate(actions.get(i).createPredicate());
+			}
+
+			ArcBuilder arcBuilder = new ArcBuilder(actionGraph);
+			arcBuilder.execute();
+
+			// System.out.println();
+			// System.out.println("Results:");
+			// this.actionGraph.printTokensWithRole();
+			// this.actionGraph.printAllBetweenTokenArcs();
+			// for (Predicate p: this.actionGraph.getPredicates()) {
+			// System.out.println(p);
+			// }
+			// for(Instruction i: this.actionGraph.getInstructions()) {
+			// System.out.println(i);
+			// }
+
+			logger.info("!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!Action Recognizer ends execution!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!");
+			System.out.println();
 		}
+	}
 
-		ArcBuilder arcBuilder = new ArcBuilder(actionGraph);
-		arcBuilder.execute();
-
-		// System.out.println();
-		// System.out.println("Results:");
-		// this.actionGraph.printTokensWithRole();
-		// this.actionGraph.printAllBetweenTokenArcs();
-		// for (Predicate p: this.actionGraph.getPredicates()) {
-		// System.out.println(p);
-		// }
-		// for(Instruction i: this.actionGraph.getInstructions()) {
-		// System.out.println(i);
-		// }
-
-		logger.info("!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!Action Recognizer ends execution!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!");
-		System.out.println();
-
+	private boolean checkExecutedbefore() {
+		if (graph.getNodeType("token").containsAttribute("role", Role.class.getName())) {
+			logger.info("Executed before, exiting!");
+			return true;
+		} else {
+			return false;
+		}
 	}
 
 	public ActionGraph getActionGraph() {
