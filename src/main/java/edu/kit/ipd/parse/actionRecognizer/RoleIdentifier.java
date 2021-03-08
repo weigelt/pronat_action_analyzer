@@ -18,7 +18,7 @@ public class RoleIdentifier {
 
 	private final ActionGraph actionGraph;
 	private final Action action;
-	private final Properties props = ConfigManager.getConfiguration(ActionRecognizer.class);
+	//	private final Properties props = ConfigManager.getConfiguration(ActionRecognizer.class);
 
 	public RoleIdentifier(ActionGraph actionGraph, Action action) {
 		this.actionGraph = actionGraph;
