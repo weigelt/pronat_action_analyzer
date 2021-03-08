@@ -106,26 +106,6 @@ public class RoleIdentifier {
 		}
 	}
 
-	/**
-	 * Identifies roles with name entity information from SENNA
-	 */
-	private void identifyWithSENNA() {
-		for (INode token : action.getTokens()) {
-			JSenna senna = new JSenna();
-			// input the token value in senna
-			senna.enter((String) token.getAttributeValue("value"));
-			// the third row of output of senna contains Name Entity Types
-			// (Eigenname)
-			String nameEntityType = senna.getResults().get(0)[4];
-			if (nameEntityType.equalsIgnoreCase("S-PER") || nameEntityType.equalsIgnoreCase("PERSON")) {
-				setRole(token, Role.WHO);
-			} else if (nameEntityType.equals("S-LOC") || nameEntityType.equalsIgnoreCase("LOCATION")) {
-				setRole(token, Role.WHERE);
-			}
-
-		}
-	}
-
 	private void identifyWithNER() {
 		for (INode token : action.getTokens()) {
 			if (token.getAttributeValue("ner") == null) {
