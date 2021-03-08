@@ -78,10 +78,6 @@
             <scope>test</scope>
         </dependency>
         <dependency>
-            <groupId>edu.kit.ipd.parse</groupId>
-            <artifactId>senna-wrapper</artifactId>
-        </dependency>
-        <dependency>
             <groupId>org.kohsuke.metainf-services</groupId>
             <artifactId>metainf-services</artifactId>
         </dependency>
