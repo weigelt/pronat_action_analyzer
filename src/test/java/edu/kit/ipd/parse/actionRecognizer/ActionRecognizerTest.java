@@ -28,7 +28,7 @@ import edu.kit.ipd.parse.tokenizing.Tokenizer;
 public class ActionRecognizerTest {
 
 	ActionRecognizer recognizer;
-	static Tokenizer tokenizer;
+	//	static Tokenizer tokenizer;
 	static ShallowNLP snlp;
 	static SRLabeler srLabeler;
 	static GraphBuilder graphBuilder;
@@ -43,9 +43,9 @@ public class ActionRecognizerTest {
 
 	@Before
 	public void before() {
-		this.recognizer = new ActionRecognizer();
-		tokenizer = new Tokenizer();
-		tokenizer.init();
+		recognizer = new ActionRecognizer();
+		//		tokenizer = new Tokenizer();
+		//		tokenizer.init();
 		snlp = new ShallowNLP();
 		snlp.init();
 		srLabeler = new SRLabeler();
@@ -68,7 +68,6 @@ public class ActionRecognizerTest {
 
 		ppd = new PrePipelineData();
 		ppd.setMainHypothesis(StringToHypothesis.stringToMainHypothesis(input));
-		;
 		try {
 			//tokenizer.exec(ppd);
 			snlp.exec(ppd);
@@ -170,7 +169,7 @@ public class ActionRecognizerTest {
 		recognizer.setGraph(graph.clone());
 		recognizer.init();
 		recognizer.exec();
-		System.out.println("altered Graph: " + this.recognizer.getGraph().showGraph());
+		System.out.println("altered Graph: " + recognizer.getGraph().showGraph());
 
 		System.out.println("!!!!!!!!!!!!!!!!!!!!!!!!!!!!Test ActionRecognizer!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!");
 		System.out.println("!!!!!!!!!!!!!!!!!!!!!!!!!!!!Test ActionRecognizer!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!");

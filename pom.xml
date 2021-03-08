@@ -86,12 +86,12 @@
             <artifactId>SRLabeler</artifactId>
             <scope>test</scope>
         </dependency>
-        <dependency>
-            <groupId>edu.kit.ipd.parse</groupId>
-            <artifactId>tokenizing</artifactId>
-            <version>0.0.1-SNAPSHOT</version>
-            <scope>test</scope>
-        </dependency>
+        <!--        <dependency>-->
+        <!--            <groupId>edu.kit.ipd.parse</groupId>-->
+        <!--            <artifactId>tokenizing</artifactId>-->
+        <!--            <version>0.0.1-SNAPSHOT</version>-->
+        <!--            <scope>test</scope>-->
+        <!--        </dependency>-->
         <dependency>
             <groupId>edu.kit.ipd.parse</groupId>
             <artifactId>graphBuilder</artifactId>
