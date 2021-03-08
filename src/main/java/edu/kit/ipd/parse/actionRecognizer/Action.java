@@ -3,10 +3,8 @@ package edu.kit.ipd.parse.actionRecognizer;
 import java.util.EnumMap;
 import java.util.LinkedList;
 import java.util.Map;
-import java.util.Properties;
 
 import edu.kit.ipd.parse.luna.graph.INode;
-import edu.kit.ipd.parse.luna.tools.ConfigManager;
 
 /**
  * An action contains an action
@@ -27,7 +25,7 @@ public class Action {
 	//    private Properties props = ConfigManager.getConfiguration(ActionRecognizer.class);
 
 	public Action() {
-      tokens = new LinkedList<INode>();
+		tokens = new LinkedList<INode>();
 		initMap();
 
 	}
@@ -45,7 +43,7 @@ public class Action {
 	 *            token to be added to the action
 	 */
 	public void addToken(INode token) {
-      tokens.add(token);
+		tokens.add(token);
 	}
 
 	/**
@@ -76,7 +74,7 @@ public class Action {
 	 * which plays the according role.
 	 */
 	public void initMap() {
-      parameterMap = new EnumMap<Role, LinkedList<INode>>(Role.class);
+		parameterMap = new EnumMap<Role, LinkedList<INode>>(Role.class);
 		parameterMap.put(Role.ACTOR, new LinkedList<INode>());
 		parameterMap.put(Role.PREDICATE, new LinkedList<INode>());
 		parameterMap.put(Role.WHAT, new LinkedList<INode>());
@@ -116,7 +114,7 @@ public class Action {
 	 * @return the predicate of the action
 	 */
 	public Predicate createPredicate() {
-      predicate = new Predicate(parameterMap.get(Role.PREDICATE), this);
+		predicate = new Predicate(parameterMap.get(Role.PREDICATE), this);
 		return predicate;
 	}
 
@@ -135,7 +133,8 @@ public class Action {
 	 * 
 	 * @return the instruciton as a string
 	 */
-	@Override public String toString() {
+	@Override
+	public String toString() {
 		StringBuilder sb = new StringBuilder();
 		for (INode node : tokens) {
 			sb.append(node.getAttributeValue("value"));
