@@ -23,7 +23,6 @@ import edu.kit.ipd.parse.luna.pipeline.PipelineStageException;
 import edu.kit.ipd.parse.luna.tools.StringToHypothesis;
 import edu.kit.ipd.parse.shallownlp.ShallowNLP;
 import edu.kit.ipd.parse.srlabeler.SRLabeler;
-import edu.kit.ipd.parse.tokenizing.Tokenizer;
 
 public class ActionRecognizerTest {
 

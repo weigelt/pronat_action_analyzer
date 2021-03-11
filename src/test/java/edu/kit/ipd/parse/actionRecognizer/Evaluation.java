@@ -4,7 +4,6 @@ import java.io.File;
 import java.io.IOException;
 import java.net.URISyntaxException;
 import java.util.HashMap;
-import java.util.Iterator;
 import java.util.Map;
 
 import javax.xml.parsers.DocumentBuilder;
@@ -27,7 +26,6 @@ import edu.kit.ipd.parse.luna.graph.IGraph;
 import edu.kit.ipd.parse.luna.pipeline.PipelineStageException;
 import edu.kit.ipd.parse.shallownlp.ShallowNLP;
 import edu.kit.ipd.parse.srlabeler.SRLabeler;
-import edu.kit.ipd.parse.tokenizing.Tokenizer;
 
 import static org.junit.Assert.*;
 
@@ -52,7 +50,7 @@ public class Evaluation {
 	@Before
 	public void setUp() {
 
-      recognizer = new ActionRecognizer();
+		recognizer = new ActionRecognizer();
 		//        tokenizer = new Tokenizer();
 		//        tokenizer.init();
 		snlp = new ShallowNLP();
@@ -60,9 +58,9 @@ public class Evaluation {
 		srLabeler = new SRLabeler();
 		srLabeler.init();
 
-      graphSolutionMap = new HashMap<String, SimpleActionGraph>();
-      instructionMap = new HashMap<String, String>();
-      accuracyMap = new HashMap<String, Accuracy>();
+		graphSolutionMap = new HashMap<String, SimpleActionGraph>();
+		instructionMap = new HashMap<String, String>();
+		accuracyMap = new HashMap<String, Accuracy>();
 
 		try {
 			File file = new File(Evaluation.class.getResource("/examplesWithSolutions.xml").toURI());
@@ -74,8 +72,8 @@ public class Evaluation {
 				Element node = (Element) examples.item(i);
 				String name = node.getAttribute("name");
 				String text = node.getTextContent();
-          instructionMap.put(name, text);
-          graphSolutionMap.put(name, new SimpleActionGraph());
+				instructionMap.put(name, text);
+				graphSolutionMap.put(name, new SimpleActionGraph());
 			}
 
 			NodeList roleSolutions = doc.getElementsByTagName("role");
@@ -84,7 +82,7 @@ public class Evaluation {
 				String name = node.getAttribute("name");
 				String text = node.getTextContent();
 
-          graphSolutionMap.get(name).addsRolesWithSolution(text);
+				graphSolutionMap.get(name).addsRolesWithSolution(text);
 			}
 
 			NodeList arcSolutions = doc.getElementsByTagName("arc");
@@ -93,7 +91,7 @@ public class Evaluation {
 				String name = node.getAttribute("name");
 				String text = node.getTextContent();
 
-          graphSolutionMap.get(name).addsArcsWithSolution(text);
+				graphSolutionMap.get(name).addsArcsWithSolution(text);
 			}
 
 		} catch (URISyntaxException e) {
@@ -400,7 +398,7 @@ public class Evaluation {
 		System.out.println("Arc precision: " + comparer.arcPrecision() * 100 + "%");
 		System.out.println("Arc recall: " + comparer.arcRecall() * 100 + "%");
 		System.out.println("-------------------------------------------------------------------------------------");
-      accuracyMap.put(name, new Accuracy(comparer.roleAccuracy(), comparer.arcPrecision(), comparer.arcRecall()));
+		accuracyMap.put(name, new Accuracy(comparer.roleAccuracy(), comparer.arcPrecision(), comparer.arcRecall()));
 
 	}
 
