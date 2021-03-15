@@ -1,18 +1,21 @@
-package edu.kit.ipd.parse.actionRecognizer;
+package edu.kit.ipd.pronat.action_analyzer;
 
 import java.io.IOException;
 import java.net.URISyntaxException;
 import java.util.Arrays;
 import java.util.Iterator;
 
-import edu.kit.ipd.parse.ner.NERTagger;
+import edu.kit.ipd.pronat.graph_builder.GraphBuilder;
+import edu.kit.ipd.pronat.ner.NERTagger;
+import edu.kit.ipd.pronat.prepipedatamodel.PrePipelineData;
+import edu.kit.ipd.pronat.prepipedatamodel.token.Token;
+import edu.kit.ipd.pronat.prepipedatamodel.tools.StringToHypothesis;
+import edu.kit.ipd.pronat.shallow_nlp.ShallowNLP;
+import edu.kit.ipd.pronat.srl.SRLabeler;
 import org.junit.Before;
 import org.junit.Test;
 
-import edu.kit.ipd.parse.graphBuilder.GraphBuilder;
 import edu.kit.ipd.parse.luna.data.MissingDataException;
-import edu.kit.ipd.parse.luna.data.PrePipelineData;
-import edu.kit.ipd.parse.luna.data.token.Token;
 import edu.kit.ipd.parse.luna.graph.IArc;
 import edu.kit.ipd.parse.luna.graph.IArcType;
 import edu.kit.ipd.parse.luna.graph.IGraph;
@@ -20,13 +23,10 @@ import edu.kit.ipd.parse.luna.graph.INode;
 import edu.kit.ipd.parse.luna.graph.INodeType;
 import edu.kit.ipd.parse.luna.graph.ParseGraph;
 import edu.kit.ipd.parse.luna.pipeline.PipelineStageException;
-import edu.kit.ipd.parse.luna.tools.StringToHypothesis;
-import edu.kit.ipd.parse.shallownlp.ShallowNLP;
-import edu.kit.ipd.parse.srlabeler.SRLabeler;
 
-public class ActionRecognizerTest {
+public class ActionAnalyzerTest {
 
-	ActionRecognizer recognizer;
+	ActionAnalyzer recognizer;
 	//	static Tokenizer tokenizer;
 	static ShallowNLP snlp;
 	static SRLabeler srLabeler;
@@ -42,7 +42,7 @@ public class ActionRecognizerTest {
 
 	@Before
 	public void before() {
-		recognizer = new ActionRecognizer();
+		recognizer = new ActionAnalyzer();
 		//		tokenizer = new Tokenizer();
 		//		tokenizer.init();
 		snlp = new ShallowNLP();
@@ -58,10 +58,10 @@ public class ActionRecognizerTest {
 	@Test
 	public void testActionRecognizer() {
 
-		System.out.println(
-				"!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!Test ActionRecognizer starts!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!");
-		System.out.println(
-				"!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!Test ActionRecognizer starts!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!");
+		System.out
+				.println("!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!Test ActionAnalyzer starts!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!");
+		System.out
+				.println("!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!Test ActionAnalyzer starts!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!");
 
 		String input = "Put the juice in the kitchen";
 
@@ -109,10 +109,8 @@ public class ActionRecognizerTest {
 			System.out.println("Token: " + node.getAllAttributeNamesAndValuesAsPair());
 		}
 
-		System.out
-				.println("!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!Test ActionRecognizer ends!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!");
-		System.out
-				.println("!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!Test ActionRecognizer ends!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!");
+		System.out.println("!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!Test ActionAnalyzer ends!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!");
+		System.out.println("!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!Test ActionAnalyzer ends!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!");
 
 	}
 
@@ -151,8 +149,8 @@ public class ActionRecognizerTest {
 	// @Test //the input is a string. Doesn't work with SRLabeler.
 	public void testActionRecognizerWithString() {
 
-		System.out.println("!!!!!!!!!!!!!!!!!!!!!!!!!!!!Test ActionRecognizer!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!");
-		System.out.println("!!!!!!!!!!!!!!!!!!!!!!!!!!!!Test ActionRecognizer!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!");
+		System.out.println("!!!!!!!!!!!!!!!!!!!!!!!!!!!!Test ActionAnalyzer!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!");
+		System.out.println("!!!!!!!!!!!!!!!!!!!!!!!!!!!!Test ActionAnalyzer!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!");
 
 		String input = "Armar came and he brought me an orange juice";
 
@@ -170,8 +168,8 @@ public class ActionRecognizerTest {
 		recognizer.exec();
 		System.out.println("altered Graph: " + recognizer.getGraph().showGraph());
 
-		System.out.println("!!!!!!!!!!!!!!!!!!!!!!!!!!!!Test ActionRecognizer!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!");
-		System.out.println("!!!!!!!!!!!!!!!!!!!!!!!!!!!!Test ActionRecognizer!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!");
+		System.out.println("!!!!!!!!!!!!!!!!!!!!!!!!!!!!Test ActionAnalyzer!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!");
+		System.out.println("!!!!!!!!!!!!!!!!!!!!!!!!!!!!Test ActionAnalyzer!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!");
 
 	}
 

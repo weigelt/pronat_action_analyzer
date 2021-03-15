@@ -1,4 +1,4 @@
-package edu.kit.ipd.parse.actionRecognizer;
+package edu.kit.ipd.pronat.action_analyzer;
 
 import java.util.LinkedList;
 import java.util.Properties;
@@ -20,7 +20,7 @@ public class ArcBuilder {
 
 	private ActionGraph actionGraph;
 
-	private Properties props = ConfigManager.getConfiguration(ActionRecognizer.class);
+	private Properties props = ConfigManager.getConfiguration(ActionAnalyzer.class);
 
 	public ArcBuilder(ActionGraph actionGraph) {
 		this.actionGraph = actionGraph;

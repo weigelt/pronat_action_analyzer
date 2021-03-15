@@ -1,4 +1,4 @@
-package edu.kit.ipd.parse.actionRecognizer;
+package edu.kit.ipd.pronat.action_analyzer;
 
 import java.util.EnumMap;
 import java.util.LinkedList;
@@ -22,7 +22,7 @@ public class Action {
 	// The predicate in the action.
 	private Predicate predicate;
 
-	//    private Properties props = ConfigManager.getConfiguration(ActionRecognizer.class);
+	//    private Properties props = ConfigManager.getConfiguration(ActionAnalyzer.class);
 
 	public Action() {
 		tokens = new LinkedList<INode>();

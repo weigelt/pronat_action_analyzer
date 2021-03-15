@@ -1,4 +1,4 @@
-package edu.kit.ipd.parse.actionRecognizer;
+package edu.kit.ipd.pronat.action_analyzer;
 
 import java.util.LinkedList;
 
@@ -9,12 +9,12 @@ import org.slf4j.LoggerFactory;
 import edu.kit.ipd.parse.luna.agent.AbstractAgent;
 
 @MetaInfServices(AbstractAgent.class)
-public class ActionRecognizer extends AbstractAgent {
+public class ActionAnalyzer extends AbstractAgent {
 
-	private static final Logger logger = LoggerFactory.getLogger(ActionRecognizer.class);
+	private static final Logger logger = LoggerFactory.getLogger(ActionAnalyzer.class);
 	private ActionGraph actionGraph;
 
-	public ActionRecognizer() {
+	public ActionAnalyzer() {
 		setId("actionRecognizer");
 	}
 
@@ -37,9 +37,9 @@ public class ActionRecognizer extends AbstractAgent {
 				RoleIdentifier roleIdentifier = new RoleIdentifier(actionGraph, actions.get(i));
 				roleIdentifier.execute();
 
-				AndAnalyser andAnalyser = new AndAnalyser(actionGraph, actions.get(i), i == 0 ? null : actions.get(i - 1),
+				AndAnalyzer andAnalyzer = new AndAnalyzer(actionGraph, actions.get(i), i == 0 ? null : actions.get(i - 1),
 						i == actions.size() - 1 ? null : actions.get(i + 1));
-				andAnalyser.execute();
+				andAnalyzer.execute();
 
 				actionGraph.addPredicate(actions.get(i).createPredicate());
 			}

@@ -1,4 +1,4 @@
-package edu.kit.ipd.parse.actionRecognizer;
+package edu.kit.ipd.pronat.action_analyzer;
 
 import java.util.List;
 import java.util.Set;

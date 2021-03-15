@@ -1,11 +1,9 @@
-package edu.kit.ipd.parse.actionRecognizer;
+package edu.kit.ipd.pronat.action_analyzer;
 
 import java.util.Iterator;
-import java.util.Properties;
 
 import edu.kit.ipd.parse.luna.graph.IArc;
 import edu.kit.ipd.parse.luna.graph.INode;
-import edu.kit.ipd.parse.luna.tools.ConfigManager;
 
 /**
  * Identifies roles of tokens in ONE action. Evaluates the role for each token
@@ -18,7 +16,7 @@ public class RoleIdentifier {
 
 	private final ActionGraph actionGraph;
 	private final Action action;
-	//	private final Properties props = ConfigManager.getConfiguration(ActionRecognizer.class);
+	//	private final Properties props = ConfigManager.getConfiguration(ActionAnalyzer.class);
 
 	public RoleIdentifier(ActionGraph actionGraph, Action action) {
 		this.actionGraph = actionGraph;

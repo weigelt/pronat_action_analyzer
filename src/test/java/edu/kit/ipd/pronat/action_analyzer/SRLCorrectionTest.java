@@ -1,18 +1,18 @@
-package edu.kit.ipd.parse.actionRecognizer;
+package edu.kit.ipd.pronat.action_analyzer;
 
+import edu.kit.ipd.pronat.graph_builder.GraphBuilder;
+import edu.kit.ipd.pronat.ner.NERTagger;
+import edu.kit.ipd.pronat.prepipedatamodel.PrePipelineData;
+import edu.kit.ipd.pronat.prepipedatamodel.tools.StringToHypothesis;
+import edu.kit.ipd.pronat.shallow_nlp.ShallowNLP;
+import edu.kit.ipd.pronat.srl.SRLabeler;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
-import edu.kit.ipd.parse.graphBuilder.GraphBuilder;
 import edu.kit.ipd.parse.luna.data.MissingDataException;
-import edu.kit.ipd.parse.luna.data.PrePipelineData;
 import edu.kit.ipd.parse.luna.graph.IGraph;
 import edu.kit.ipd.parse.luna.graph.INode;
 import edu.kit.ipd.parse.luna.pipeline.PipelineStageException;
-import edu.kit.ipd.parse.luna.tools.StringToHypothesis;
-import edu.kit.ipd.parse.ner.NERTagger;
-import edu.kit.ipd.parse.shallownlp.ShallowNLP;
-import edu.kit.ipd.parse.srlabeler.SRLabeler;
 
 public class SRLCorrectionTest {
 
@@ -20,7 +20,7 @@ public class SRLCorrectionTest {
 	private static GraphBuilder graphBuilder;
 	private static SRLabeler srLabeler;
 	private static IGraph pg;
-	private static ActionRecognizer ar;
+	private static ActionAnalyzer ar;
 	private static NERTagger nert;
 	private PrePipelineData ppd;
 
@@ -34,7 +34,7 @@ public class SRLCorrectionTest {
 		snlp.init();
 		nert = new NERTagger();
 		nert.init();
-		ar = new ActionRecognizer();
+		ar = new ActionAnalyzer();
 		ar.init();
 	}
 

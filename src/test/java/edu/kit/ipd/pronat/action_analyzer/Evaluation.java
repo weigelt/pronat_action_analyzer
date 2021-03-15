@@ -1,4 +1,4 @@
-package edu.kit.ipd.parse.actionRecognizer;
+package edu.kit.ipd.pronat.action_analyzer;
 
 import java.io.File;
 import java.io.IOException;
@@ -10,6 +10,10 @@ import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
 import javax.xml.parsers.ParserConfigurationException;
 
+import edu.kit.ipd.pronat.prepipedatamodel.PrePipelineData;
+import edu.kit.ipd.pronat.prepipedatamodel.token.Token;
+import edu.kit.ipd.pronat.shallow_nlp.ShallowNLP;
+import edu.kit.ipd.pronat.srl.SRLabeler;
 import org.junit.Before;
 import org.junit.After;
 import org.junit.Ignore;
@@ -20,18 +24,12 @@ import org.w3c.dom.NodeList;
 import org.xml.sax.SAXException;
 
 import edu.kit.ipd.parse.luna.data.MissingDataException;
-import edu.kit.ipd.parse.luna.data.PrePipelineData;
-import edu.kit.ipd.parse.luna.data.token.Token;
 import edu.kit.ipd.parse.luna.graph.IGraph;
 import edu.kit.ipd.parse.luna.pipeline.PipelineStageException;
-import edu.kit.ipd.parse.shallownlp.ShallowNLP;
-import edu.kit.ipd.parse.srlabeler.SRLabeler;
-
-import static org.junit.Assert.*;
 
 public class Evaluation {
 
-	ActionRecognizer recognizer;
+	ActionAnalyzer recognizer;
 	//    static Tokenizer tokenizer;
 	static ShallowNLP snlp;
 	static SRLabeler srLabeler;
@@ -50,7 +48,7 @@ public class Evaluation {
 	@Before
 	public void setUp() {
 
-		recognizer = new ActionRecognizer();
+		recognizer = new ActionAnalyzer();
 		//        tokenizer = new Tokenizer();
 		//        tokenizer.init();
 		snlp = new ShallowNLP();
